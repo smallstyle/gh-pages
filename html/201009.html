@@ -1,0 +1,413 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="ja-JP">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="generator" content="tDiary 3.2.1">
+	<meta http-equiv="Last-Modified" content="Tue, 12 Oct 2010 14:02:07 GMT">
+	<meta http-equiv="Content-Script-Type" content="text/javascript; charset=UTF-8">
+	<meta name="author" content="hb">
+	
+	<link rel="start" title="最新" href="./">
+	
+	<link rel="shortcut icon" href="favicon.ico">
+	<meta name="description" content="日々，気になったことを書き留める日記">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js" type="text/javascript"></script>
+	<script src="js/00default.js?3.2.120200906" type="text/javascript"></script>
+		<script type="text/javascript"><!--
+		$tDiary.style = 'wiki';
+		//-->
+		</script>
+	<meta http-equiv="content-style-type" content="text/css">
+	<link rel="stylesheet" href="theme/base.css" type="text/css" media="all">
+	<link rel="stylesheet" href="stylesheets/smallstyle-2010/smallstyle-2010.css" title="smallstyle-2010" type="text/css" media="all">
+	
+	<title>SmallStyle(2010-09)</title>
+	
+	<link rel="author" href="https://plus.google.com/116137028933519395680">
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.smallstyle.com/smallstyle">
+	<link rel="alternate" type="application/rss+xml" title="RSS(without comments)" href="http://feeds.smallstyle.com/smallstyle_no_comments">
+	<style type="text/css" media="all"><!--
+	div.sequel {
+		font-size: 75%;
+		text-align: right;
+		margin: 0px;
+	}
+	--></style>
+</head>
+<body>
+<div class="whole-content">
+
+<div class="adminmenu"><div class="adminmenu">
+<span class="adminmenu"><a href="./201008.html">&laquo;前月</a></span>
+<span class="adminmenu"><a href="./">最新</a></span>
+<span class="adminmenu"><a href="./201010.html">翌月&raquo;</a></span>
+</div>
+</div>
+<h1><a href="http://www.smallstyle.com/">SmallStyle</a></h1>
+<div class="content">
+<div class="main">
+
+<hr class="sep">
+
+
+	
+<div class="day autopagerize_page_element">
+<h2><span class="date">
+<a href="./20100904.html">2010-09-04</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="./20100904.html#p01" title="公式 Tweet ボタンがたくさんあると Safari がしばらく応答しなくなった"><span class="sanchor">_</span></a> 公式 Tweet ボタンがたくさんあると Safari がしばらく応答しなくなった</h3>
+<p>tDiary を利用しているサイトをいくつか開いたときに，なんだか読み込み完了までに妙に時間がかかることがあった．レインボーがくるくるまわって何もできなくなるので，なんだろなーと思って，時間のかかったのを見比べてみて共通していたのは…</p>
+<ul>
+<li>日記を月表示などでまとめて表示した場合に遅い</li>
+<li>公式 Tweet ボタンがセクション毎に設置されている</li>
+</ul>
+<p>各日記の Tweet 数を取得してレンダリングするまでに時間がかかっているということか．日毎に表示した場合や数件の場合は影響はないけれども，月別表示など比較的日記のセクション数が多くなる場合はやっかいだなぁ．</p>
+<p><del>とりあえず自分のところはやっつけプラグイン書いてたので，対策案が思いつくまではいったんプラグインを無効化することにした．</del>月表示の時とかは Tweet 数を取得しないように切り替えるとか，なんかうまいこと考えた方がよさそう．（その後，日毎と最新の日記表示のときに表示するようにした）</p>
+<p>まだ他のブラウザでは確認していないのですが，少なくとも Mac 版 Safari ではこうした問題が発生しています．</p>
+<p>section_footer プラグインでツイートボタンを表示している tDiary には共通して発生する可能性のある問題になるんだろうな．</p>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<hr class="sep">
+	
+<div class="day autopagerize_page_element">
+<h2><span class="date">
+<a href="./20100910.html">2010-09-10</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="./20100910.html#p01" title="Picasa の画像を簡単に日記に挿入できるプラグインを書いてみた"><span class="sanchor">_</span></a> Picasa の画像を簡単に日記に挿入できるプラグインを書いてみた</h3>
+<p>しばらく Picasa の API をさわっていたので，せっかくなので tDiary のプラグインに使えないかなということで，ちょっと書いてみた．久々に Ruby のコード書くぞーと思っていたら，コードのほとんどが JavaScript になってしまった．というのも，tDiary の編集画面では，jQuery が標準でサポートされるようになったので，日記の編集画面で Picasa から写真をひっぱってきたりとかという部分を JavaScript で実装してみたから．Ruby のコードは日記に表示するためのと，更新画面のフォームを作成するくらい．</p>
+<p>最初は jQuery のお作法がよくわからずに，あれやこれやと書いているうちになんとなく理解できてきたので，とりあえず動くところまではもってこれた．なんかもっときれいに書けそうな気もするけど…</p>
+<p>picasa プラグインは，ウェブ上で一般公開指定されているアルバムを対象に，日記の編集画面からアルバムの一覧，画像の一覧を表示し，日記編集エリアに簡単に挿入することができるプラグインです．jQuery ライブラリを利用しているので tDiary 3.0 以降で動作します．</p>
+<ul>
+<li><a href="http://coderepos.org/share/browser/platform/tdiary/plugin/picasa.rb">http://coderepos.org/share/browser/platform/tdiary/plugin/picasa.rb</a></li>
+</ul>
+<p>プラグインを動作させるためにはあらかじめ，tdiary.conf に以下の値を設定します．</p>
+<pre>@options['picasa.user'] = 'username'
+@options['picasa.default_size'] = 400</pre>
+<p>picasa.user の設定は必須です．設定する値は Picasa の設定で全般で設定しているギャラリーの URL で指定しているユーザー名です．picasa.default_size  は日記で表示する際の写真のサイズを指定します．</p>
+<p><img title="picasaプラグインのサンプル" alt="picasaプラグインのサンプル" src="http://lh6.ggpht.com/_ihKAdXEKr-A/TIkWkiYWhlI/AAAAAAAAABM/mGW-AT5Hj_Q/s300/picasa_plugin.png" class="right picasa"></p>
+<p>日記の編集画面で本文の入力エリアの下に，「Get Picasa Album List」というボタンが追加されます．このボタンでアルバム一覧を取得し，表示されたアルバム一覧から，適当なアルバム名を選択すると画像のサムネイル一覧が表示されます．サムネイル画像をクリックすると日記の本文にプラグインを呼び出す形で URL が追記されます．（ちなみに一般公開されているアルバムなら指定したユーザーの誰のものでも取得できるので，サンプル画像は<a href="http://picasaweb.google.com/tadatadashi">たださんの公開アルバム</a>を勝手ながら利用させてもらっています）</p>
+<p>プラグインでは，画像 URL の指定と，タイトルの指定ができるようになっています．また，picasa_right や picasa_left といった image プラグイン相当の呼び出し方も可能です．右のサンプル画像も Picasa の画像を直接表示しています．</p>
+<p>というわけで，Picasa に一般公開の画像さえ用意すれば，簡単に日記に追加することが可能となるプラグインの紹介でした．よろしければご利用ください．</p>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<hr class="sep">
+	
+<div class="day autopagerize_page_element">
+<h2><span class="date">
+<a href="./20100915.html">2010-09-15</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="./20100915.html#p01" title="日記のテーマを修正した"><span class="sanchor">_</span></a> 日記のテーマを修正した</h3>
+<p>ずいぶん前から iPhone でここをみるとレイアウトが大崩壊していることは認識していながら，ながらく放置していた日記のテーマをやっとのことで改修．といっても見た目はそう大きくは変えてない．変えてないけど CSS は完全に書き直したもの．大きく変更したのは，これまではサイドバーを右に表示していたけど，もろもろの情報はまとめて日記の下部に移動させたこと．どうも横にごちゃごちゃあっても見づらいだけだよなぁ，ということで．</p>
+<p>ちなみにベースというかテンプレートにしたのは <a href="http://github.com/tdiary/tdiary-theme/blob/master/gustav/gustav.css">gustav.css</a>．少なくとも iPhone での表示に問題がないことが確認できているテーマだったので，これをベースに手をいれたのだが，iPhone で表示したときに長い URL が折り返されずにレイアウトが崩れることになかなか気がつけずに時間がかかった．</p>
+<p>CSS3 で新しく利用できるものなどもいくつか利用してみていて，なかなかすっきりまとまった感．Safari5，Chrome5，Firefox3.6 でとりあえずは問題なく表示されるのが確認できたので，まぁ，いいかな．</p>
+<p>もともとこのベースとなったこのデザインに変更したのが <a href="http://www.smallstyle.com/20050718.html#p01">５ 年ほど前</a>ということで，ずいぶんと長い間変えていないということに自分でもびっくりしてみたり．無難にまとまっていて自分では気に入ってるからいいんですけどね．</p>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<hr class="sep">
+	
+<div class="day autopagerize_page_element">
+<h2><span class="date">
+<a href="./20100920.html">2010-09-20</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="./20100920.html#p01" title="tDiary 3.0.1 アップデート"><span class="sanchor">_</span></a> tDiary 3.0.1 アップデート</h3>
+<p><a href="http://www.tdiary.org/20100920.html">tDiary 3.0.1 がリリース</a>されたのでアップデートしました．</p>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<hr class="sep">
+	
+<div class="day autopagerize_page_element">
+<h2><span class="date">
+<a href="./20100922.html">2010-09-22</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="./20100922.html#p01" title="日記をプレビューしたときに校正支援してくれるプラグイン"><span class="sanchor">_</span></a> 日記をプレビューしたときに校正支援してくれるプラグイン</h3>
+<p><img class="right" src="http://www.smallstyle.com/images/20100922_0.png" alt="校正支援プラグイン動作イメージ" title="校正支援プラグイン動作イメージ" width="240"></p>
+<p>日記を書いて Web 上に公開していると，たまに漢字が間違っていたり，文章としてなんとなくおかしかったりすることがありませんか？プレビュー段階でひととおり確認して，おかしなところがないかは自分で確認するけれど，この段階で，ちょっとした校正支援をしてくれるプラグインがあってもいいかな，ということで，<a href="http://developer.yahoo.co.jp/">Yahoo!デベロッパーネットワーク</a>で提供されている<a href="http://developer.yahoo.co.jp/webapi/jlp/kousei/v1/kousei.html">校正支援 Web API</a>を利用した tDiary のプラグインを書いてみました．</p>
+<p>このプラグインを利用することで日記のプレビュー画面で，指定した指摘グループに基づいた言い換え候補や指摘内容を一覧表示してくれるようになります．</p>
+<ul>
+<li><a href="http://coderepos.org/share/browser/platform/tdiary/plugin/yahoo_kousei.rb">http://coderepos.org/share/browser/platform/tdiary/plugin/yahoo_kousei.rb</a></li>
+</ul>
+<p>プラグインを動作させるには，<a href="https://e.developer.yahoo.co.jp/webservices/register_application">あらかじめアプリケーション ID を取得</a>した上で，tdiary.conf に以下の値を設定します．また，指摘部分の選択表示のために，今回も jQuery を用いているので，tDiary 3.0 以降で動作が可能です．</p>
+<pre>@options['yahoo_kousei.appid'] = '&lt;アプリケーション ID&gt;'</pre>
+<p>アプリケーション ID を設定して，プラグインを有効にすると，プレビュー段階で校正支援 Web API に対して入力内容を送信し，校正候補を取得，表示します．指摘する内容については，さらにオプションで制御することも可能です．設定項目は<a href="http://developer.yahoo.co.jp/webapi/jlp/kousei/v1/kousei.html">校正支援 API</a> のリクエストパラメータに準拠します．</p>
+<pre># 指摘グループを指定
+@options['yahoo_kousei.filter_group'] = '1,2,3'
+# filter_group で指定した指摘グループから除外する指摘
+@options['yahoo_kousei.no_filter'] = '17'</pre>
+<p>指定しない場合は，すべてが有効な状態となります．</p>
+<p>表示された校正候補をクリックすると，日記編集の textarea で該当部分が選択されるようになります．IE では選択された位置に textarea が自動的にスクロールするのですが，Chrome や Firefox はスクロールしてくれないので，選択部分を自力で探すしかありません．このへんがうまく制御できればいいんだけどな…</p>
+<p>このプラグインを利用することで，ここで公開している日記の誤字や脱字，おかしな表現が少しでもましになればいいのですが，はたしてその効果はどのくらいになるのかな．</p>
+<p>API を利用して思ったのが，用字や用語についての指摘が多いので，校正候補に従って修正していれば，日によって表現が異なったり，その日の日記でも異なる表現がなくなることで，読みやすい文章に近づくかもしれませんね．</p>
+<div class="sequel">つづき: <a href="http://www.smallstyle.com/20110621.html#p01">2011-06-21</a></div>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+		<div class="caption">本日のツッコミ(全2件) [<a href="./20100922.html#c">ツッコミを入れる</a>]</div>
+		<div class="commentshort">
+				<p><a href="./20100922.html#c01"><span class="canchor">_</span></a>
+				<span class="commentator">kdmsnr</span>&nbsp;[わ。便利ですね！ スクロールは、  + o.scrollTop = 0; + o.scrollLeft = 0; o..]</p>
+				<p><a href="./20100922.html#c02"><span class="canchor">_</span></a>
+				<span class="commentator">hb</span>&nbsp;[SafariとChromeでは，現状のコードで校正候補をダブルクリックすると，うまく動作してました． コメントのコー..]</p>
+		</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<hr class="sep">
+	
+<div class="day autopagerize_page_element">
+<h2><span class="date">
+<a href="./20100923.html">2010-09-23</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="./20100923.html#p01" title="手羽元と野菜の酢煮"><span class="sanchor">_</span></a> 手羽元と野菜の酢煮</h3>
+<p><img title="手羽元と野菜の酢煮" alt="手羽元と野菜の酢煮" src="http://lh6.ggpht.com/_ihKAdXEKr-A/TJtfS84bw4I/AAAAAAAAABc/CA-5_Nmt3bY/s300/P9230015.JPG" class="right picasa"></p>
+<p>参考にしたレシピは，手羽元とネギ，ごぼうだったけど，ごぼうを大根に代えてみた．味見したときは酢が強すぎたかなと思ったけど，食べてみるとそうでもなく．煮る時間が短めだったので，大根はちょっと固めだったけど，この酢煮だと多少固めでも問題なし．おいしかった！</p>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<hr class="sep">
+	
+<div class="day autopagerize_page_element">
+<h2><span class="date">
+<a href="./20100926.html">2010-09-26</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="./20100926.html#p01" title="ゴッチャポントでランチ"><span class="sanchor">_</span></a> ゴッチャポントでランチ</h3>
+<p><img title="ゴッチャポント" alt="ゴッチャポント" src="http://lh6.ggpht.com/_ihKAdXEKr-A/TJ9fi1QL4VI/AAAAAAAAABo/aWzdfvHxkx4/s300/photo.JPG" class="right picasa"></p>
+<p>昼どきに一宮の方に出かけたので，そういえば近くに気になるイタリアンのお店があったなぁ，ということでランチへ．</p>
+<p>森本にある<a href="http://gcpt.exblog.jp/">ゴッチャポント</a>は住宅街の少し中に入ったところで，気にしていないと通り過ぎてしまうくらい．店には 13 時過ぎくらいに行って運良く駐車場は 1 台分空いていた．</p>
+<p>お店に入るとご予約は…と聞かれて，していないことを伝えるとしばらくお待ちくださいと．お店はそれほど座席があるわけではないので，ランチでも予約はしておいた方がよさそう．2 人分の席は空いていたようで，ほどなくして店員に案内される．</p>
+<p>ランチは，950 円，1300 円，2300 円から．とりあえず 1300 円のランチに．前菜 5 種類にパンとパスタ，食後にドリンク．パスタはホタテとほうれん草のトマトソースのものを．おいしかったけど，トマトソースのパスタは魚介系よりも肉系のものの方が個人的には好きだなぁ．</p>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<hr class="sep">
+
+</div>
+
+
+
+
+
+<div class="additional_information">
+<div class="information">
+<h4>about me</h4>
+<div itemscope itemtype="http://data-vocabulary.org/Person">
+<dl>
+<p>いろいろと興味を持ったことを書いてます．ちょっとしたことは <a href="http://twitter.com/smallstyle"><span itemprop="name">hb</span>(@<span itemprop="nickname">smallstyle</span>) on Twitter</a> で書いてます．</p>
+</div>
+
+<h4>Archive</h4>
+<div class="calendar">
+<div class="year">2003|<a href="./200301.html">01</a>|<a href="./200302.html">02</a>|<a href="./200303.html">03</a>|<a href="./200304.html">04</a>|<a href="./200305.html">05</a>|<a href="./200306.html">06</a>|<a href="./200307.html">07</a>|<a href="./200308.html">08</a>|<a href="./200309.html">09</a>|<a href="./200310.html">10</a>|<a href="./200311.html">11</a>|<a href="./200312.html">12</a>|</div>
+<div class="year">2004|<a href="./200401.html">01</a>|<a href="./200402.html">02</a>|<a href="./200403.html">03</a>|<a href="./200404.html">04</a>|<a href="./200405.html">05</a>|<a href="./200406.html">06</a>|<a href="./200407.html">07</a>|<a href="./200408.html">08</a>|<a href="./200409.html">09</a>|<a href="./200410.html">10</a>|<a href="./200411.html">11</a>|<a href="./200412.html">12</a>|</div>
+<div class="year">2005|<a href="./200501.html">01</a>|<a href="./200502.html">02</a>|<a href="./200503.html">03</a>|<a href="./200504.html">04</a>|<a href="./200505.html">05</a>|<a href="./200506.html">06</a>|<a href="./200507.html">07</a>|<a href="./200508.html">08</a>|<a href="./200509.html">09</a>|<a href="./200510.html">10</a>|<a href="./200511.html">11</a>|<a href="./200512.html">12</a>|</div>
+<div class="year">2006|<a href="./200601.html">01</a>|<a href="./200602.html">02</a>|<a href="./200603.html">03</a>|<a href="./200604.html">04</a>|<a href="./200605.html">05</a>|<a href="./200606.html">06</a>|<a href="./200607.html">07</a>|<a href="./200608.html">08</a>|<a href="./200609.html">09</a>|<a href="./200610.html">10</a>|<a href="./200611.html">11</a>|<a href="./200612.html">12</a>|</div>
+<div class="year">2007|<a href="./200701.html">01</a>|<a href="./200702.html">02</a>|<a href="./200703.html">03</a>|<a href="./200704.html">04</a>|<a href="./200705.html">05</a>|<a href="./200706.html">06</a>|<a href="./200707.html">07</a>|<a href="./200708.html">08</a>|<a href="./200709.html">09</a>|<a href="./200710.html">10</a>|<a href="./200711.html">11</a>|<a href="./200712.html">12</a>|</div>
+<div class="year">2008|<a href="./200801.html">01</a>|<a href="./200802.html">02</a>|<a href="./200803.html">03</a>|<a href="./200804.html">04</a>|<a href="./200805.html">05</a>|<a href="./200806.html">06</a>|<a href="./200807.html">07</a>|<a href="./200808.html">08</a>|<a href="./200809.html">09</a>|<a href="./200810.html">10</a>|<a href="./200812.html">12</a>|</div>
+<div class="year">2009|<a href="./200901.html">01</a>|<a href="./200902.html">02</a>|<a href="./200903.html">03</a>|<a href="./200904.html">04</a>|<a href="./200905.html">05</a>|<a href="./200906.html">06</a>|<a href="./200907.html">07</a>|<a href="./200908.html">08</a>|<a href="./200909.html">09</a>|<a href="./200910.html">10</a>|<a href="./200911.html">11</a>|<a href="./200912.html">12</a>|</div>
+<div class="year">2010|<a href="./201001.html">01</a>|<a href="./201002.html">02</a>|<a href="./201003.html">03</a>|<a href="./201004.html">04</a>|<a href="./201005.html">05</a>|<a href="./201006.html">06</a>|<a href="./201007.html">07</a>|<a href="./201008.html">08</a>|<a href="./201009.html">09</a>|<a href="./201010.html">10</a>|<a href="./201011.html">11</a>|<a href="./201012.html">12</a>|</div>
+<div class="year">2011|<a href="./201101.html">01</a>|<a href="./201102.html">02</a>|<a href="./201103.html">03</a>|<a href="./201104.html">04</a>|<a href="./201105.html">05</a>|<a href="./201106.html">06</a>|<a href="./201107.html">07</a>|<a href="./201108.html">08</a>|<a href="./201109.html">09</a>|<a href="./201110.html">10</a>|<a href="./201111.html">11</a>|<a href="./201112.html">12</a>|</div>
+<div class="year">2012|<a href="./201201.html">01</a>|<a href="./201202.html">02</a>|<a href="./201203.html">03</a>|<a href="./201204.html">04</a>|<a href="./201205.html">05</a>|<a href="./201206.html">06</a>|<a href="./201207.html">07</a>|<a href="./201208.html">08</a>|<a href="./201209.html">09</a>|<a href="./201210.html">10</a>|<a href="./201211.html">11</a>|<a href="./201212.html">12</a>|</div>
+<div class="year">2013|<a href="./201301.html">01</a>|<a href="./201302.html">02</a>|<a href="./201303.html">03</a>|<a href="./201304.html">04</a>|<a href="./201305.html">05</a>|<a href="./201306.html">06</a>|<a href="./201307.html">07</a>|<a href="./201308.html">08</a>|<a href="./201309.html">09</a>|<a href="./201310.html">10</a>|<a href="./201311.html">11</a>|<a href="./201312.html">12</a>|</div>
+<div class="year">2014|<a href="./201401.html">01</a>|<a href="./201402.html">02</a>|<a href="./201403.html">03</a>|<a href="./201404.html">04</a>|<a href="./201405.html">05</a>|<a href="./201406.html">06</a>|<a href="./201407.html">07</a>|<a href="./201408.html">08</a>|<a href="./201409.html">09</a>|<a href="./201410.html">10</a>|<a href="./201411.html">11</a>|<a href="./201412.html">12</a>|</div>
+<div class="year">2015|<a href="./201501.html">01</a>|<a href="./201502.html">02</a>|<a href="./201503.html">03</a>|<a href="./201504.html">04</a>|<a href="./201505.html">05</a>|<a href="./201506.html">06</a>|<a href="./201507.html">07</a>|<a href="./201508.html">08</a>|<a href="./201509.html">09</a>|<a href="./201510.html">10</a>|<a href="./201511.html">11</a>|<a href="./201512.html">12</a>|</div>
+<div class="year">2016|<a href="./201601.html">01</a>|<a href="./201602.html">02</a>|<a href="./201603.html">03</a>|<a href="./201604.html">04</a>|<a href="./201605.html">05</a>|<a href="./201606.html">06</a>|<a href="./201607.html">07</a>|<a href="./201608.html">08</a>|<a href="./201609.html">09</a>|<a href="./201612.html">12</a>|</div>
+</div>
+
+</div>
+
+<hr>
+
+
+
+</div>
+<div class="adminmenu"><span class="adminmenu"><a href="./201008.html">&laquo;前月</a></span>
+<span class="adminmenu"><a href="./">最新</a></span>
+<span class="adminmenu"><a href="./201010.html">翌月&raquo;</a></span>
+</div>
+</div>
+<ul class="plugin-counter">
+<li>Yesterday: <span class="counter-yesterday"><span class="counter-0"><span class="counter-num-1">1</span></span><span class="counter-1"><span class="counter-num-6">6</span></span><span class="counter-2"><span class="counter-num-9">9</span></span></span></li>
+<li>Today:<span class="counter-today"><span class="counter-0"><span class="counter-num-1">1</span></span><span class="counter-1"><span class="counter-num-4">4</span></span><span class="counter-2"><span class="counter-num-9">9</span></span></span></li>
+<li>Total:<span class="counter"><span class="counter-0"><span class="counter-num-1">1</span></span><span class="counter-1"><span class="counter-num-0">0</span></span><span class="counter-2"><span class="counter-num-2">2</span></span><span class="counter-3"><span class="counter-num-8">8</span></span><span class="counter-4"><span class="counter-num-2">2</span></span><span class="counter-5"><span class="counter-num-1">1</span></span><span class="counter-6"><span class="counter-num-7">7</span></span></span></li>
+</ul>
+
+
+
+
+
+
+<div class="footer">
+Generated by <a href="http://www.tdiary.org/">tDiary</a> version 3.2.1<br>
+Powered by <a href="http://www.ruby-lang.org/">Ruby</a> version 1.9.3-p194
+</div>
+</div>
+</body>
+</html>

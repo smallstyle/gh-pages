@@ -1,0 +1,319 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="ja-JP">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="generator" content="tDiary 3.2.1">
+	<meta http-equiv="Last-Modified" content="Mon, 13 Jun 2016 08:15:53 GMT">
+	<meta http-equiv="Content-Script-Type" content="text/javascript; charset=UTF-8">
+	<meta name="author" content="hb">
+	
+	<link rel="start" title="最新" href="./">
+	<link rel="alternate" media="handheld" type="text/html" href="http://www.smallstyle.com/">
+	<link rel="shortcut icon" href="favicon.ico">
+	<meta name="description" content="日々，気になったことを書き留める日記">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js" type="text/javascript"></script>
+	<script src="js/00default.js?3.2.120200906" type="text/javascript"></script>
+		<script type="text/javascript"><!--
+		$tDiary.style = 'wiki';
+		//-->
+		</script>
+	<meta http-equiv="content-style-type" content="text/css">
+	<link rel="stylesheet" href="theme/base.css" type="text/css" media="all">
+	<link rel="stylesheet" href="stylesheets/smallstyle-2010/smallstyle-2010.css" title="smallstyle-2010" type="text/css" media="all">
+	
+	<title>SmallStyle</title>
+	
+	<link rel="author" href="https://plus.google.com/116137028933519395680">
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.smallstyle.com/smallstyle">
+	<link rel="alternate" type="application/rss+xml" title="RSS(without comments)" href="http://feeds.smallstyle.com/smallstyle_no_comments">
+	<style type="text/css" media="all"><!--
+	div.sequel {
+		font-size: 75%;
+		text-align: right;
+		margin: 0px;
+	}
+	--></style>
+</head>
+<body>
+<div class="whole-content">
+
+<div class="adminmenu"><div class="adminmenu">
+<span class="adminmenu"><a href="./20051231-3.html" rel="next">&laquo;前3日分</a></span>
+<span class="adminmenu"><a href="./">最新</a></span>
+<span class="adminmenu"><a href="./20060106-3.html" rel="prev">次3日分&raquo;</a></span>
+</div>
+</div>
+<h1><a href="http://www.smallstyle.com/">SmallStyle</a></h1>
+<div class="content">
+<div class="main">
+
+<hr class="sep">
+
+
+	
+<div class="day autopagerize_page_element">
+<h2><span class="date">
+<a href="./20060103.html">2006-01-03</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="./20060103.html#p01" title="しもやけ"><span class="sanchor">_</span></a> しもやけ</h3>
+<p>もともとしもやけになりやすい体質なのですが，今年もやっぱりなってしまったしもやけ…．右手と右足をやられてしまいました．できるだけならないようにと，手を洗ったときは入念にタオルで拭いて水分を残さないようにしたりとか，雨や雪の日は替えの靴下を準備しておいて，濡れたら即替えるようにしてたのになぁ．しばらくはこのかゆみとの闘いになりそうです．</p>
+
+</div>
+<div class="section">
+
+<h3><a href="./20060103.html#p02" title="Lightbox JS を使って画像表示をかっこよくみせてみる"><span class="sanchor">_</span></a> <a href="http://www.huddletogether.com/projects/lightbox/">Lightbox JS</a> を使って画像表示をかっこよくみせてみる</h3>
+<p>ここのところ Firefox の拡張紹介などをはじめ，いろいろ画像とあわせて日記を書くことがあるのですが，大きめの画像は縮小表示しているので，クリックしてもらうと大きな画像を確認してもらうことができます．ただ，これだとブラウザの「戻る」なり新しいタブ，ウィンドウを閉じるなど，閲覧者に一手間かけている部分があるかもしれません．</p>
+<p>そこで，<a href="http://openstratus.com/article/52/lightboxjs-web20/">lightbox.js - Web2.0ライクな画像サムネイル生成 ― OpenStratus Archive</a> で紹介されていた，lightbox.js を利用して，画像表示を Web2.0 っぽく，ちょっといい感じに見せてみることにしてみました．</p>
+<p><img class="right" src="http://www.smallstyle.com/images/20060103_0.jpg" alt="Sample Pict" title="Sample Pict" width="240"></p>
+<p>ためしにこのエントリーにある画像をクリックしてもらうとわかると思うのですが，元画像がポップアップ表示され，周囲が暗く透過された表示になると思います．Firefox などでは意図したように表示してくれるのですが，<del>IE ではうまくいかないっぽいです．この辺は暇なときに調べてみることにします．</del>その後，<a href="http://www.smallstyle.com/20060107.html#p01" title="Lightbox JS での 背景画像 (overlay.png) の配置場所">スタイルシートで overlay.png の記述部分が原因だったことが判明</a>し，正しい場所を指定したら表示できました．</p>
+<p>tDiary で lightbox.js を組み込む場合は，ここでは image_ex.rb を利用しているので，こちらにちょこっと手を加えることにしました．image_ex.rb の 120,123 行目で，rel="lightbox" を追記します．</p>
+<pre>%Q[&lt;a href="#{image_url}#{list[id.to_i]}" rel="lightbox"&gt;&lt;img class="#{place}" src="#{image_url}#{list[id2.to_i]}" alt="#{alt}"&gt;&lt;/a&gt;]
+...
+   %Q[&lt;a href="#{image_url}#{list[id.to_i]}" rel="lightbox"&gt;&lt;img src="#{image_url}#{slist[id.to_i]}" alt="#{alt}" #{width_tag} class="#{place}"&gt;&lt;/a&gt;]</pre>
+<p>また，lightbox.js を呼び出すために，add_header_proc を新たに追記します．image_ex.rb の最後の方に，</p>
+<pre>add_header_proc do
+   %Q|\t&lt;script type="text/javascript" src="js/lightbox.js"&gt;&lt;/script&gt;\n|
+end</pre>
+<p>と記述する．src はとりあえず自分の環境に合わせて書き換える必要があります．これで &lt;head&gt; で lightbox.js が呼び出されるようになります．あとは，<a href="http://www.huddletogether.com/projects/lightbox/">Lightbox JS</a>から，</p>
+<ul>
+<li>lightbox.js lightbox.js - the important stuff</li>
+<li>lightbox.css lightbox.css - basic style and tricky PNG support</li>
+<li>overlay.png overlay.png - 80% opacity, black tile used to create shadow</li>
+<li>loading.gif loading.gif - mock status bar used in examples above</li>
+</ul>
+<p>上記のファイルをダウンロードして，適切な場所に配置します．lightbox.css は CSS の @import 宣言などで読み込むようにして，同じディレクトリに overlay.png も配置します．loading.gif はデフォルトではカレントディレクトに配置するようになっています．</p>
+<p>ホイールクリックなどで画像リンクをクリックすると，通常通りタブで画像が表示されますし，JavaScript が無効な環境の場合は普通に画像を表示させることができます．</p>
+<div class="sequel">つづき: <a href="http://www.smallstyle.com/20060107.html#p01" title="Lightbox JS での 背景画像 (overlay.png) の配置場所">2006-01-07</a>, <a href="http://www.smallstyle.com/20060111.html#p01" title="Lightbox JS ちょこっとカスタマイズ">2006-01-11</a>, <a href="http://www.smallstyle.com/20060326.html#p01">2006-03-26</a>, <a href="http://www.smallstyle.com/20060627.html#p01">2006-06-27</a>, <a href="http://www.smallstyle.com/20070106.html#p01">2007-01-06</a></div>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+		<div class="caption">本日のツッコミ(全5件) [<a href="./20060103.html#c">ツッコミを入れる</a>]</div>
+		<div class="commentshort">
+			<p><a href="./20060103.html#c00">Before...</a></p>
+				<p><a href="./20060103.html#c03"><span class="canchor">_</span></a>
+				<span class="commentator">hb</span>&nbsp;[その後IEでもうまく動くようになりました．overlay.pngの場所指定がおかしかったのが原因でした．]</p>
+				<p><a href="./20060103.html#c04"><span class="canchor">_</span></a>
+				<span class="commentator">ef</span>&nbsp;[なるほど、パスがスタイルシート想定でなくページからの相対になるという ＩＥ の仕様ですね。これって ＩＥ７ になって..]</p>
+				<p><a href="./20060103.html#c05"><span class="canchor">_</span></a>
+				<span class="commentator">TrackBack</span>&nbsp;[http://spinred.org/sb/log/eid121.html GochaBookMarkClips R..]</p>
+		</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<hr class="sep">
+	
+<div class="day autopagerize_page_element">
+<h2><span class="date">
+<a href="./20060102.html">2006-01-02</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="./20060102.html#p01" title="WebMailCompose で mailto リンクから Gmail を開く"><span class="sanchor">_</span></a> <a href="http://jedbrown.net/1.0/mozilla/extensions/">WebMailCompose</a> で mailto リンクから Gmail を開く</h3>
+<p><img class="right" src="http://www.smallstyle.com/images/20060102_0.png" alt="Context Menu" title="Context Menu" width="240"></p>
+<p><a href="http://www.smallstyle.com/20051229.html#p01" title="mailto リンクで外部メーラを起動させない">mailto リンクで外部メーラを起動させない</a>ように設定できたのはいいものの，できれば Gmail を簡単に呼び出せる拡張はないかなぁと思っていたのですが，<a href="http://jedbrown.net/1.0/mozilla/extensions/">WebMailCompose</a> という拡張を使えば，Gmail に限らず Web メール全般を呼び出すことが可能になります．とりあえず mailto リンクをクリックすると Web メールを呼び出されるのはあまり必要ないので，mailto リンク上でコンテキストメニューから呼び出すように設定しました．また，文字列を選択した状態で右クリックをすると，ハイライトされた文字列を Web メールの宛先として渡すことができます．</p>
+<p><a href="http://xxsionxx.blog17.fc2.com/blog-entry-136.html">ふと今日は・・・・・・ WebMailCompose 日本語化</a>で日本語化されたものも公開されています．</p>
+<p>デフォルトで定義されている Web メーラは，
+<img class="right" src="http://www.smallstyle.com/images/20060102_3.png" alt="WebMailCompose Option" title="WebMailCompose Option" width="240"></p>
+<ul>
+<li>Gmail</li>
+<li>YahooMail</li>
+<li>Hotmail</li>
+<li>Netscape</li>
+<li>Mail.com</li>
+<li>Opera</li>
+<li>Horde</li>
+<li>SquirrelMail</li>
+</ul>
+<p>上記以外でも，任意で指定することも可能です．YahoMail なんかは，.com の YahooMail となっているので，.co.jp を指定するように書き換える必要があります．<a href="http://xxsionxx.blog17.fc2.com/blog-entry-136.html">ふと今日は・・・・・・ WebMailCompose 日本語化</a>でも書かれていますが，</p>
+<pre>http://jp.f25.mail.yahoo.co.jp/ym/Compose?To=^T&amp;Subject=^S&amp;Body=^M&amp;Cc=^C&amp;Bcc=^B</pre>
+<p>のように書き換えれば利用できます．私の環境では f25 がサーバになります．自分の環境では何を指定すればいいかは，YahooMail にアクセスしたときに表示されている jp.xxx.mail.yahoo.co.jp の xxx を確認してください．</p>
+<div class="sequel">つづき: <a href="http://www.smallstyle.com/20060206.html#p01">2006-02-06</a></div>
+
+</div>
+<div class="section">
+
+<h3><a href="./20060102.html#p02" title="オプション画面の設定項目が隠れてしまったときに"><span class="sanchor">_</span></a> オプション画面の設定項目が隠れてしまったときに</h3>
+<p><img class="right" src="http://www.smallstyle.com/images/20060102_2.png" alt="オプション画面を tab 上で表示" title="オプション画面を tab 上で表示" width="240"></p>
+<p><a href="http://jedbrown.net/1.0/mozilla/extensions/">WebMailCompose</a> のオプション画面を開いて思ったのが，たまに設定項目がダイアログ内におさまらずに見えなくなってしまっていることがあります．Windows 側のフォントの設定が影響しているのかいまいち原因がよくわからないのですが，とりあえずブラウザのアドレスバーで，</p>
+<pre>chrome://webmailcompose/content/prefDialog.xul</pre>
+<p>と入力すると，タブ (Window) 上でオプション画面を開くことができるので，これで見えない項目についてはとりあえず対処中．</p>
+
+</div>
+<div class="section">
+
+<h3><a href="./20060102.html#p03" title="新年会兼同窓会"><span class="sanchor">_</span></a> 新年会兼同窓会</h3>
+<p><a href="http://www.smallstyle.com/20050820.html#p01">夏以来の同窓会</a>開催．場所をいろいろ考えたものの，2 日から営業しているところもそれほどないので，<a href="http://www.smallstyle.com/20050102.html#p02">結局 1 年前と同じところに予約</a>をとりました．19 時集合で一応幹事だし 10 分前くらいには，と思ってきてみたらすでに Y さんがきてるし．社会人になって時間を守れるようになったとか．えらいえらい…って，19 時にきてるの 2 人だけやん…</p>
+<p>予定より 1 人増えたり，4隣のテーブルは同じ高校のハンドボール部の新年会で数年ぶりに再会する人がいたりと，びっくりなこともありました．それ以外はいつもどおりな感じで．</p>
+<p>次回は夏．お盆のころにまた開催するとしましょう．</p>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+		<div class="caption">本日のツッコミ(全3件) [<a href="./20060102.html#c">ツッコミを入れる</a>]</div>
+		<div class="commentshort">
+				<p><a href="./20060102.html#c01"><span class="canchor">_</span></a>
+				<span class="commentator">TrackBack</span>&nbsp;[http://xxsionxx.blog17.fc2.com/blog-entry-279.html ふと今日は・・..]</p>
+				<p><a href="./20060102.html#c02"><span class="canchor">_</span></a>
+				<span class="commentator">SION</span>&nbsp;[WebMailCompose の日本語版を配布しているSIONですが、うちのブログで配布しているものについてはメニュ..]</p>
+				<p><a href="./20060102.html#c03"><span class="canchor">_</span></a>
+				<span class="commentator">hb</span>&nbsp;[早速，アップデートして確認してみたところ，すべて表示されるようになりました! 対応，ご連絡ありがとうございました．]</p>
+		</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<hr class="sep">
+	
+<div class="day autopagerize_page_element">
+<h2><span class="date">
+<a href="./20060101.html">2006-01-01</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="./20060101.html#p01" title="A Happy New Year"><span class="sanchor">_</span></a> A Happy New Year</h3>
+<p><img class="right" src="http://www.smallstyle.com/images/20060101_0.png" alt="謹賀新年2006" title="謹賀新年2006"></p>
+<p>というわけで，あけましておめでとうございます．2006 年，新しい 1 年の幕開けです．今年はどんな 1 年になるのかな．良いこと悪いこといろいろあるだろうけど，元気に過ごせればいいなと思います．</p>
+<p>それでは，今年もそしてこれからもどうぞよろしくお願いします．</p>
+
+</div>
+<div class="section">
+
+<h3><a href="./20060101.html#p02" title="うるう秒"><span class="sanchor">_</span></a> うるう秒</h3>
+<p>7 年ぶりにうるう秒の挿入が行われるました．うるう秒とは，</p>
+<blockquote><p>かつて、時刻を決めるためには、地球の公転・自転に基づく天文時が使われていましたが、現在では、原子の振動を利用した原子時計をもとに決められるようになり、非常に高精度なものとなっています。このため、逆に天文時に基づく時刻との間でずれが生じるようになりました。</p>
+<p>そこで、原子時計に基づく時刻を天文時と 0.9 秒以上ずれないように調整を行った時刻を世界の標準時として使うことにしています。今回の「うるう秒」の調整も地球の公転・自転に基づく時刻とのずれが 0.9 秒に近づいたために行われるものです。</p>
+<p>なお、最近では 7 年前（平成 11 年（ 1999 年）1 月 1 日）にうるう秒の挿入を行いました。</p>
+<p><a href="http://www.soumu.go.jp/s-news/2005/050907_2.html">総務省(報道資料)</a>より引用</p>
+</blockquote>
+<p>このサーバでも 1 時間毎に時刻あわせを行っているので，ログを確認してみました．</p>
+<pre>Jan  1 08:00:02 piccolo ntpdate[5706]: step time server 210.173.160.57 offset 0.376491 sec
+Jan  1 09:00:01 piccolo ntpdate[6325]: step time server 210.173.160.87 offset -0.626670 sec
+Jan  1 10:00:02 piccolo ntpdate[6847]: step time server 210.173.160.27 offset 0.374318 sec</pre>
+<p>ということで，きちんと 1 秒分修正されたようです．</p>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<hr class="sep">
+
+</div>
+
+
+
+
+
+<div class="additional_information">
+<div class="information">
+<h4>about me</h4>
+<div itemscope itemtype="http://data-vocabulary.org/Person">
+<dl>
+<p>いろいろと興味を持ったことを書いてます．ちょっとしたことは <a href="http://twitter.com/smallstyle"><span itemprop="name">hb</span>(@<span itemprop="nickname">smallstyle</span>) on Twitter</a> で書いてます．</p>
+</div>
+
+<h4>Archive</h4>
+<div class="calendar">
+<div class="year">2003|<a href="./200301.html">01</a>|<a href="./200302.html">02</a>|<a href="./200303.html">03</a>|<a href="./200304.html">04</a>|<a href="./200305.html">05</a>|<a href="./200306.html">06</a>|<a href="./200307.html">07</a>|<a href="./200308.html">08</a>|<a href="./200309.html">09</a>|<a href="./200310.html">10</a>|<a href="./200311.html">11</a>|<a href="./200312.html">12</a>|</div>
+<div class="year">2004|<a href="./200401.html">01</a>|<a href="./200402.html">02</a>|<a href="./200403.html">03</a>|<a href="./200404.html">04</a>|<a href="./200405.html">05</a>|<a href="./200406.html">06</a>|<a href="./200407.html">07</a>|<a href="./200408.html">08</a>|<a href="./200409.html">09</a>|<a href="./200410.html">10</a>|<a href="./200411.html">11</a>|<a href="./200412.html">12</a>|</div>
+<div class="year">2005|<a href="./200501.html">01</a>|<a href="./200502.html">02</a>|<a href="./200503.html">03</a>|<a href="./200504.html">04</a>|<a href="./200505.html">05</a>|<a href="./200506.html">06</a>|<a href="./200507.html">07</a>|<a href="./200508.html">08</a>|<a href="./200509.html">09</a>|<a href="./200510.html">10</a>|<a href="./200511.html">11</a>|<a href="./200512.html">12</a>|</div>
+<div class="year">2006|<a href="./200601.html">01</a>|<a href="./200602.html">02</a>|<a href="./200603.html">03</a>|<a href="./200604.html">04</a>|<a href="./200605.html">05</a>|<a href="./200606.html">06</a>|<a href="./200607.html">07</a>|<a href="./200608.html">08</a>|<a href="./200609.html">09</a>|<a href="./200610.html">10</a>|<a href="./200611.html">11</a>|<a href="./200612.html">12</a>|</div>
+<div class="year">2007|<a href="./200701.html">01</a>|<a href="./200702.html">02</a>|<a href="./200703.html">03</a>|<a href="./200704.html">04</a>|<a href="./200705.html">05</a>|<a href="./200706.html">06</a>|<a href="./200707.html">07</a>|<a href="./200708.html">08</a>|<a href="./200709.html">09</a>|<a href="./200710.html">10</a>|<a href="./200711.html">11</a>|<a href="./200712.html">12</a>|</div>
+<div class="year">2008|<a href="./200801.html">01</a>|<a href="./200802.html">02</a>|<a href="./200803.html">03</a>|<a href="./200804.html">04</a>|<a href="./200805.html">05</a>|<a href="./200806.html">06</a>|<a href="./200807.html">07</a>|<a href="./200808.html">08</a>|<a href="./200809.html">09</a>|<a href="./200810.html">10</a>|<a href="./200812.html">12</a>|</div>
+<div class="year">2009|<a href="./200901.html">01</a>|<a href="./200902.html">02</a>|<a href="./200903.html">03</a>|<a href="./200904.html">04</a>|<a href="./200905.html">05</a>|<a href="./200906.html">06</a>|<a href="./200907.html">07</a>|<a href="./200908.html">08</a>|<a href="./200909.html">09</a>|<a href="./200910.html">10</a>|<a href="./200911.html">11</a>|<a href="./200912.html">12</a>|</div>
+<div class="year">2010|<a href="./201001.html">01</a>|<a href="./201002.html">02</a>|<a href="./201003.html">03</a>|<a href="./201004.html">04</a>|<a href="./201005.html">05</a>|<a href="./201006.html">06</a>|<a href="./201007.html">07</a>|<a href="./201008.html">08</a>|<a href="./201009.html">09</a>|<a href="./201010.html">10</a>|<a href="./201011.html">11</a>|<a href="./201012.html">12</a>|</div>
+<div class="year">2011|<a href="./201101.html">01</a>|<a href="./201102.html">02</a>|<a href="./201103.html">03</a>|<a href="./201104.html">04</a>|<a href="./201105.html">05</a>|<a href="./201106.html">06</a>|<a href="./201107.html">07</a>|<a href="./201108.html">08</a>|<a href="./201109.html">09</a>|<a href="./201110.html">10</a>|<a href="./201111.html">11</a>|<a href="./201112.html">12</a>|</div>
+<div class="year">2012|<a href="./201201.html">01</a>|<a href="./201202.html">02</a>|<a href="./201203.html">03</a>|<a href="./201204.html">04</a>|<a href="./201205.html">05</a>|<a href="./201206.html">06</a>|<a href="./201207.html">07</a>|<a href="./201208.html">08</a>|<a href="./201209.html">09</a>|<a href="./201210.html">10</a>|<a href="./201211.html">11</a>|<a href="./201212.html">12</a>|</div>
+<div class="year">2013|<a href="./201301.html">01</a>|<a href="./201302.html">02</a>|<a href="./201303.html">03</a>|<a href="./201304.html">04</a>|<a href="./201305.html">05</a>|<a href="./201306.html">06</a>|<a href="./201307.html">07</a>|<a href="./201308.html">08</a>|<a href="./201309.html">09</a>|<a href="./201310.html">10</a>|<a href="./201311.html">11</a>|<a href="./201312.html">12</a>|</div>
+<div class="year">2014|<a href="./201401.html">01</a>|<a href="./201402.html">02</a>|<a href="./201403.html">03</a>|<a href="./201404.html">04</a>|<a href="./201405.html">05</a>|<a href="./201406.html">06</a>|<a href="./201407.html">07</a>|<a href="./201408.html">08</a>|<a href="./201409.html">09</a>|<a href="./201410.html">10</a>|<a href="./201411.html">11</a>|<a href="./201412.html">12</a>|</div>
+<div class="year">2015|<a href="./201501.html">01</a>|<a href="./201502.html">02</a>|<a href="./201503.html">03</a>|<a href="./201504.html">04</a>|<a href="./201505.html">05</a>|<a href="./201506.html">06</a>|<a href="./201507.html">07</a>|<a href="./201508.html">08</a>|<a href="./201509.html">09</a>|<a href="./201510.html">10</a>|<a href="./201511.html">11</a>|<a href="./201512.html">12</a>|</div>
+<div class="year">2016|<a href="./201601.html">01</a>|<a href="./201602.html">02</a>|<a href="./201603.html">03</a>|<a href="./201604.html">04</a>|<a href="./201605.html">05</a>|<a href="./201606.html">06</a>|<a href="./201607.html">07</a>|<a href="./201608.html">08</a>|<a href="./201609.html">09</a>|<a href="./201612.html">12</a>|</div>
+</div>
+
+</div>
+
+<hr>
+
+
+
+</div>
+<div class="adminmenu"><span class="adminmenu"><a href="./20051231-3.html" rel="next">&laquo;前3日分</a></span>
+<span class="adminmenu"><a href="./">最新</a></span>
+<span class="adminmenu"><a href="./20060106-3.html" rel="prev">次3日分&raquo;</a></span>
+</div>
+</div>
+<ul class="plugin-counter">
+<li>Yesterday: <span class="counter-yesterday"><span class="counter-0"><span class="counter-num-1">1</span></span><span class="counter-1"><span class="counter-num-6">6</span></span><span class="counter-2"><span class="counter-num-9">9</span></span></span></li>
+<li>Today:<span class="counter-today"><span class="counter-0"><span class="counter-num-1">1</span></span><span class="counter-1"><span class="counter-num-4">4</span></span><span class="counter-2"><span class="counter-num-9">9</span></span></span></li>
+<li>Total:<span class="counter"><span class="counter-0"><span class="counter-num-1">1</span></span><span class="counter-1"><span class="counter-num-0">0</span></span><span class="counter-2"><span class="counter-num-2">2</span></span><span class="counter-3"><span class="counter-num-8">8</span></span><span class="counter-4"><span class="counter-num-2">2</span></span><span class="counter-5"><span class="counter-num-1">1</span></span><span class="counter-6"><span class="counter-num-7">7</span></span></span></li>
+</ul>
+
+
+
+
+
+
+<div class="footer">
+Generated by <a href="http://www.tdiary.org/">tDiary</a> version 3.2.1<br>
+Powered by <a href="http://www.ruby-lang.org/">Ruby</a> version 1.9.3-p194
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="ja-JP">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="generator" content="tDiary 3.2.1">
+	<meta http-equiv="Last-Modified" content="Fri, 31 Jul 2009 02:02:01 GMT">
+	<meta http-equiv="Content-Script-Type" content="text/javascript; charset=UTF-8">
+	<meta name="author" content="hb">
+	
+	<link rel="prev" title="前の日記(2007-10-18)" href="./20071018.html">
+	<link rel="next" title="次の日記(2007-11-13)" href="./20071113.html">
+	<link rel="start" title="最新" href="./">
+	<link rel="alternate" media="handheld" type="text/html" href="http://www.smallstyle.com/20071029.html">
+	<link rel="shortcut icon" href="favicon.ico">
+	<meta name="description" content="日々，気になったことを書き留める日記">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js" type="text/javascript"></script>
+	<script src="js/00default.js?3.2.120200906" type="text/javascript"></script>
+	<script src="js/highlight.js?3.2.120200906" type="text/javascript"></script>
+		<script type="text/javascript"><!--
+		$tDiary.style = 'wiki';
+		$tDiary.title = "SmallStyle(2007-10-29)";
+		//-->
+		</script>
+	<meta http-equiv="content-style-type" content="text/css">
+	<link rel="stylesheet" href="theme/base.css" type="text/css" media="all">
+	<link rel="stylesheet" href="stylesheets/smallstyle-2010/smallstyle-2010.css" title="smallstyle-2010" type="text/css" media="all">
+	
+	<title> plaggerのFilter::FFmpegで変換するときにファイル名が文字化けしてエラーになる - SmallStyle(2007-10-29)</title>
+	
+	<link rel="author" href="https://plus.google.com/116137028933519395680">
+		<style type="text/css"><!--
+			form.comment div.mail { display: none; }
+		--></style>
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.smallstyle.com/smallstyle">
+	<link rel="alternate" type="application/rss+xml" title="RSS(without comments)" href="http://feeds.smallstyle.com/smallstyle_no_comments">
+	<style type="text/css" media="all"><!--
+	div.sequel {
+		font-size: 75%;
+		text-align: right;
+		margin: 0px;
+	}
+	--></style>
+</head>
+<body>
+<div class="whole-content">
+
+<div class="adminmenu"><div class="adminmenu">
+<span class="adminmenu"><a href="./20071018.html">&laquo;前の日記(2007-10-18)</a></span>
+<span class="adminmenu"><a href="./">最新</a></span>
+<span class="adminmenu"><a href="./20071113.html">次の日記(2007-11-13)&raquo;</a></span>
+</div>
+</div>
+<h1><a href="http://www.smallstyle.com/">SmallStyle</a></h1>
+<div class="content">
+<div class="main">
+
+<hr class="sep">
+
+
+	
+<div class="day autopagerize_page_element">
+<h2><span class="date">
+<a href="./20071029.html">2007-10-29</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a name="p01" href="./20071029.html#p01" title="plaggerのFilter::FFmpegで変換するときにファイル名が文字化けしてエラーになる"><span class="sanchor">_</span></a> plaggerのFilter::FFmpegで変換するときにファイル名が文字化けしてエラーになる</h3>
+<p><a href="http://www.hsbt.org/diary/20071029.html#p01">ニコニコ動画/YouTube の動画を Plagger で落として変換しようとした記録(3) - HsbtDiary(2007-10-29)</a>について，週末に同じことをやろうとして，文字化けについては自分の環境では解決したっぽいので，せっかくだから書いておこう．ちなみに実行環境は OS X 上で文字コードは UTF-8 の環境です．</p>
+<p>以下の yaml で実行してみる．</p>
+<pre>(略)
+- module: Filter::FFmpeg
+  config:
+    dir: /tmp/work
+    ext: MP4
+    command: /opt/local/bin/ffmpeg
+    encoding: utf-8
+    option_string: '-y -threads 4 -s 640x480 -r 29.97 -vcodec xvid -g 250 -aspect 4:3 -b 600 -level 13 -loop 1 -sc_threshold 40 -partp4x4 1 -rc_eq blurCplx^(1-qComp) -refs 3 -maxrate 768 -async 50 -acodec aac -ar 44100 -ac 2 -ab 128'</pre>
+<p>で，実行してみると以下のようなエラーで変換に失敗する．</p>
+<pre>Plagger::Plugin::Filter::FFmpeg [info] Converting ぬこぬこトーク ...
+Plagger::Plugin::Filter::FFmpeg [error] FFmpeg version SVN-r9102, Copyright (c) 2000-2007 Fabrice Bellard, et al.
+ configuration: --prefix=/opt/local --prefix=/opt/local --disable-vhook --mandir=/opt/local/share/man --enable-shared --enable-pthreads --enable-libmp3lame --enable-libogg --enable-libvorbis --enable-libtheora --enable-gpl --enable-libfaac --enable-libfaad --enable-xvid --enable-x264 --enable-liba52
+ libavutil version: 49.4.0
+ libavcodec version: 51.40.4
+ libavformat version: 51.12.1
+ built on Oct 22 2007 01:34:17, gcc: 4.0.1 (Apple Computer, Inc. build 5367)
+/tmp/work/???????????.flv: no such file or directory</pre>
+<p>まぁ，見てのとおりファイル名が化けてしまっている(???? の部分は実際は変な記号で化けています)ので，対象のファイルがありませんよー，ということ．文字コード問題ってのはどこにでもつきもののややこしいものです．</p>
+<p>いろいろと調べてみた結果，UTF-8 フラグというのがキーワードっぽい．これがついてると何かと文字化けを引き起こす原因となっているらしい．そこで FFmpeg.pm に以下の関数を追加して，UTF-8 フラグがあれば除去してencodeするようにしてみた．</p>
+<pre>sub convert
+  my ($self, $str) = @_;
+  utf8::decode($str) unless utf8::is_utf8($str);
+  return encode($self-&gt;conf-&gt;{encoding} || 'cp932', $str);
+}</pre>
+<p>上記コードは，Publish::Pipe にあったものをそのまま利用しました．で，FFmpeg.pm 内で，</p>
+<pre>encode($encoding, $enclosure-&gt;local_path)</pre>
+<p>のような，encodeしている部分を，</p>
+<pre>$self-&gt;convert($enclosure-&gt;local_path)</pre>
+<p>先ほど追加した関数を通すようにしたところ，文字化けせずにファイルを出力できるようになりました．</p>
+<p>一応，diffを貼付けておきます．</p>
+<pre>--- FFmpeg.pm.old       2007-09-24 22:10:10.000000000 +0900
++++ FFmpeg.pm   2007-10-29 22:05:44.000000000 +0900
+@@ -48,15 +48,15 @@
+         }
+
+         my $ff = FFmpeg::Command-&gt;new($self-&gt;conf-&gt;{command});
+-        $ff-&gt;input_options({ file =&gt; encode($encoding, $enclosure-&gt;local_path) });
++        $ff-&gt;input_options({ file =&gt;  $self-&gt;convert($enclosure-&gt;local_path) });
+
+         my $output_file = File::Spec-&gt;catfile($self-&gt;conf-&gt;{dir}, "$file");
+         my $output_options = {
+-            file    =&gt; encode($encoding, $output_file),
++            file    =&gt; $self-&gt;convert($output_file),
+             device  =&gt; $self-&gt;conf-&gt;{device} || 'ipod',
+-            title   =&gt; encode($encoding, $entry-&gt;title),
+-            author  =&gt; encode($encoding, $entry-&gt;author),
+-            comment =&gt; encode($encoding, $entry-&gt;summary),
++            title   =&gt; $self-&gt;convert($entry-&gt;title),
++            author  =&gt; $self-&gt;convert($entry-&gt;author),
++            comment =&gt; $self-&gt;convert($entry-&gt;summary),
+             %{ $self-&gt;conf-&gt;{options} || {} },
+         };
+
+@@ -91,6 +91,13 @@
+     }
+ }
+
++
++sub convert {
++  my ($self, $str) = @_;
++  utf8::decode($str) unless utf8::is_utf8($str);
++  return encode($self-&gt;conf-&gt;{encoding} || 'cp932', $str);
++}
++
+ 1;
+ __END__</pre>
+<p>試した環境は OS X 上なので，その他の環境でうまくいくかどうかわかりませんが，文字化けでお悩みの場合は一度お試しあれ．</p>
+<p>Perl についてはあまりよく理解していないので，間違っていればどしどしご指摘ください．</p>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+</div>
+
+<div id="comment-form-section"></div>
+
+
+
+
+
+
+
+
+</div>
+
+<hr class="sep">
+
+</div>
+
+
+
+
+
+<div class="additional_information">
+<div class="information">
+<h4>about me</h4>
+<div itemscope itemtype="http://data-vocabulary.org/Person">
+<dl>
+<p>いろいろと興味を持ったことを書いてます．ちょっとしたことは <a href="http://twitter.com/smallstyle"><span itemprop="name">hb</span>(@<span itemprop="nickname">smallstyle</span>) on Twitter</a> で書いてます．</p>
+</div>
+
+<h4>Archive</h4>
+<div class="calendar">
+<div class="year">2003|<a href="./200301.html">01</a>|<a href="./200302.html">02</a>|<a href="./200303.html">03</a>|<a href="./200304.html">04</a>|<a href="./200305.html">05</a>|<a href="./200306.html">06</a>|<a href="./200307.html">07</a>|<a href="./200308.html">08</a>|<a href="./200309.html">09</a>|<a href="./200310.html">10</a>|<a href="./200311.html">11</a>|<a href="./200312.html">12</a>|</div>
+<div class="year">2004|<a href="./200401.html">01</a>|<a href="./200402.html">02</a>|<a href="./200403.html">03</a>|<a href="./200404.html">04</a>|<a href="./200405.html">05</a>|<a href="./200406.html">06</a>|<a href="./200407.html">07</a>|<a href="./200408.html">08</a>|<a href="./200409.html">09</a>|<a href="./200410.html">10</a>|<a href="./200411.html">11</a>|<a href="./200412.html">12</a>|</div>
+<div class="year">2005|<a href="./200501.html">01</a>|<a href="./200502.html">02</a>|<a href="./200503.html">03</a>|<a href="./200504.html">04</a>|<a href="./200505.html">05</a>|<a href="./200506.html">06</a>|<a href="./200507.html">07</a>|<a href="./200508.html">08</a>|<a href="./200509.html">09</a>|<a href="./200510.html">10</a>|<a href="./200511.html">11</a>|<a href="./200512.html">12</a>|</div>
+<div class="year">2006|<a href="./200601.html">01</a>|<a href="./200602.html">02</a>|<a href="./200603.html">03</a>|<a href="./200604.html">04</a>|<a href="./200605.html">05</a>|<a href="./200606.html">06</a>|<a href="./200607.html">07</a>|<a href="./200608.html">08</a>|<a href="./200609.html">09</a>|<a href="./200610.html">10</a>|<a href="./200611.html">11</a>|<a href="./200612.html">12</a>|</div>
+<div class="year">2007|<a href="./200701.html">01</a>|<a href="./200702.html">02</a>|<a href="./200703.html">03</a>|<a href="./200704.html">04</a>|<a href="./200705.html">05</a>|<a href="./200706.html">06</a>|<a href="./200707.html">07</a>|<a href="./200708.html">08</a>|<a href="./200709.html">09</a>|<a href="./200710.html">10</a>|<a href="./200711.html">11</a>|<a href="./200712.html">12</a>|</div>
+<div class="year">2008|<a href="./200801.html">01</a>|<a href="./200802.html">02</a>|<a href="./200803.html">03</a>|<a href="./200804.html">04</a>|<a href="./200805.html">05</a>|<a href="./200806.html">06</a>|<a href="./200807.html">07</a>|<a href="./200808.html">08</a>|<a href="./200809.html">09</a>|<a href="./200810.html">10</a>|<a href="./200812.html">12</a>|</div>
+<div class="year">2009|<a href="./200901.html">01</a>|<a href="./200902.html">02</a>|<a href="./200903.html">03</a>|<a href="./200904.html">04</a>|<a href="./200905.html">05</a>|<a href="./200906.html">06</a>|<a href="./200907.html">07</a>|<a href="./200908.html">08</a>|<a href="./200909.html">09</a>|<a href="./200910.html">10</a>|<a href="./200911.html">11</a>|<a href="./200912.html">12</a>|</div>
+<div class="year">2010|<a href="./201001.html">01</a>|<a href="./201002.html">02</a>|<a href="./201003.html">03</a>|<a href="./201004.html">04</a>|<a href="./201005.html">05</a>|<a href="./201006.html">06</a>|<a href="./201007.html">07</a>|<a href="./201008.html">08</a>|<a href="./201009.html">09</a>|<a href="./201010.html">10</a>|<a href="./201011.html">11</a>|<a href="./201012.html">12</a>|</div>
+<div class="year">2011|<a href="./201101.html">01</a>|<a href="./201102.html">02</a>|<a href="./201103.html">03</a>|<a href="./201104.html">04</a>|<a href="./201105.html">05</a>|<a href="./201106.html">06</a>|<a href="./201107.html">07</a>|<a href="./201108.html">08</a>|<a href="./201109.html">09</a>|<a href="./201110.html">10</a>|<a href="./201111.html">11</a>|<a href="./201112.html">12</a>|</div>
+<div class="year">2012|<a href="./201201.html">01</a>|<a href="./201202.html">02</a>|<a href="./201203.html">03</a>|<a href="./201204.html">04</a>|<a href="./201205.html">05</a>|<a href="./201206.html">06</a>|<a href="./201207.html">07</a>|<a href="./201208.html">08</a>|<a href="./201209.html">09</a>|<a href="./201210.html">10</a>|<a href="./201211.html">11</a>|<a href="./201212.html">12</a>|</div>
+<div class="year">2013|<a href="./201301.html">01</a>|<a href="./201302.html">02</a>|<a href="./201303.html">03</a>|<a href="./201304.html">04</a>|<a href="./201305.html">05</a>|<a href="./201306.html">06</a>|<a href="./201307.html">07</a>|<a href="./201308.html">08</a>|<a href="./201309.html">09</a>|<a href="./201310.html">10</a>|<a href="./201311.html">11</a>|<a href="./201312.html">12</a>|</div>
+<div class="year">2014|<a href="./201401.html">01</a>|<a href="./201402.html">02</a>|<a href="./201403.html">03</a>|<a href="./201404.html">04</a>|<a href="./201405.html">05</a>|<a href="./201406.html">06</a>|<a href="./201407.html">07</a>|<a href="./201408.html">08</a>|<a href="./201409.html">09</a>|<a href="./201410.html">10</a>|<a href="./201411.html">11</a>|<a href="./201412.html">12</a>|</div>
+<div class="year">2015|<a href="./201501.html">01</a>|<a href="./201502.html">02</a>|<a href="./201503.html">03</a>|<a href="./201504.html">04</a>|<a href="./201505.html">05</a>|<a href="./201506.html">06</a>|<a href="./201507.html">07</a>|<a href="./201508.html">08</a>|<a href="./201509.html">09</a>|<a href="./201510.html">10</a>|<a href="./201511.html">11</a>|<a href="./201512.html">12</a>|</div>
+<div class="year">2016|<a href="./201601.html">01</a>|<a href="./201602.html">02</a>|<a href="./201603.html">03</a>|<a href="./201604.html">04</a>|<a href="./201605.html">05</a>|<a href="./201606.html">06</a>|<a href="./201607.html">07</a>|<a href="./201608.html">08</a>|<a href="./201609.html">09</a>|<a href="./201612.html">12</a>|</div>
+</div>
+
+</div>
+
+<hr>
+
+
+
+</div>
+<div class="adminmenu"><span class="adminmenu"><a href="./20071018.html">&laquo;前の日記(2007-10-18)</a></span>
+<span class="adminmenu"><a href="./">最新</a></span>
+<span class="adminmenu"><a href="./20071113.html">次の日記(2007-11-13)&raquo;</a></span>
+</div>
+</div>
+<ul class="plugin-counter">
+<li>Yesterday: <span class="counter-yesterday"><span class="counter-0"><span class="counter-num-1">1</span></span><span class="counter-1"><span class="counter-num-6">6</span></span><span class="counter-2"><span class="counter-num-9">9</span></span></span></li>
+<li>Today:<span class="counter-today"><span class="counter-0"><span class="counter-num-1">1</span></span><span class="counter-1"><span class="counter-num-4">4</span></span><span class="counter-2"><span class="counter-num-9">9</span></span></span></li>
+<li>Total:<span class="counter"><span class="counter-0"><span class="counter-num-1">1</span></span><span class="counter-1"><span class="counter-num-0">0</span></span><span class="counter-2"><span class="counter-num-2">2</span></span><span class="counter-3"><span class="counter-num-8">8</span></span><span class="counter-4"><span class="counter-num-2">2</span></span><span class="counter-5"><span class="counter-num-1">1</span></span><span class="counter-6"><span class="counter-num-7">7</span></span></span></li>
+</ul>
+
+
+
+
+			<script type="text/javascript"><!--
+			document.getElementById('comment-form-section').innerHTML = '';
+			//--></script>
+		<script type="text/javascript"><!--
+			document.getElementsByName("mail")[0].value = "";
+		//--></script>
+<div class="footer">
+Generated by <a href="http://www.tdiary.org/">tDiary</a> version 3.2.1<br>
+Powered by <a href="http://www.ruby-lang.org/">Ruby</a> version 1.9.3-p194
+</div>
+</div>
+</body>
+</html>

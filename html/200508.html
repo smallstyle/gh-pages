@@ -1,0 +1,926 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="ja-JP">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="generator" content="tDiary 3.2.1">
+	<meta http-equiv="Last-Modified" content="Sat, 05 Sep 2020 06:20:16 GMT">
+	<meta http-equiv="Content-Script-Type" content="text/javascript; charset=UTF-8">
+	<meta name="author" content="hb">
+	
+	<link rel="start" title="最新" href="./">
+	
+	<link rel="shortcut icon" href="favicon.ico">
+	<meta name="description" content="日々，気になったことを書き留める日記">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js" type="text/javascript"></script>
+	<script src="js/00default.js?3.2.120200906" type="text/javascript"></script>
+		<script type="text/javascript"><!--
+		$tDiary.style = 'wiki';
+		//-->
+		</script>
+	<meta http-equiv="content-style-type" content="text/css">
+	<link rel="stylesheet" href="theme/base.css" type="text/css" media="all">
+	<link rel="stylesheet" href="stylesheets/smallstyle-2010/smallstyle-2010.css" title="smallstyle-2010" type="text/css" media="all">
+	
+	<title>SmallStyle(2005-08)</title>
+	
+	<link rel="author" href="https://plus.google.com/116137028933519395680">
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.smallstyle.com/smallstyle">
+	<link rel="alternate" type="application/rss+xml" title="RSS(without comments)" href="http://feeds.smallstyle.com/smallstyle_no_comments">
+	<style type="text/css" media="all"><!--
+	div.sequel {
+		font-size: 75%;
+		text-align: right;
+		margin: 0px;
+	}
+	--></style>
+</head>
+<body>
+<div class="whole-content">
+
+<div class="adminmenu"><div class="adminmenu">
+<span class="adminmenu"><a href="./200507.html">&laquo;前月</a></span>
+<span class="adminmenu"><a href="./">最新</a></span>
+<span class="adminmenu"><a href="./200509.html">翌月&raquo;</a></span>
+</div>
+</div>
+<h1><a href="http://www.smallstyle.com/">SmallStyle</a></h1>
+<div class="content">
+<div class="main">
+
+<hr class="sep">
+
+
+	
+<div class="day autopagerize_page_element">
+<h2><span class="date">
+<a href="./20050806.html">2005-08-06</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="./20050806.html#p01" title="メモリ増設とkernelのアップデート"><span class="sanchor">_</span></a> メモリ増設とkernelのアップデート</h3>
+<p>昨晩，サーバのメモリを256MBから512MBに増強しました．で，再起動ついでにkernelを2.6ベースにアップデート．woodyからそのままdist-upgradeしたsarge環境なのでブートローダーはliloを使っていたのですが，案の定というかなんというか，kernel panicで起動できず．</p>
+<pre>VFS: Unable to mount root fs on unknown-block(3,2)</pre>
+<p>といったメッセージで起動に失敗します．原因を調べるのも時間かかりそうだったので，ブートローダーをgrubに変更．</p>
+<pre># apt-get install grub
+# mkdir /boot/grub
+# update-grub
+# grub-install /dev/hda</pre>
+<p>これで無事起動できました．サーバの温度監視にlm-sensorsを利用しているのですが，kernelを2.6に変えたことでlm-sensorsを利用してグラフ表示しているHotSaNICの設定を変更する必要あり．HotSaNIC/modules/sensors/settingsを以下のように変更．</p>
+<pre>SENSOR=/sys/bus/i2c/devices/1-0290/temp2_input,temp2,CPU Temp,1,0.001,0,C</pre>
+<p>これでkernel2.6環境で温度の監視が可能になりました．</p>
+
+</div>
+<div class="section">
+
+<h3><a href="./20050806.html#p02" title="夕立"><span class="sanchor">_</span></a> 夕立</h3>
+<p>昨日，夕方会社をでるころ遠くに黒い雲がはりだしているのを見ました．なぁんか雲行きあやしそーなんて思いながら地下鉄に乗りました．家のある方面に向かうにつれてだんだん暗くなり，空がひかり始めました．と，思ったら一気に降ってきました．夕立です．天気予報では晴れ時々くもり．傘なんて持っていません．駅についてコンビニでビニール傘を購入．駐車場までの5分ほどの距離なのですが，それでもズボンはかなりぬれてしまうほどの大雨でした．20分もすれば小雨になったのですが…．</p>
+<p>今日も夕方から雷が鳴り出し，その後激しい雨が降りました．ほんの10分ほどの雨ですが，雨上がりは少し気温もさがりすごしやすくなります．雨は嫌いですが，夏の夕立はなんとなく嫌いになれない部分があります．雨上がり網戸にセミがとまってなきはじめた．目の前でなかれるとかなりうるさいです…．</p>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<hr class="sep">
+	
+<div class="day autopagerize_page_element">
+<h2><span class="date">
+<a href="./20050807.html">2005-08-07</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="./20050807.html#p01" title="ランチ"><span class="sanchor">_</span></a> ランチ</h3>
+<p>今日はE嬢がお休みをとれたということで，お昼にあうことになりました．ランチは松原の湖岸にあるお店，<a href="http://maps.google.com/maps?q=35.286239,136.255982+(Le%20Vent%20de%20Vert)&amp;spn=0.003985,0.007736&amp;hl=ja">Le Vent de Vert</a>にしました．13時過ぎに行ったのですが2組みお客さんがいました．ちょうど窓側の眺めのいいテーブルが空いていたのでそこに座りました．<a href="http://www.smallstyle.com/20040801.html">前回きたとき</a>と同じランチセットを注文．今日は梅のパスタにしてみました．(ほぼ1年ぶりにこの店きたのか…)</p>
+<p>E嬢とは10ヶ月ぶりくらいの再会だったかな．ひさびさに会えて楽しかった．なかなか仕事も忙しそうで．でも元気そうでよかった．</p>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<hr class="sep">
+	
+<div class="day autopagerize_page_element">
+<h2><span class="date">
+<a href="./20050810.html">2005-08-10</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="./20050810.html#p01" title="Red Hat Linux スキルチェックテスト"><span class="sanchor">_</span></a> Red Hat Linux スキルチェックテスト</h3>
+<p><a href="http://www.jp.redhat.com/">レッドハット株式会社</a>が<a href="http://www.jp.redhat.com/training/camp_assess.html">Linuxのスキルチェックテスト</a>を公開しました．Linuxまったくの初心者ってわけではないのですが，「RH033 Red Hat Linux 基本コース向け」でも，結構やばめなスコアに…．恥ずかしくてとてもさらせるスコアではありません．ちなみにスキル不足が顕著に表れたのは，</p>
+<ul>
+<li>パーミッションと属性</li>
+<li>フロッピーディスクの操作</li>
+<li>正規表現</li>
+<li>プロセスの制御</li>
+<li>シェルスクリプトの作成</li>
+</ul>
+<p>でした．</p>
+<blockquote><p>［診断］:</p>
+<p>その技術レベルにおけるあなたの知識は偏りがあります。</p>
+</blockquote>
+<p>もう一度初心に戻って，勉強しなおします…</p>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<hr class="sep">
+	
+<div class="day autopagerize_page_element">
+<h2><span class="date">
+<a href="./20050812.html">2005-08-12</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="./20050812.html#p01" title="夏休み"><span class="sanchor">_</span></a> 夏休み</h3>
+<p>昨日の午後と今日，それから来週の木，金が一応夏休み．今年もいわゆる盆休みといわれるまとまった休暇はとらないことに…．そのかわり10月くらいに秋休みをとるかも．いや，とりたい．人ごみ嫌いな私にとってはみんなと同じ時期に休みをとっても引きこもりがちなので．</p>
+<p>去年は10月に沖縄に行ってきましたが，今年はどこに行こう…．高校時代の友人が鹿児島に長期出張している間に，一度は鹿児島に訪れてみたいな…．九州地方は中学，高校の修学旅行で長崎，熊本，大分，福岡あたりはなんとなくいっているので，あとは九州でも南のほうがまだか．2泊か3泊くらいの予定でちょっと考えてみよう．</p>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<hr class="sep">
+	
+<div class="day autopagerize_page_element">
+<h2><span class="date">
+<a href="./20050813.html">2005-08-13</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="./20050813.html#p01" title="洋楽歌詞検索プラグイン(2)"><span class="sanchor">_</span></a> 洋楽歌詞検索プラグイン(2)</h3>
+<p>以前作成した洋楽歌詞検索プラグインの<a href="http://www.smallstyle.com/20050122.html">LetsSingIt検索プラグイン</a>はサイトの検索時にpost要求しか使えなくなっていました．他に洋楽の歌詞検索サイトでいいところはないかと探していたら，ありました．<a href="http://lyrics.astraweb.com/">Lyrics Search Engine</a>というサイトで，アーティスト名，曲名で検索ができます．</p>
+<pre># Lyrics Search Engine
+
+&lt;search
+       name="Lyrics Search Engine"
+       description="All About Lyrics Search at Astraweb"
+       sourceTextEncoding="1"
+       method="GET"
+       action="http://search.lyrics.astraweb.com/"
+
+       queryEncoding="iso-8859-1"
+       queryCharset="iso-8859-1"
+&gt;
+
+&lt;input name="word" user&gt;
+&lt;interpret
+       browserResultType="result"
+       charset = "iso-8859-1"
+&gt;
+&lt;/search&gt;</pre>
+<p>毎度のごとく上のソースをそのままコピーしてもらってもいいですし，リンクからのインストールも可能です．</p>
+<p>．</p>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<hr class="sep">
+	
+<div class="day autopagerize_page_element">
+<h2><span class="date">
+<a href="./20050815.html">2005-08-15</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="./20050815.html#p01" title="世間は盆休み"><span class="sanchor">_</span></a> 世間は盆休み</h3>
+<p>会社もなんだかんだで人はまばら．電車も休日ダイヤで乗客も少なめ．快適だ．お昼は普段なら結構混んでいるらしい<a href="http://www.s-sa.jp/modules/ssa_menya/">名古屋麺屋横丁</a>へ．12時ころでも一部店舗を除いて待ちはなし．待ちといっても10分程度っぽかったけど．</p>
+<p>今回は<a href="http://www.s-sa.jp/modules/ssa_shop/index.php?shop_id=8">東京「つしま」</a>へ．あっさりした中華そばでなかなかうまかった．テーブルにあった高菜は結構辛いですが，そばといっしょに食べるとなかなかいい感じでした．辛い物好きの人にはいいかもしれませんが，苦手な人はほんの少しで試したほうが身のためかもしれません．結構のどが熱くなる辛さです．</p>
+<p>店を出ると，きたときよりも行列のできている店が増えていました．盆休みといえども結構お客はくるみたいです．まぁ，同じようなサラリーマンよりも家族ずれやお休みっぽい人ばかりでしたけど．</p>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<hr class="sep">
+	
+<div class="day autopagerize_page_element">
+<h2><span class="date">
+<a href="./20050816.html">2005-08-16</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="./20050816.html#p01" title="地震"><span class="sanchor">_</span></a> 地震</h3>
+<p>お昼休み直前，名古屋のビルがぐらぐらとゆれました．気象庁の発表によると，</p>
+<blockquote><p>平成17年08月16日12時12分 気象庁地震火山部 発表</p>
+<p>16日11時46分頃地震がありました。</p>
+<p>震源地は宮城県沖 (北緯38.1°、東経142.4°）で震源の</p>
+<p>深さは約20Km、地震の規模（マグニチュード）は6.8と推定されます。</p>
+<p><a href="http://www.jma.go.jp/jp/quake/16121200391.html">気象庁｜地震情報</a>より引用</p>
+</blockquote>
+<p>震源に近い宮城県では震度6弱と非常に大きな地震だったようです．お盆休みでちょうど昼時．火災などの被害が出ていないことを祈るばかりです．</p>
+<p>それにしても今回の地震はなんだか今までの，ドカンっとくるのではなくて，なんだかうねうねした感じだったのはビルの14Fにいたからなのでしょうか…．</p>
+
+</div>
+<div class="section">
+
+<h3><a href="./20050816.html#p02" title="HUBが熱暴走したかな"><span class="sanchor">_</span></a> HUBが熱暴走したかな</h3>
+<p>今年に入って2度目のHUB熱暴走．やっぱ屋根裏なんかに置いておくのが無謀なのかなぁ…．</p>
+
+</div>
+<div class="section">
+
+<h3><a href="./20050816.html#p03" title="今日もラーメン"><span class="sanchor">_</span></a> 今日もラーメン</h3>
+<p><a href="http://www.smallstyle.com/20050815.html">昨日</a>に引き続き，今日も<a href="http://www.s-sa.jp/modules/ssa_menya/">名古屋麺屋横丁</a>へ．ちょうど<a href="http://www.smallstyle.com/20050816.html#p1">昼前に地震があった</a>こともあり昨日より少し遅く出ました．(エレベーター乗ってる途中で地震があったら止まってしまってたかも…）</p>
+<p>今日は表示では全店待ちなし．で，昨日結構待ち時間があった<a href="http://www.s-sa.jp/modules/ssa_shop/index.php?shop_id=12">横浜「いまむら」</a>へ．店に着くと満席．5分くらい待つと案内されました．どの店も結構狭いのですぐにいっぱいになってしまう．まぁラーメンなんて回転はやいから多少狭くても問題ないでしょうけど．あっさり系の昭和の煮干しラーメンを注文．少し足りなかったので替え玉注文．あっさりしてておいしかったと思います．基本的にはこってり系が好きなので物足りないといえば物足りないですが…</p>
+<p>2日続けて名古屋麺屋横丁きてみましたが，個人的には名古屋駅にあるの方がお勧めです．</p>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+		<div class="caption">本日のツッコミ(全2件) [<a href="./20050816.html#c">ツッコミを入れる</a>]</div>
+		<div class="commentshort">
+				<p><a href="./20050816.html#c01"><span class="canchor">_</span></a>
+				<span class="commentator">おがみ屋</span>&nbsp;[＞地震 そっちはゆれたんやね。こっちはなんとも。 まあ、ご無事で何より。  ＞ラーメン 僕もこってり派です。では、今..]</p>
+				<p><a href="./20050816.html#c02"><span class="canchor">_</span></a>
+				<span class="commentator">hb</span>&nbsp;[さすがに滋賀までいくと揺れも感じないか． 名古屋でもじっとしているとやっとわかるくらいでしたが…  京都のうまいラー..]</p>
+		</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<hr class="sep">
+	
+<div class="day autopagerize_page_element">
+<h2><span class="date">
+<a href="./20050817.html">2005-08-17</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="./20050817.html#p01" title="復帰"><span class="sanchor">_</span></a> 復帰</h3>
+<p>HUBの調子がおかしいと思い込んでいたのですが，どうやらサーバそのものが落ちていた模様．サーバ起動してサイト復帰．</p>
+
+</div>
+<div class="section">
+
+<h3><a href="./20050817.html#p02" title="Firefoxでプラグインの追加の通知を表示させない"><span class="sanchor">_</span></a> Firefoxでプラグインの追加の通知を表示させない</h3>
+<p><img class="right" src="http://www.smallstyle.com/images/20050817_0.png" alt="Zaurus Screen Shot" title="Zaurus Screen Shot" width="240"></p>
+<p><a href="http://www.smallstyle.com/20050220.html#p01">ZaurusにpdaXromをいれて</a>，特にこれといった支障もなく快適に利用しているのですが，ひとつ覚書．Firefoxを利用しているとFlashを利用しているページなどでプラグインが未導入だと，プラグインを追加するように通知されます．MacromediaからはpdaXromで動作するFlashプラグインは提供されていないし，<a href="http://pdaxrom.sourceforge.jp/wiki/index.php?cmd=read&amp;page=Firefox%A4%CBFlash%A5%D7%A5%E9%A5%B0%A5%A4%A5%F3&amp;word=flash">GPLFlashを使えばpdaXrom上のFirefoxでもFlashを再生できる</a>ようですが，今のところ必須ではありません．</p>
+<p>この通知を消すにはどうしたものかと調べたところ，</p>
+<blockquote><p>Mozilla Firefoxのpluginsディレクトリからlibnullplugin.soを削除してください。</p>
+<p><a href="http://plugindoc.mozdev.org/ja-JP/faqs/firefox-linux.html#qa-libnullplugin">mozdev.org - プラグインのインストールを要求されないようにするにはどうしたらいいの？</a>より引用</p>
+</blockquote>
+<p>というわけで，libnullplugin.soを削除してみたわけですが，これだけでは通知は消えてくれませんでした．どうももうひとつ変更を加える必要があるみたいです．ロケーションバーに，about:configと入力して，plugin.default_plugin_disableの値をfalseにする必要があるみたいです．これらの設定をすることで，プラグイン導入の通知をさせないようにすることができました．</p>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<hr class="sep">
+	
+<div class="day autopagerize_page_element">
+<h2><span class="date">
+<a href="./20050820.html">2005-08-20</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="./20050820.html#p01" title="同窓会"><span class="sanchor">_</span></a> 同窓会</h3>
+<p>鹿児島に長期出張中のTが京都に出戻り中ということで，久々に飲み会．いつも集まるメンバーにしか声をかけなかったので，多くても4人だろうとか考えてたら，気がつけば6人になってたし．</p>
+<p>次回は年始くらいにでもまた唐突に開催予定ということで，いつも言い出すのは自分なので，やるやらないは僕の気分しだいということか．</p>
+<div class="sequel">つづき: <a href="http://www.smallstyle.com/20060102.html#p03">2006-01-02</a></div>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<hr class="sep">
+	
+<div class="day autopagerize_page_element">
+<h2><span class="date">
+<a href="./20050821.html">2005-08-21</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="./20050821.html#p01" title="IEのアドレスバーの検索をGoogleに"><span class="sanchor">_</span></a> IEのアドレスバーの検索をGoogleに</h3>
+<p>ごくまれにIEで検索などをすることがあるのですが，Windows Updateのときぐらいしか使わないのでお気に入りとかもデフォルトのままです．ちょっと調べ物がしたいときに，アドレスバーで検索したい文字列を打ち込むと，IEでは<a href="http://search.msn.co.jp/">MSNサーチ</a>に飛ばしてくれます．でもやっぱり慣れ親しんだGoogleの検索のほうがいい．…ということで，IEのアドレスバーでの検索でGoogleを使う方法．</p>
+<p>レジストリエディタを起動して，</p>
+<pre>HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\SearchUrl</pre>
+<p>の（既定）の値を</p>
+<pre>http://www.google.co.jp/keyword%s</pre>
+<p>とし，providerの値を"gogl"と設定します．これでIEのアドレスバーで検索をしてみると検索エンジンがGoogleに変わります．一度ログアウトをして，再度ログインすれば設定が反映されます．</p>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<hr class="sep">
+	
+<div class="day autopagerize_page_element">
+<h2><span class="date">
+<a href="./20050822.html">2005-08-22</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="./20050822.html#p01" title="ウォームビズ"><span class="sanchor">_</span></a> <a href="http://www.kahoku.co.jp/news/2005/08/2005082201003038.htm">ウォームビズ</a></h3>
+<p>クールビズに続いて今度はウォームビズですか…．これはどうなるのかなぁ．個人的にはクールビズほどの普及はなさそうな感じがしますが．</p>
+<blockquote><p>夏場のノーネクタイ姿を提唱した「クールビズ」に続き、環境省は２２日、秋や冬にオフィスの暖房を抑えて省エネにつなげるための新キャンペーン「ウォームビズ」を１０月１日から始めると発表した。</p>
+<p><a href="http://www.kahoku.co.jp/news/2005/08/2005082201003038.htm">河北新報ニュース　今度は「ウォームビズ」　暖房も控えめにと環境省</a>より引用</p>
+</blockquote>
+<p>冷暖房を適切な温度に設定することで，地球環境にも人にもやさしい環境になるので，こうした動きそのものは悪くないとは思います．一年だけやっても意味はないわけで毎年こうした活動を続けることではじめて効果があらわれてくるかと思います．</p>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<hr class="sep">
+	
+<div class="day autopagerize_page_element">
+<h2><span class="date">
+<a href="./20050825.html">2005-08-25</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="./20050825.html#p01" title="台風"><span class="sanchor">_</span></a> 台風</h3>
+<p>台風11号が接近しているということで今朝は夕方には帰れちゃったりするかなぁとか思っていたのですが，名古屋は台風なんて近付いてるの？というくらい雨も降らない一日でした．夕方にはきれいな夕日がおがめるくらいだったし．あまりたいしたことない台風なのかなと帰宅してからテレビを見てみると静岡ではかなりの暴風雨みたいですね．大きな被害がでなければいいですが…．</p>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<hr class="sep">
+	
+<div class="day autopagerize_page_element">
+<h2><span class="date">
+<a href="./20050826.html">2005-08-26</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="./20050826.html#p01" title="FEEDBRINGERのUIが変更"><span class="sanchor">_</span></a> <a href="http://feedbringer.net/">FEEDBRINGER</a>のUIが変更</h3>
+<p>さきほどFEEDBRINGERにアクセスしたらUIがいつもと見た目が変わっていた．<a href="http://blog.feedbringer.net/feed/archives/2005/08/post_2.html">以前お知らせのあったユーザインターフェースの変更</a>が行われた模様．これで少し前に紹介した<a href="http://www.smallstyle.com/20050730.html">FEEDBRINGERを@-moz-documentを使って改良</a>を使わなくても標準で擬似フレームを用いた使いやすいインターフェースになりました．</p>
+<p>ちなみに以前紹介した@-moz-documentを使ったソースは，HTML構造の変更によりうまく機能しないので，そのままではもう利用できません．</p>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<hr class="sep">
+	
+<div class="day autopagerize_page_element">
+<h2><span class="date">
+<a href="./20050827.html">2005-08-27</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="./20050827.html#p01" title="結婚式"><span class="sanchor">_</span></a> 結婚式</h3>
+<p>今日は弟の結婚式でした．さんざんまわりから弟に先を越された，おまえはいつ結婚するんだと言われまくりで疲れた…．でも，じいちゃん，ばぁちゃんたちは孫の結婚式に出られてとてもうれしそうだったのでよかった．運転手役でお酒も飲めず，いろんな人があいさつにくるのでとりあえず気苦労のたえない一日でした．</p>
+<p>ん，でもまぁ，弟には幸せな家庭を築いてもらいたいものです．これで兄は安心して一人身を楽しめそうだ…．</p>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+		<div class="caption">本日のツッコミ(全4件) [<a href="./20050827.html#c">ツッコミを入れる</a>]</div>
+		<div class="commentshort">
+			<p><a href="./20050827.html#c00">Before...</a></p>
+				<p><a href="./20050827.html#c02"><span class="canchor">_</span></a>
+				<span class="commentator">hb</span>&nbsp;[座ってるだけでいろんな人がくるので，その辺はどうにもなりませんな． お酒飲んだかどうかで少しは違うかもしれないけどね..]</p>
+				<p><a href="./20050827.html#c03"><span class="canchor">_</span></a>
+				<span class="commentator">おがみ屋</span>&nbsp;[でも、楽しいよね。家族が増えるというのは。]</p>
+				<p><a href="./20050827.html#c04"><span class="canchor">_</span></a>
+				<span class="commentator">hb</span>&nbsp;[まだ慣れないけどねぇ．あまり面識がないもので… まだ3回くらいしか会ったことないし．]</p>
+		</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<hr class="sep">
+	
+<div class="day autopagerize_page_element">
+<h2><span class="date">
+<a href="./20050828.html">2005-08-28</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="./20050828.html#p01" title="tDiary on Lighttpd with FastCGI"><span class="sanchor">_</span></a> tDiary on Lighttpd with FastCGI</h3>
+<p>なんとなくApache以外のWebサーバでtDiaryを動かしてみたい衝動にかられて，最近よくみる<a href="http://www.lighttpd.net/">Lighttpd</a>を使ってみました．tDiaryを単純なCGIとして動かすだけであれば，最低限の設定をすることで難なく動かすことができました．この時点でApacheとLighttpdのベンチマークを比較してみると，</p>
+<pre># Apache
+Requests per second:    1.15 [#/sec] (mean)
+
+# lighttpd
+Requests per second:    1.17 [#/sec] (mean)</pre>
+<p>という結果で，まぁそう大差のない結果となりました．これではあまり面白みがないので，FastCGIを使ってどのくらい高速化できるかを試してみました．aptでlibfcgi-rubyをインストールして，LighttpdのFastCGIのモジュールを有効にします．設定は以下のようにしてみました．</p>
+<pre>fastcgi.server = (
+        ".fcgi" =&gt; ( "localhost" =&gt;
+                (
+                "max-procs" =&gt; 10,
+                "socket" =&gt; "/tmp/tdiary.socket",
+                "bin-path" =&gt; "/var/www/html/index.fcgi"
+                )
+        ),
+)</pre>
+<p>呼び出すindex.fcgiは以下のようにしました．</p>
+<pre>#!/usr/bin/env ruby
+$MY_DIR = File.dirname(__FILE__)
+$LOAD_PATH.unshift $MY_DIR
+Dir.chdir( File.dirname(__FILE__) )
+
+require 'fcgi'
+
+FCGI.each_cgi { |cgi|
+        begin
+                ENV.clear
+                ENV.update(cgi.env_table)
+
+                $CGI = cgi
+                def CGI::new; $CGI; end
+
+                load File.join($MY_DIR, 'index.rb')
+        ensure
+                class &lt;&lt; CGI; remove_method :new; end
+        end
+}</pre>
+<p>上記コードは，<a href="http://d.akinori.org/?date=20040813">tDiaryをFastCGI化</a>と<a href="http://cgikit.sourceforge.jp/cgi-bin/ja/index.cgi?LighttpdAndFastCGI">LighttpdAndFastCGI</a>を参考にしました．<a href="http://cgikit.sourceforge.jp/cgi-bin/ja/index.cgi?LighttpdAndFastCGI">LighttpdAndFastCGI</a>でも書かれていますが，</p>
+<blockquote><p>よくわかんないけど、lighttpdでFastCGIを実行すると、カレントディレクトリが '/' になる。</p>
+</blockquote>
+<p>という影響からなのか，tdiary.confが読み込めないエラーが発生しました．これを解決するために，「Dir.chdir( File.dirname(__FILE__) )」を記述しています．このサーバではtDiaryを複数設置構成でインストールしてあるので，index.rbはシンボリックリンクになっています．で，これでベンチマークをとってみると…</p>
+<pre># FastCGI
+Requests per second:    2.11 [#/sec] (mean)</pre>
+<p>数値上は早くなったみたい．体感ではいまいちよくわからないですが…．ベンチマークはとっていませんが，PHPをFastCGIで実行した結果は体感でも早くなったような気がします（気のせいかもしれませんが…）．もうちょっといろいろさわってみて，問題なさそうならApacheからLighttpdに移行してみようかと思います．</p>
+<div class="sequel">つづき: <a href="http://www.smallstyle.com/20060321.html#p01">2006-03-21</a></div>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<hr class="sep">
+	
+<div class="day autopagerize_page_element">
+<h2><span class="date">
+<a href="./20050829.html">2005-08-29</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="./20050829.html#p01" title="フライパンで秋刀魚"><span class="sanchor">_</span></a> フライパンで秋刀魚</h3>
+<p>夏も終わりに近づいてきてそろそろ秋刀魚の季節．やたらと秋刀魚が食べたくなったのですが，アパート住まいで，コンロもないので焼くことができません．そういえば少し前にテレビでフライパンにクッキングシートを敷いて，その上で魚を焼くってのをやっていたのを思い出して試してみました．</p>
+<p>お店でクッキングペーパーが売られているそのすぐ横に，フライパンで魚を焼くときに…と書かれた，そのものずばりの商品が．あとは秋刀魚1匹を100円で購入．おいしい秋刀魚の見分け方は，見た目の新鮮さ度合いはもちろんのこと，背中から見たときにまるまると太っているのが，脂ののったものだそうです．</p>
+<p>さて，実際に調理するには，フライパンに収まる程度に切る必要がありました．とりあえず頭だけ切って，塩をふっておきます．火は中火から弱火くらいで焦げないように気をつけながら，両面をしっかり焼きます．15から20分もあれば中までしっかり火がとおったおいしい秋刀魚の塩焼きの完成です．</p>
+<p>煙もでないので一人暮らしには十分な調理方法ですね．でも，やっぱりあの魚独特の生臭さが少しフライパンや蓋に残ってしまいました．この辺が何かいい回避方法はないものか…．とりあえずおいしく焼けることはわかったので，これからは家で魚を食べられそうです．</p>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<hr class="sep">
+	
+<div class="day autopagerize_page_element">
+<h2><span class="date">
+<a href="./20050830.html">2005-08-30</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="./20050830.html#p01" title="Opera 10周年記念"><span class="sanchor">_</span></a> Opera 10周年記念</h3>
+<p>各所で話題になっていますが，ブラウザに広告を表示することで無料で利用することができるブラウザのOperaが，10周年を記念してこの広告を取り除いた形で利用することができます．期間は日本時間で8月31日の16時までのようです．</p>
+<p>当初，Operaにメールをすることで，ライセンスキーを送ってもらう形だったようなのですが，<a href="http://www.forest.impress.co.jp">窓の杜</a>にもあるように，</p>
+<blockquote><p>ライセンスキーは、Webページ右上の［Go free now］ボタンを押したあとに、自分のメールアドレスをWebフォームで送信すれば無料で入手可能。</p>
+<p><a href="http://www.forest.impress.co.jp/article/2005/08/30/opera10anniversary.html">窓の杜 - 【NEWS】Operaが10周年を記念してライセンスキーを無料配布、本日22時開始</a>より引用</p>
+</blockquote>
+<p>とのことで，<a href="http://my.opera.com/community/party/">My Opera Community</a>からライセンスキーを手に入れることができます．Windows版以外にも，LinuxやFreeBSD，Solaris，Mac版のライセンスキーがありました．</p>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+		<div class="caption">本日のツッコミ(全4件) [<a href="./20050830.html#c">ツッコミを入れる</a>]</div>
+		<div class="commentshort">
+			<p><a href="./20050830.html#c00">Before...</a></p>
+				<p><a href="./20050830.html#c02"><span class="canchor">_</span></a>
+				<span class="commentator">ムシメズル姫@新幹線</span>&nbsp;[きっといいことあるよ（わけもわからず答えてみました）]</p>
+				<p><a href="./20050830.html#c03"><span class="canchor">_</span></a>
+				<span class="commentator">hb</span>&nbsp;[Operaっていうブラウザのライセンスコードです．ネットするのにInternetExplorerが一般的によく使われ..]</p>
+				<p><a href="./20050830.html#c04"><span class="canchor">_</span></a>
+				<span class="commentator">TrackBack</span>&nbsp;[http://www.smallstyle.com/20050920.html#p01 SmallStyle [ww..]</p>
+		</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<hr class="sep">
+	
+<div class="day autopagerize_page_element">
+<h2><span class="date">
+<a href="./20050831.html">2005-08-31</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="./20050831.html#p01" title="研修"><span class="sanchor">_</span></a> 研修</h3>
+<p><img class="right" src="http://www.smallstyle.com/images/20050831_0.jpg" alt="川崎日航ホテル" title="川崎日航ホテル" width="240"></p>
+<p>久々に研修で川崎にきました．こちらに研修にきたときはたいてい川崎日航ホテルに宿泊するのですが，今回はシングルで予約したのですがツインの部屋が割り当てられました．高層階で禁煙部屋なので快適です．写真は携帯で撮影した写真をZaurusに赤外線で転送してのせてみました．</p>
+<p>それにしても品川から川崎までの東海道線の混み具合は何度乗っても慣れません…．今日もものすごい満員電車にゆられてやってきました．たった一駅なのにどっと疲れてしまいます…</p>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<hr class="sep">
+
+</div>
+
+
+
+
+
+<div class="additional_information">
+<div class="information">
+<h4>about me</h4>
+<div itemscope itemtype="http://data-vocabulary.org/Person">
+<dl>
+<p>いろいろと興味を持ったことを書いてます．ちょっとしたことは <a href="http://twitter.com/smallstyle"><span itemprop="name">hb</span>(@<span itemprop="nickname">smallstyle</span>) on Twitter</a> で書いてます．</p>
+</div>
+
+<h4>Archive</h4>
+<div class="calendar">
+<div class="year">2003|<a href="./200301.html">01</a>|<a href="./200302.html">02</a>|<a href="./200303.html">03</a>|<a href="./200304.html">04</a>|<a href="./200305.html">05</a>|<a href="./200306.html">06</a>|<a href="./200307.html">07</a>|<a href="./200308.html">08</a>|<a href="./200309.html">09</a>|<a href="./200310.html">10</a>|<a href="./200311.html">11</a>|<a href="./200312.html">12</a>|</div>
+<div class="year">2004|<a href="./200401.html">01</a>|<a href="./200402.html">02</a>|<a href="./200403.html">03</a>|<a href="./200404.html">04</a>|<a href="./200405.html">05</a>|<a href="./200406.html">06</a>|<a href="./200407.html">07</a>|<a href="./200408.html">08</a>|<a href="./200409.html">09</a>|<a href="./200410.html">10</a>|<a href="./200411.html">11</a>|<a href="./200412.html">12</a>|</div>
+<div class="year">2005|<a href="./200501.html">01</a>|<a href="./200502.html">02</a>|<a href="./200503.html">03</a>|<a href="./200504.html">04</a>|<a href="./200505.html">05</a>|<a href="./200506.html">06</a>|<a href="./200507.html">07</a>|<a href="./200508.html">08</a>|<a href="./200509.html">09</a>|<a href="./200510.html">10</a>|<a href="./200511.html">11</a>|<a href="./200512.html">12</a>|</div>
+<div class="year">2006|<a href="./200601.html">01</a>|<a href="./200602.html">02</a>|<a href="./200603.html">03</a>|<a href="./200604.html">04</a>|<a href="./200605.html">05</a>|<a href="./200606.html">06</a>|<a href="./200607.html">07</a>|<a href="./200608.html">08</a>|<a href="./200609.html">09</a>|<a href="./200610.html">10</a>|<a href="./200611.html">11</a>|<a href="./200612.html">12</a>|</div>
+<div class="year">2007|<a href="./200701.html">01</a>|<a href="./200702.html">02</a>|<a href="./200703.html">03</a>|<a href="./200704.html">04</a>|<a href="./200705.html">05</a>|<a href="./200706.html">06</a>|<a href="./200707.html">07</a>|<a href="./200708.html">08</a>|<a href="./200709.html">09</a>|<a href="./200710.html">10</a>|<a href="./200711.html">11</a>|<a href="./200712.html">12</a>|</div>
+<div class="year">2008|<a href="./200801.html">01</a>|<a href="./200802.html">02</a>|<a href="./200803.html">03</a>|<a href="./200804.html">04</a>|<a href="./200805.html">05</a>|<a href="./200806.html">06</a>|<a href="./200807.html">07</a>|<a href="./200808.html">08</a>|<a href="./200809.html">09</a>|<a href="./200810.html">10</a>|<a href="./200812.html">12</a>|</div>
+<div class="year">2009|<a href="./200901.html">01</a>|<a href="./200902.html">02</a>|<a href="./200903.html">03</a>|<a href="./200904.html">04</a>|<a href="./200905.html">05</a>|<a href="./200906.html">06</a>|<a href="./200907.html">07</a>|<a href="./200908.html">08</a>|<a href="./200909.html">09</a>|<a href="./200910.html">10</a>|<a href="./200911.html">11</a>|<a href="./200912.html">12</a>|</div>
+<div class="year">2010|<a href="./201001.html">01</a>|<a href="./201002.html">02</a>|<a href="./201003.html">03</a>|<a href="./201004.html">04</a>|<a href="./201005.html">05</a>|<a href="./201006.html">06</a>|<a href="./201007.html">07</a>|<a href="./201008.html">08</a>|<a href="./201009.html">09</a>|<a href="./201010.html">10</a>|<a href="./201011.html">11</a>|<a href="./201012.html">12</a>|</div>
+<div class="year">2011|<a href="./201101.html">01</a>|<a href="./201102.html">02</a>|<a href="./201103.html">03</a>|<a href="./201104.html">04</a>|<a href="./201105.html">05</a>|<a href="./201106.html">06</a>|<a href="./201107.html">07</a>|<a href="./201108.html">08</a>|<a href="./201109.html">09</a>|<a href="./201110.html">10</a>|<a href="./201111.html">11</a>|<a href="./201112.html">12</a>|</div>
+<div class="year">2012|<a href="./201201.html">01</a>|<a href="./201202.html">02</a>|<a href="./201203.html">03</a>|<a href="./201204.html">04</a>|<a href="./201205.html">05</a>|<a href="./201206.html">06</a>|<a href="./201207.html">07</a>|<a href="./201208.html">08</a>|<a href="./201209.html">09</a>|<a href="./201210.html">10</a>|<a href="./201211.html">11</a>|<a href="./201212.html">12</a>|</div>
+<div class="year">2013|<a href="./201301.html">01</a>|<a href="./201302.html">02</a>|<a href="./201303.html">03</a>|<a href="./201304.html">04</a>|<a href="./201305.html">05</a>|<a href="./201306.html">06</a>|<a href="./201307.html">07</a>|<a href="./201308.html">08</a>|<a href="./201309.html">09</a>|<a href="./201310.html">10</a>|<a href="./201311.html">11</a>|<a href="./201312.html">12</a>|</div>
+<div class="year">2014|<a href="./201401.html">01</a>|<a href="./201402.html">02</a>|<a href="./201403.html">03</a>|<a href="./201404.html">04</a>|<a href="./201405.html">05</a>|<a href="./201406.html">06</a>|<a href="./201407.html">07</a>|<a href="./201408.html">08</a>|<a href="./201409.html">09</a>|<a href="./201410.html">10</a>|<a href="./201411.html">11</a>|<a href="./201412.html">12</a>|</div>
+<div class="year">2015|<a href="./201501.html">01</a>|<a href="./201502.html">02</a>|<a href="./201503.html">03</a>|<a href="./201504.html">04</a>|<a href="./201505.html">05</a>|<a href="./201506.html">06</a>|<a href="./201507.html">07</a>|<a href="./201508.html">08</a>|<a href="./201509.html">09</a>|<a href="./201510.html">10</a>|<a href="./201511.html">11</a>|<a href="./201512.html">12</a>|</div>
+<div class="year">2016|<a href="./201601.html">01</a>|<a href="./201602.html">02</a>|<a href="./201603.html">03</a>|<a href="./201604.html">04</a>|<a href="./201605.html">05</a>|<a href="./201606.html">06</a>|<a href="./201607.html">07</a>|<a href="./201608.html">08</a>|<a href="./201609.html">09</a>|<a href="./201612.html">12</a>|</div>
+</div>
+
+</div>
+
+<hr>
+
+
+
+</div>
+<div class="adminmenu"><span class="adminmenu"><a href="./200507.html">&laquo;前月</a></span>
+<span class="adminmenu"><a href="./">最新</a></span>
+<span class="adminmenu"><a href="./200509.html">翌月&raquo;</a></span>
+</div>
+</div>
+<ul class="plugin-counter">
+<li>Yesterday: <span class="counter-yesterday"><span class="counter-0"><span class="counter-num-1">1</span></span><span class="counter-1"><span class="counter-num-6">6</span></span><span class="counter-2"><span class="counter-num-9">9</span></span></span></li>
+<li>Today:<span class="counter-today"><span class="counter-0"><span class="counter-num-1">1</span></span><span class="counter-1"><span class="counter-num-4">4</span></span><span class="counter-2"><span class="counter-num-9">9</span></span></span></li>
+<li>Total:<span class="counter"><span class="counter-0"><span class="counter-num-1">1</span></span><span class="counter-1"><span class="counter-num-0">0</span></span><span class="counter-2"><span class="counter-num-2">2</span></span><span class="counter-3"><span class="counter-num-8">8</span></span><span class="counter-4"><span class="counter-num-2">2</span></span><span class="counter-5"><span class="counter-num-1">1</span></span><span class="counter-6"><span class="counter-num-7">7</span></span></span></li>
+</ul>
+
+
+
+
+
+
+<div class="footer">
+Generated by <a href="http://www.tdiary.org/">tDiary</a> version 3.2.1<br>
+Powered by <a href="http://www.ruby-lang.org/">Ruby</a> version 1.9.3-p194
+</div>
+</div>
+</body>
+</html>

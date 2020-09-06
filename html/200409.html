@@ -1,0 +1,536 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="ja-JP">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="generator" content="tDiary 3.2.1">
+	<meta http-equiv="Last-Modified" content="Fri, 01 Apr 2011 01:25:27 GMT">
+	<meta http-equiv="Content-Script-Type" content="text/javascript; charset=UTF-8">
+	<meta name="author" content="hb">
+	
+	<link rel="start" title="最新" href="./">
+	
+	<link rel="shortcut icon" href="favicon.ico">
+	<meta name="description" content="日々，気になったことを書き留める日記">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js" type="text/javascript"></script>
+	<script src="js/00default.js?3.2.120200906" type="text/javascript"></script>
+		<script type="text/javascript"><!--
+		$tDiary.style = 'wiki';
+		//-->
+		</script>
+	<meta http-equiv="content-style-type" content="text/css">
+	<link rel="stylesheet" href="theme/base.css" type="text/css" media="all">
+	<link rel="stylesheet" href="stylesheets/smallstyle-2010/smallstyle-2010.css" title="smallstyle-2010" type="text/css" media="all">
+	
+	<title>SmallStyle(2004-09)</title>
+	
+	<link rel="author" href="https://plus.google.com/116137028933519395680">
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.smallstyle.com/smallstyle">
+	<link rel="alternate" type="application/rss+xml" title="RSS(without comments)" href="http://feeds.smallstyle.com/smallstyle_no_comments">
+	<style type="text/css" media="all"><!--
+	div.sequel {
+		font-size: 75%;
+		text-align: right;
+		margin: 0px;
+	}
+	--></style>
+</head>
+<body>
+<div class="whole-content">
+
+<div class="adminmenu"><div class="adminmenu">
+<span class="adminmenu"><a href="./200408.html">&laquo;前月</a></span>
+<span class="adminmenu"><a href="./">最新</a></span>
+<span class="adminmenu"><a href="./200410.html">翌月&raquo;</a></span>
+</div>
+</div>
+<h1><a href="http://www.smallstyle.com/">SmallStyle</a></h1>
+<div class="content">
+<div class="main">
+
+<hr class="sep">
+
+
+	
+<div class="day autopagerize_page_element">
+<h2><span class="date">
+<a href="./20040901.html">2004-09-01</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="./20040901.html#p01" title="Strutsカスタムタグhtml:buttonでdisabled"><span class="sanchor">_</span></a> Strutsカスタムタグhtml:buttonでdisabled</h3>
+<p>StrutsのHTMLカスタムタグのひとつに &lt;html:button&gt; がある．この属性のひとつにdisabledというものがある．これはボタンを無効化する属性で，例えば「次のページ」や「前のページ」なんかのボタンで．「次のページ」はないからボタンを押せないようにしようとかいったときに使えます．で，このdisabled属性を動的に変更するにはどうしたらいいかで，今日は少しばかり時間をとられました．結論としてはJSP上でスクリプトレットを記述して値を取得するという方法で解決しました．Formクラスでボタンの状態を返すメソッド「isNextButton()」を準備．戻り値の型は boolean としておく．JSP側では以下のような実装を行う．</p>
+<pre>&lt;bean:define id="form" name="formName" type="com.hoge.forms.formName" /&gt;
+&lt;html:form action="/hogehoge"&gt;
+&lt;html:button value="NEXT" disabled="&lt;%= form.isNextButton() %&gt;" property="next" onclick="submit()"/&gt;
+&lt;/html:form&gt;</pre>
+<p>といった具合で実装．基本的にスクリプトレットは使用しない方針ですが，こういった場合はやむをえないので使用することとしました．もっとスマートな書き方ないかなぁ…．</p>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<hr class="sep">
+	
+<div class="day autopagerize_page_element">
+<h2><span class="date">
+<a href="./20040902.html">2004-09-02</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="./20040902.html#p01" title="WindowsXP SP2 日本語版公開"><span class="sanchor">_</span></a> WindowsXP SP2 日本語版公開</h3>
+<p>ついに日本語版が正式に公開されたらしいWindows XP SP2．<a href="http://www.forest.impress.co.jp/article/2004/09/01/winxpsp2.html">窓の杜</a>でも紹介されています．さて，このWinXPSP2ですが，どうも適用すると何かと問題が起きるらしい．らしい，というのはまだ私は試してないから．先週末試してみようとしたところHDDがお亡くなりになってしまったので…．<a href="http://www.microsoft.com/japan/presspass/detail.aspx?newsid=2016">Microsoft</a>では，</p>
+<blockquote><p>Windows XPユーザーは、Windows XP SP2を適用することにより、ウイルス、ワーム、および悪意のあるハッカーによる攻撃からの保護機能など、セキュリティに関する機能が大幅に強化され、PCのセキュリティ環境を大幅に向上させることが可能です。マイクロソフトは、個人ユーザーのWindows XP SP2の速やかな適用、および企業ユーザーの早期検証と適用を推奨します。</p>
+</blockquote>
+<p>だそうですが，個人ユーザーの速やかな適用の前に，自分の環境が果たしてSP2に対応しきれるのか，検討する必要があるのかもしれません．同じくMicrosoftからでている<a href="http://www.microsoft.com/japan/windowsxp/compatible/sp2/">ガイド</a>なんかを参考にしてみるといいかも．</p>
+
+</div>
+<div class="section">
+
+<h3><a href="./20040902.html#p02" title="Googleニュース　日本語版"><span class="sanchor">_</span></a> Googleニュース　日本語版</h3>
+<p><img class="right" src="http://www.smallstyle.com/images/20040902_0.jpg" alt="Googleニュース 日本語版" title="Googleニュース 日本語版" width="240"></p>
+<p>Googleで新しく<a href="http://news.google.co.jp/">Googleニュース 日本語版 Beta</a>が公開されました．ニュースを検索することは私の場合それほどないのですが…．ジャンルごとに各サイトのニュースが表示されていて，普通に最新のニュースを確認するだけでも十分に便利そうです．Googleは<a href="https://gmail.google.com/">Gmail</a>なんかのサービスもはじめたりしていますが，こっちの日本語版もそのうちでるのかな．1GBのメールボックスの使い道は，これまでの使い方とはまた違ったことができそう．</p>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<hr class="sep">
+	
+<div class="day autopagerize_page_element">
+<h2><span class="date">
+<a href="./20040904.html">2004-09-04</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="./20040904.html#p01" title="HDD交換"><span class="sanchor">_</span></a> HDD交換</h3>
+<p>先週末，突如異音をたてて逝ってしまったHDDにかわり新しいHDDを買ってきました．最後までHGSTかWDかで迷いましたが，初めて購入したPCのHDDがWDで未だ健在という実績をかってWDに決めました．買ったのは<a href="http://www.wdc.com/jp/products/products.asp?DriveID=57">WD Caviar SE Serial ATA 160 GB ハード・ドライブ ( WD1600JD )</a>．流通量から見れば明らかにHGSTの方が多いのだろうけど…．HGSTの方は160GBモデルは品切れだったからというのもありますが．</p>
+<p>さっそくフォーマットしてWindowsXP SP2統合CDでインストール．特に問題なくインストール完了．音に関しては特に気になる点はないな…と，思ったらどうも時々鈴虫がなくみたい．2chのWDスレでもこの手の話題はでているので，はずれを引いたかな…．まぁ，気にしなければほとんどわからないレベルなのでかまいませんが．発熱に関しても先代のMaxtorに比べればぜんぜん問題ないレベルでしょう．悪い買い物ではなかったと思います．さて，問題はこの死んだHDDからどうやってデータを救出するかだなぁ…．</p>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<hr class="sep">
+	
+<div class="day autopagerize_page_element">
+<h2><span class="date">
+<a href="./20040908.html">2004-09-08</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="./20040908.html#p01" title="Gmail"><span class="sanchor">_</span></a> Gmail</h3>
+<p>ある人から<a href="http://gmail.google.com">Gmail</a>への招待を受けて，私もGmailユーザーの一人となりました．このGmailですが，Googleのサービスのひとつで，HotmailやYahooメールのようなWebメールの一種です．いまのところ招待を受けた人しか使えないBetaテストといったところです．Gmailの特徴は無料にもかかわらず容量が1GBもあるといったところでしょうか．まぁ，1GBもメールを溜め込むなよといった感じもないわけではありませんが，あればあったで何かと便利なのではと思います．自分宛添付メールを送ってネットワークストレージとして扱うことだって，やろうと思えば可能なわけですから．そんな使い方をはじめれば1GBなんてあっという間でしょうね．</p>
+<p>…と，まぁ，招待されたのがつい昨日の話なので，まだ機能や使い方なんかをまったく把握できていないわけですが，週末にちょっといろいろ試してみようと思います．</p>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<hr class="sep">
+	
+<div class="day autopagerize_page_element">
+<h2><span class="date">
+<a href="./20040912.html">2004-09-12</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="./20040912.html#p01" title="Firefox Extention便利メモ"><span class="sanchor">_</span></a> Firefox Extention便利メモ</h3>
+<p>本格的にメインブラウザを<a href="http://www20.pos.to/%7Esleipnir/software/sleipnir/index.html">Sleipnir</a>から<a href="http://www.mozilla.org/products/firefox/">Firefox</a>に乗り換えようかと，とりあえずいろんな拡張を探して試してみた．タブブラウザを使い始めたころは<a href="http://www.kit.hi-ho.ne.jp/tomo-sg/">BugBrowser</a>を使い，その後<a href="http://www20.pos.to/%7Esleipnir/software/sleipnir/index.html">Sleipnir</a>に乗り換えた．<a href="http://www20.pos.to/%7Esleipnir/software/sleipnir/index.html">Sleipnir</a>は，かれこれ3年近く使っているのだろうか．これといって不満があるわけでもないのだが，IEコンポーネントということもあって，セキュリティ面を考えるとどうしても不安になってきた．<a href="http://www.mozilla.org/products/firefox/">Firefox</a>もFirebirdの頃から使ってはいたものの，使い勝手がどうもなじまず乗り換えるまでにはならなかった．その他のタブブラウザとしては<a href="http://www.opera.com/">Opera</a>なんかもあるけど広告がうざいので却下．</p>
+<p><a href="http://www.mozilla.org/products/firefox/">Firefox</a>のバージョンも0.93まできたし，そろそろ1.0もでそうなのと，便利なExtentionが増えてきて，<a href="http://www20.pos.to/%7Esleipnir/software/sleipnir/index.html">Sleipnir</a>から乗り換えてもそれほど不便でもないかなと思えてきたのが，乗り換え理由のもうひとつ．<a href="http://sage.mozdev.org/">Sage</a>なんかのRSS Reader Panelとか，<a href="http://www.mozilla.org/products/firefox/">Firefox</a>からWinampやMedia Playerなんかが操作できる<a href="http://www.iosart.com/foxytunes/firefox/">FoxTunes</a>なんかは結構使える．もちろんタブブラウザとしての機能を存分に発揮させる拡張もある．とりあえずは一通りの拡張を試して今は快適に使えています．</p>
+
+</div>
+<div class="section">
+
+<h3><a href="./20040912.html#p02" title="国土情報ウェブマッピングシステム（試作版）"><span class="sanchor">_</span></a> 国土情報ウェブマッピングシステム（試作版）</h3>
+<p>ちょっと古い航空写真になるけど自分の住んでる地域の航空写真をみることができました．<a href="http://w3land.mlit.go.jp/WebGIS/index.html">国土情報ウェブマッピングシステム（試作版）</a>で見ることができます．見たい場所を選んでいくと空中写真を見ることができます．私の住んでいる地域では昭和50年のものしか見られませんでしたが，400dpiだとかなり細かい部分まで見られました．</p>
+
+</div>
+<div class="section">
+
+<h3><a href="./20040912.html#p03" title="TrackBackのURLがおかしい"><span class="sanchor">_</span></a> TrackBackのURLがおかしい</h3>
+<p>TrackBack先に指定するURLが一部ユーザーディレクトリを表示しているものがあって，おかしいなぁと調べてみたら，どうも複数日記の運営の弊害かもしれないということで，調べたところ次のようにすればよいことがわかった．</p>
+<pre>def base_url
+   'http://www.smallstyle.com/'
+end</pre>
+<p>上記をtdiary.confに記述することで問題は解決しました．いくつかのページでキャッシュが残ってしまっていてまだおかしなところがいくつかあるかもしれません…．</p>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<hr class="sep">
+	
+<div class="day autopagerize_page_element">
+<h2><span class="date">
+<a href="./20040913.html">2004-09-13</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="./20040913.html#p01" title="Trayconizer"><span class="sanchor">_</span></a> Trayconizer</h3>
+<p>様々なWindowsのアプリケーションを立ち上げていると，タスクバーがいっぱいになってしまって見づらくなってしまったり，できればタスクトレイに入ってくれたらなぁなんてソフトがたまにあったります．標準で最小化したらタスクトレイに収まってくれるものはいいのですが，そうでないものもやはりあります．そんなときに役立つソフトが<a href="http://www.whitsoftdev.com/trayconizer/">Trayconizer</a>です．</p>
+<p>このアプリケーションのいいところは，Trayconizer自体がタスクトレイに現れないところ．アプリケーションを最小化したときに，タスクトレイに入れてくれるアプリケーションは他にもいくつかありますが，それ自体がタスクトレイに常駐したり，レジストリをいじったりと，今ひとつ納得いくものではありませんでした．Trayconizerはレジストリをいじらず，タスクトレイに常駐もしません．じゃぁどうなってるのかというと，プロセスとして常駐しているわけです．</p>
+<p>使い方はいたって簡単で，使いたいアプリケーションを起動するときに，Trayconizer のコマンドラインオプションに最小化した時にタスクトレイに入れたいアプリのパスを書いて起動するだけです．ためしにファイル名を指定して実行なんかで，次のコマンドを実行してみてください．</p>
+<pre>"C:\Program Files\trayconizerw\Trayconizer.exe" C:\winnt\notepad.exe</pre>
+<p>実行するとメモ帳が起動されると思います．このメモ帳を最小化するとタスクトレイに入ってくれるはずです．たいていのアプリケーションはうまくいくらしいですが，私の環境ではLotus Notesがタスクトレイには入りませんでした…残念．</p>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<hr class="sep">
+	
+<div class="day autopagerize_page_element">
+<h2><span class="date">
+<a href="./20040918.html">2004-09-18</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="./20040918.html#p01" title="Firefox覚書"><span class="sanchor">_</span></a> Firefox覚書</h3>
+<p>現在のFirefoxの最新バージョンは1.0PRですが，これまで使用していた拡張などが一部対応していないものもあります．私の環境ではBookmarkの表示をIEのように，フォルダを常に最大で一つだけ開かせるようにしするために，<a href="http://tkm.s31.xrea.com/xul/bx.shtml">BX</a>を使っていたのですが，これは最新版には対応していません．作者さんが休業中のためしばらく対応されなさそうな感じなので，自分でその場しのぎの対応をすることにしてみました．</p>
+<p><a href="http://diary.noasobi.net/0409.html#diary_040910">朝顔日記 Mozilla firefox 0.10 への移行</a>でその方法が紹介されています．対応方法としては，拡張を一度ローカルにダウンロードして拡張子.xpiを.zipに変更．変更したzipファイルを解凍して中にあるinstall.rdfを任意のエディターで開きます．その中の，</p>
+<pre>&lt;em:maxVersion&amp;gt;0.9+&amp;lt;/em:maxVersion&gt;</pre>
+<p>と書かれている部分を，</p>
+<pre>&lt;em:maxVersion&amp;gt;0.10+&amp;lt;/em:maxVersion&gt;</pre>
+<p>と変更します．あとは再度zipファイルに圧縮して拡張子を.xpiに変更し，インストールすれば使えました．すべての拡張に対してこれがうまくいくのかはわかりませんが，なんとかしてみたいときに試してみるといいかもしれません．でも，あくまで自己責任で…</p>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<hr class="sep">
+	
+<div class="day autopagerize_page_element">
+<h2><span class="date">
+<a href="./20040920.html">2004-09-20</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="./20040920.html#p01" title="tDiarySearchの設置"><span class="sanchor">_</span></a> tDiarySearchの設置</h3>
+<p>ここの日記ではカテゴリ分類をしていることである程度必要な情報の切り分けはできるのですが，日記のログもそれなりに増えてきたので検索機能をつけてみました．namazuでの検索も考えたのですが，<a href="http://i.loveruby.net/w/tdiarysearch.html">tDiarySearch</a>なるものをみつけたのでそちらを試してみることにしました．</p>
+<p>まず，<a href="http://i.loveruby.net/w/tdiarysearch.html">tDiarySearch</a>のページからtdiarysearch.txtをダウンロード．index.rbなどがおいてあるディレクトリと同じ場所に設置．日記のヘッダかフッタに以下を追記する．</p>
+<pre>&lt;form method="post" action="search.rb" class="grepform"&gt;
+&lt;input type="text" name="q" size="20" value=""&gt;
+&lt;input type="submit" value="Search"&gt;
+&lt;/form&gt;</pre>
+<p>新しくできた検索フォームに適当にキーワードを入れて実行してみる．うまく表示できれば完成．</p>
+
+</div>
+<div class="section">
+
+<h3><a href="./20040920.html#p02" title="tDiary Plugin入門"><span class="sanchor">_</span></a> tDiary Plugin入門</h3>
+<p>tDiaryのPluginの仕組みをちょっと勉強してみようとサンプルで作成してみた．探せばどこかで誰かがすでに作っていそうな，HTMLのHEADER部分を設定画面から編集できるようにしてみた，<a href="./sample/addheader.txt">addheader.rb</a>というPlugin．外部のJavaScriptなどを指定したいときに使えるかなぁと…．</p>
+<p>練習としては設定画面から値を変更できることや，tdiary.confに読み書きすること，そして入力した値が表示されるという点．それほど難しいことはしていないのですが，私でも簡単にPluginが作成できるのは，tDiaryの使用が拡張しやすいように設計されているからなんだと思いました．</p>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<hr class="sep">
+	
+<div class="day autopagerize_page_element">
+<h2><span class="date">
+<a href="./20040925.html">2004-09-25</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="./20040925.html#p01" title="Gmail情報いろいろ"><span class="sanchor">_</span></a> Gmail情報いろいろ</h3>
+<p>Gmailの便利な使い方について，いろいろ情報を集めてみたのでそれのまとめ．まず基本的なメール機能として便利なツールに，Googleから公式に出ているメールチェッカー，<a href="http://toolbar.google.com/gmail-helper/">Gmail Notifer</a>．これはWindowsのタスクトレイに常駐してメールを定期的にチェックしてくれるツール．新着メールがあるとポップアップでお知らせしてくれます．</p>
+<p>GmailはWebメールなので基本的にはブラウザを通してメールの送受信をすることが普通です．でも使い慣れたメーラーでGmailを使いたいなぁと思うかもしれません．そんなときに便利なのが，<a href="http://www.imizzy.com/gpopper/">gPopper</a>．このツールはOutlook，Outlook Express，Eudora，Thunderbirdといったメーラーから，Gmailサーバに対してPOP3/SMTP接続を可能にしてくれます．このツールを使うことでGmailサーバ上にあるメールをローカルのメーラーに保存することも可能です．</p>
+<p>ブラウザをここのところ人気急上昇中の<a href="http://www.mozilla.org/products/firefox/">Firefox</a>を使っている人にはぜひお勧めしたいのが，Extensionの<a href="http://www.nexgenmedia.net/extensions/">GMail Notifier</a>．これはFirefoxの拡張としてインストールできて，画像のようにブラウザの右下の部分に表示され未読件数なんかも表示できます．定期的にサーバへ新着チェックを行っていて，新着メールがある場合は本家の<a href="http://toolbar.google.com/gmail-helper/">Gmail Notifer</a>同様，ポップアップでお知らせしてくれます．マウス1クリックでGmailにアクセスもできて重宝してます．</p>
+<p><img class="right" src="http://www.smallstyle.com/images/20040925_0.gif" alt="GMail Notifer" title="GMail Notifer"></p>
+<p>少々反則気味な使い方としては，Gmailの持つ1GBというスペースをLinuxのファイルシステムとしてマウント，操作可能にして扱おうという，「<a href="http://richard.jones.name/google-hacks/gmail-filesystem/gmail-filesystem.html">GmailFS</a>」．世の中にはいろんなことを思いつく人がいるものです．<a href="http://lowlife.jp/yasusii/">Discreet Blog</a>さんのところでこの<a href="http://richard.jones.name/google-hacks/gmail-filesystem/gmail-filesystem.html">GmailFS</a>の使い方について解説されているので，興味のあるひとは見てみてはいかがでしょうか．</p>
+<p>もうひとつ紹介しておくとGmailをblogとして使ってしまおうなんていう「<a href="http://ion.gluch.org.mx/files/Hacks/gallina/">Gallina</a>」．こうなるとなんでもありかと思えてきますね…．</p>
+<p>最後2つ紹介したものに関しては，Googleさまがダメって言ったらダメになっちゃうだろうから，やる人はあくまで自己責任で．アカウント消されたとしても泣かないこと．</p>
+<p>さて，このGmailですが，Yahoo!メールやMSN Hotmailなどの他のWebメールに向けてメールを送信すると文字化けします．これはGmailからメールを送信するときに送られるヘッダ情報がこれまでのものと異なるからです．文字化けの原因となっているのは，</p>
+<pre>Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: base64</pre>
+<p>この記述によって文字化けを引き起こしています．一般的に日本語でのメールの場合，エンコード方式はiso-2022-jpが標準となっています．そのためUTF-8で送信されたGmailからのメールをその他のWebメールで受信すると，エンコード方式の違いから文字化けしてしまうのです．エンコード方式の違いによる文字化けへの対応はWebメールサービスを提供している会社によりまちまちだそうですが，将来的には対応されていくことを望みます．</p>
+<div class="sequel">つづき: <a href="http://www.smallstyle.com/20041011.html#p01">2004-10-11</a></div>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<hr class="sep">
+	
+<div class="day autopagerize_page_element">
+<h2><span class="date">
+<a href="./20040927.html">2004-09-27</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="./20040927.html#p01" title="赤黒鉛筆登場"><span class="sanchor">_</span></a> 赤黒鉛筆登場</h3>
+<p>1週間ほど前のネタですが<a href="http://k-tai.impress.co.jp/cda/article/todays_goods/20418.html">ケータイWatch 本日の一品</a>で紹介されてたものです．これまで赤青鉛筆は何度も目にしてきたけど，赤黒鉛筆は見たことがなかった．なんでないんだろうと自分で考えていたのは，普通の鉛筆と色鉛筆の黒は，書いたときの硬さか，色の感じが違うからかなぁと．じゃぁ普通の鉛筆の芯を使えばとかそういう発想はなく，普通に赤黒鉛筆の黒は色鉛筆の黒だと思い込んでいました．</p>
+<p>今回，新しく発売されるこの赤黒鉛筆の黒の部分は，ちゃんとした黒の鉛筆の芯だ．</p>
+<blockquote><p>従来、「黒赤鉛筆」ができなかった理由は、基本的に黒芯と色芯の直径の太さの差が問題であったらしい。確かに、普通の鉛筆の黒芯と比較して色鉛筆の色芯は少し太めだ。鉛筆の芯はご存じのように、黒鉛と粘度から作られ、すべての芯が同じ太さの直径であることが前提で、薄い板の上にできあがった芯を平行に何本か並べ、それをサンドイッチするように上板を載せて接着、その後、芯を中心に細長く六角形や円形に切り取って、できあがるのである。</p>
+</blockquote>
+<p>ほぉ，そういう理由だったのか．そういえば昔，NHK教育テレビかなんかで色鉛筆をつくる工程を放送しているのを見たことがあるような気がする．確かにそんな作り方だった感じが頭の片隅に残っている．でもまぁ，私の場合，鉛筆そのものを使う機会が中学を卒業してからめっきり減ってしまい，シャープペンシルやボールペンが活躍し，お目にかかることもないだろうなとも思うのでありました．今の小学生とかはやっぱり鉛筆使ってるのかな…？</p>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<hr class="sep">
+
+</div>
+
+
+
+
+
+<div class="additional_information">
+<div class="information">
+<h4>about me</h4>
+<div itemscope itemtype="http://data-vocabulary.org/Person">
+<dl>
+<p>いろいろと興味を持ったことを書いてます．ちょっとしたことは <a href="http://twitter.com/smallstyle"><span itemprop="name">hb</span>(@<span itemprop="nickname">smallstyle</span>) on Twitter</a> で書いてます．</p>
+</div>
+
+<h4>Archive</h4>
+<div class="calendar">
+<div class="year">2003|<a href="./200301.html">01</a>|<a href="./200302.html">02</a>|<a href="./200303.html">03</a>|<a href="./200304.html">04</a>|<a href="./200305.html">05</a>|<a href="./200306.html">06</a>|<a href="./200307.html">07</a>|<a href="./200308.html">08</a>|<a href="./200309.html">09</a>|<a href="./200310.html">10</a>|<a href="./200311.html">11</a>|<a href="./200312.html">12</a>|</div>
+<div class="year">2004|<a href="./200401.html">01</a>|<a href="./200402.html">02</a>|<a href="./200403.html">03</a>|<a href="./200404.html">04</a>|<a href="./200405.html">05</a>|<a href="./200406.html">06</a>|<a href="./200407.html">07</a>|<a href="./200408.html">08</a>|<a href="./200409.html">09</a>|<a href="./200410.html">10</a>|<a href="./200411.html">11</a>|<a href="./200412.html">12</a>|</div>
+<div class="year">2005|<a href="./200501.html">01</a>|<a href="./200502.html">02</a>|<a href="./200503.html">03</a>|<a href="./200504.html">04</a>|<a href="./200505.html">05</a>|<a href="./200506.html">06</a>|<a href="./200507.html">07</a>|<a href="./200508.html">08</a>|<a href="./200509.html">09</a>|<a href="./200510.html">10</a>|<a href="./200511.html">11</a>|<a href="./200512.html">12</a>|</div>
+<div class="year">2006|<a href="./200601.html">01</a>|<a href="./200602.html">02</a>|<a href="./200603.html">03</a>|<a href="./200604.html">04</a>|<a href="./200605.html">05</a>|<a href="./200606.html">06</a>|<a href="./200607.html">07</a>|<a href="./200608.html">08</a>|<a href="./200609.html">09</a>|<a href="./200610.html">10</a>|<a href="./200611.html">11</a>|<a href="./200612.html">12</a>|</div>
+<div class="year">2007|<a href="./200701.html">01</a>|<a href="./200702.html">02</a>|<a href="./200703.html">03</a>|<a href="./200704.html">04</a>|<a href="./200705.html">05</a>|<a href="./200706.html">06</a>|<a href="./200707.html">07</a>|<a href="./200708.html">08</a>|<a href="./200709.html">09</a>|<a href="./200710.html">10</a>|<a href="./200711.html">11</a>|<a href="./200712.html">12</a>|</div>
+<div class="year">2008|<a href="./200801.html">01</a>|<a href="./200802.html">02</a>|<a href="./200803.html">03</a>|<a href="./200804.html">04</a>|<a href="./200805.html">05</a>|<a href="./200806.html">06</a>|<a href="./200807.html">07</a>|<a href="./200808.html">08</a>|<a href="./200809.html">09</a>|<a href="./200810.html">10</a>|<a href="./200812.html">12</a>|</div>
+<div class="year">2009|<a href="./200901.html">01</a>|<a href="./200902.html">02</a>|<a href="./200903.html">03</a>|<a href="./200904.html">04</a>|<a href="./200905.html">05</a>|<a href="./200906.html">06</a>|<a href="./200907.html">07</a>|<a href="./200908.html">08</a>|<a href="./200909.html">09</a>|<a href="./200910.html">10</a>|<a href="./200911.html">11</a>|<a href="./200912.html">12</a>|</div>
+<div class="year">2010|<a href="./201001.html">01</a>|<a href="./201002.html">02</a>|<a href="./201003.html">03</a>|<a href="./201004.html">04</a>|<a href="./201005.html">05</a>|<a href="./201006.html">06</a>|<a href="./201007.html">07</a>|<a href="./201008.html">08</a>|<a href="./201009.html">09</a>|<a href="./201010.html">10</a>|<a href="./201011.html">11</a>|<a href="./201012.html">12</a>|</div>
+<div class="year">2011|<a href="./201101.html">01</a>|<a href="./201102.html">02</a>|<a href="./201103.html">03</a>|<a href="./201104.html">04</a>|<a href="./201105.html">05</a>|<a href="./201106.html">06</a>|<a href="./201107.html">07</a>|<a href="./201108.html">08</a>|<a href="./201109.html">09</a>|<a href="./201110.html">10</a>|<a href="./201111.html">11</a>|<a href="./201112.html">12</a>|</div>
+<div class="year">2012|<a href="./201201.html">01</a>|<a href="./201202.html">02</a>|<a href="./201203.html">03</a>|<a href="./201204.html">04</a>|<a href="./201205.html">05</a>|<a href="./201206.html">06</a>|<a href="./201207.html">07</a>|<a href="./201208.html">08</a>|<a href="./201209.html">09</a>|<a href="./201210.html">10</a>|<a href="./201211.html">11</a>|<a href="./201212.html">12</a>|</div>
+<div class="year">2013|<a href="./201301.html">01</a>|<a href="./201302.html">02</a>|<a href="./201303.html">03</a>|<a href="./201304.html">04</a>|<a href="./201305.html">05</a>|<a href="./201306.html">06</a>|<a href="./201307.html">07</a>|<a href="./201308.html">08</a>|<a href="./201309.html">09</a>|<a href="./201310.html">10</a>|<a href="./201311.html">11</a>|<a href="./201312.html">12</a>|</div>
+<div class="year">2014|<a href="./201401.html">01</a>|<a href="./201402.html">02</a>|<a href="./201403.html">03</a>|<a href="./201404.html">04</a>|<a href="./201405.html">05</a>|<a href="./201406.html">06</a>|<a href="./201407.html">07</a>|<a href="./201408.html">08</a>|<a href="./201409.html">09</a>|<a href="./201410.html">10</a>|<a href="./201411.html">11</a>|<a href="./201412.html">12</a>|</div>
+<div class="year">2015|<a href="./201501.html">01</a>|<a href="./201502.html">02</a>|<a href="./201503.html">03</a>|<a href="./201504.html">04</a>|<a href="./201505.html">05</a>|<a href="./201506.html">06</a>|<a href="./201507.html">07</a>|<a href="./201508.html">08</a>|<a href="./201509.html">09</a>|<a href="./201510.html">10</a>|<a href="./201511.html">11</a>|<a href="./201512.html">12</a>|</div>
+<div class="year">2016|<a href="./201601.html">01</a>|<a href="./201602.html">02</a>|<a href="./201603.html">03</a>|<a href="./201604.html">04</a>|<a href="./201605.html">05</a>|<a href="./201606.html">06</a>|<a href="./201607.html">07</a>|<a href="./201608.html">08</a>|<a href="./201609.html">09</a>|<a href="./201612.html">12</a>|</div>
+</div>
+
+</div>
+
+<hr>
+
+
+
+</div>
+<div class="adminmenu"><span class="adminmenu"><a href="./200408.html">&laquo;前月</a></span>
+<span class="adminmenu"><a href="./">最新</a></span>
+<span class="adminmenu"><a href="./200410.html">翌月&raquo;</a></span>
+</div>
+</div>
+<ul class="plugin-counter">
+<li>Yesterday: <span class="counter-yesterday"><span class="counter-0"><span class="counter-num-1">1</span></span><span class="counter-1"><span class="counter-num-6">6</span></span><span class="counter-2"><span class="counter-num-9">9</span></span></span></li>
+<li>Today:<span class="counter-today"><span class="counter-0"><span class="counter-num-1">1</span></span><span class="counter-1"><span class="counter-num-4">4</span></span><span class="counter-2"><span class="counter-num-9">9</span></span></span></li>
+<li>Total:<span class="counter"><span class="counter-0"><span class="counter-num-1">1</span></span><span class="counter-1"><span class="counter-num-0">0</span></span><span class="counter-2"><span class="counter-num-2">2</span></span><span class="counter-3"><span class="counter-num-8">8</span></span><span class="counter-4"><span class="counter-num-2">2</span></span><span class="counter-5"><span class="counter-num-1">1</span></span><span class="counter-6"><span class="counter-num-7">7</span></span></span></li>
+</ul>
+
+
+
+
+
+
+<div class="footer">
+Generated by <a href="http://www.tdiary.org/">tDiary</a> version 3.2.1<br>
+Powered by <a href="http://www.ruby-lang.org/">Ruby</a> version 1.9.3-p194
+</div>
+</div>
+</body>
+</html>

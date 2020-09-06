@@ -1,0 +1,258 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="ja-JP">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="generator" content="tDiary 3.2.1">
+	<meta http-equiv="Last-Modified" content="Wed, 20 Oct 2010 12:32:31 GMT">
+	<meta http-equiv="Content-Script-Type" content="text/javascript; charset=UTF-8">
+	<meta name="author" content="hb">
+	
+	<link rel="start" title="最新" href="./">
+	<link rel="alternate" media="handheld" type="text/html" href="http://www.smallstyle.com/">
+	<link rel="shortcut icon" href="favicon.ico">
+	<meta name="description" content="日々，気になったことを書き留める日記">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js" type="text/javascript"></script>
+	<script src="js/00default.js?3.2.120200906" type="text/javascript"></script>
+		<script type="text/javascript"><!--
+		$tDiary.style = 'wiki';
+		//-->
+		</script>
+	<meta http-equiv="content-style-type" content="text/css">
+	<link rel="stylesheet" href="theme/base.css" type="text/css" media="all">
+	<link rel="stylesheet" href="stylesheets/smallstyle-2010/smallstyle-2010.css" title="smallstyle-2010" type="text/css" media="all">
+	
+	<title>SmallStyle</title>
+	
+	<link rel="author" href="https://plus.google.com/116137028933519395680">
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.smallstyle.com/smallstyle">
+	<link rel="alternate" type="application/rss+xml" title="RSS(without comments)" href="http://feeds.smallstyle.com/smallstyle_no_comments">
+	<style type="text/css" media="all"><!--
+	div.sequel {
+		font-size: 75%;
+		text-align: right;
+		margin: 0px;
+	}
+	--></style>
+</head>
+<body>
+<div class="whole-content">
+
+<div class="adminmenu"><div class="adminmenu">
+<span class="adminmenu"><a href="./20050316-3.html" rel="next">&laquo;前3日分</a></span>
+<span class="adminmenu"><a href="./">最新</a></span>
+<span class="adminmenu"><a href="./20050324-3.html" rel="prev">次3日分&raquo;</a></span>
+</div>
+</div>
+<h1><a href="http://www.smallstyle.com/">SmallStyle</a></h1>
+<div class="content">
+<div class="main">
+
+<hr class="sep">
+
+
+	
+<div class="day autopagerize_page_element">
+<h2><span class="date">
+<a href="./20050320.html">2005-03-20</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="./20050320.html#p01" title="Thunderbirdのヘッダ表示をスクロール可能にする"><span class="sanchor">_</span></a> Thunderbirdのヘッダ表示をスクロール可能にする</h3>
+<p><a href="http://level.s69.xrea.com/mozilla/index.cgi?id=20050320_TB_HedareScroll">えむもじら</a>経由，<a href="http://www.mozilla.gr.jp/forums/">Mozilla組フォーラム</a>で，<a href="http://www.mozilla.gr.jp/forums/?mode=one&amp;namber=17184&amp;type=17164&amp;space=15&amp;">Thunderbirdのヘッダ情報を表示する際にヘッダ部分をスクロール可能にする，userChrome.cssの設定が紹介</a>されていました．先日，あるMLのヘッダだけですべて埋め尽くされてしまって見づらいなぁと思っていたところに，ちょうどいい情報でした．</p>
+<pre>#msgHeaderView {
+  max-height: 12em !important;
+}
+#expandedHeaderView {
+  overflow: auto !important;
+}</pre>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<hr class="sep">
+	
+<div class="day autopagerize_page_element">
+<h2><span class="date">
+<a href="./20050318.html">2005-03-18</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="./20050318.html#p01" title="DB2オンラインマニュアル全文検索plugin"><span class="sanchor">_</span></a> DB2オンラインマニュアル全文検索plugin</h3>
+<p><a href="http://www.db2.jp/index.html">DB2.jp</a>で公開されている，<a href="http://www.db2.jp/cgi-bin/namazu.cgi">DB2インフォメーション・センターの全文検索</a>をFirefoxから検索できるようにします．これが必要な人ってほとんどいないとは思うのですが…．</p>
+<pre># DB2
+
+&lt;search
+        name="DB2 Online Manual"
+        description="DB2 Online Manual"
+        sourceTextEncoding="1"
+        method="GET"
+        action="http://www.db2.jp/cgi-bin/namazu.cgi"
+
+        queryEncoding="EUC-JP"
+        queryCharset="EUC-JP"
+&gt;
+
+&lt;input name="query" user&gt;
+&lt;input name="whence" value="0"&gt;
+&lt;input name="max" value="30"&gt;
+&lt;input name="result" value="normal"&gt;
+&lt;input name="sort" value="score"&gt;
+&lt;interpret
+        browserResultType="result"
+        charset = "EUC-JP"
+&gt;
+&lt;/search&gt;</pre>
+<p>DB2でちょっと調べ物をしたいときに利用できます．導入は<a href="fxsearch/">プラグイン置き場</a>から．</p>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<hr class="sep">
+	
+<div class="day autopagerize_page_element">
+<h2><span class="date">
+<a href="./20050317.html">2005-03-17</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="./20050317.html#p01" title="Google X 行方不明"><span class="sanchor">_</span></a> Google X 行方不明</h3>
+<p><a href="http://www.smallstyle.com/20050316.html">昨日紹介した「Google X」</a>ですが，<a href="http://japan.cnet.com/news/media/story/0,2000047715,20081403,00.htm">公開1日にして行方不明</a>です．</p>
+
+</div>
+<div class="section">
+
+<h3><a href="./20050317.html#p02" title="雨でもやっぱり花粉症"><span class="sanchor">_</span></a> 雨でもやっぱり花粉症</h3>
+<p>今日は朝から雨が降っていたので，そんなに花粉も飛んでいないだろうと勝手に判断したのが間違いでした．普段は家を出る前にマスクを着用して会社に向かうのですが，雨だから，ってそれだけの理由でマスクをつけませんでした．駅に着くまでのほんの10分ほどで目はかゆくなる，くしゃみ・鼻水が止まらない…．今年の花粉をなめすぎました．</p>
+<p>今年は年明けあたりから，<a href="http://www.orbis.co.jp/">ORBIS</a>の<a href="https://www.orbis.co.jp/Shop/small.asp?id=6205010">甜茶シソエキス</a>のサプリメントで対策をとっていたからか，ここのところ結構調子よかったのですが…．そんなわけで手持ちのポケットティシューも底をついてしまったので昼休みに急遽，BOXティシューを調達へ．5箱で239円くらいのがあったのですが，会社にストックしておく場所もないし，残ったのを持って帰るのも面倒なのと，鼻が痛くなるのを考えて，「<a href="http://www.kleenex.jp/lineup/index.html">クリネックス アロエ ローション ティシュー</a>」を購入．お値段は1箱で207円と高めですが，それだけのことはある．使い心地はそこらのものとはくらべものになりません．この春はこのティシューとともに乗り越えようと思うのでありました．</p>
+<p>ちなみに<a href="http://kiwam.s57.xrea.com/">PROP@kamba</a>の<a href="http://kiwam.s57.xrea.com/archives/000195.html">保湿ティッシュランキング</a>によるともっとも使い心地がよかったのは「<a href="http://www.elleair.co.jp/product/tissue/tissue.html">エリエール　ローションティシュー</a>」がよかったとか．これは今日買いに行った店では見かけなかったのですが，どこかで見つけたら試してみようと思います．</p>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<hr class="sep">
+
+</div>
+
+
+
+
+
+<div class="additional_information">
+<div class="information">
+<h4>about me</h4>
+<div itemscope itemtype="http://data-vocabulary.org/Person">
+<dl>
+<p>いろいろと興味を持ったことを書いてます．ちょっとしたことは <a href="http://twitter.com/smallstyle"><span itemprop="name">hb</span>(@<span itemprop="nickname">smallstyle</span>) on Twitter</a> で書いてます．</p>
+</div>
+
+<h4>Archive</h4>
+<div class="calendar">
+<div class="year">2003|<a href="./200301.html">01</a>|<a href="./200302.html">02</a>|<a href="./200303.html">03</a>|<a href="./200304.html">04</a>|<a href="./200305.html">05</a>|<a href="./200306.html">06</a>|<a href="./200307.html">07</a>|<a href="./200308.html">08</a>|<a href="./200309.html">09</a>|<a href="./200310.html">10</a>|<a href="./200311.html">11</a>|<a href="./200312.html">12</a>|</div>
+<div class="year">2004|<a href="./200401.html">01</a>|<a href="./200402.html">02</a>|<a href="./200403.html">03</a>|<a href="./200404.html">04</a>|<a href="./200405.html">05</a>|<a href="./200406.html">06</a>|<a href="./200407.html">07</a>|<a href="./200408.html">08</a>|<a href="./200409.html">09</a>|<a href="./200410.html">10</a>|<a href="./200411.html">11</a>|<a href="./200412.html">12</a>|</div>
+<div class="year">2005|<a href="./200501.html">01</a>|<a href="./200502.html">02</a>|<a href="./200503.html">03</a>|<a href="./200504.html">04</a>|<a href="./200505.html">05</a>|<a href="./200506.html">06</a>|<a href="./200507.html">07</a>|<a href="./200508.html">08</a>|<a href="./200509.html">09</a>|<a href="./200510.html">10</a>|<a href="./200511.html">11</a>|<a href="./200512.html">12</a>|</div>
+<div class="year">2006|<a href="./200601.html">01</a>|<a href="./200602.html">02</a>|<a href="./200603.html">03</a>|<a href="./200604.html">04</a>|<a href="./200605.html">05</a>|<a href="./200606.html">06</a>|<a href="./200607.html">07</a>|<a href="./200608.html">08</a>|<a href="./200609.html">09</a>|<a href="./200610.html">10</a>|<a href="./200611.html">11</a>|<a href="./200612.html">12</a>|</div>
+<div class="year">2007|<a href="./200701.html">01</a>|<a href="./200702.html">02</a>|<a href="./200703.html">03</a>|<a href="./200704.html">04</a>|<a href="./200705.html">05</a>|<a href="./200706.html">06</a>|<a href="./200707.html">07</a>|<a href="./200708.html">08</a>|<a href="./200709.html">09</a>|<a href="./200710.html">10</a>|<a href="./200711.html">11</a>|<a href="./200712.html">12</a>|</div>
+<div class="year">2008|<a href="./200801.html">01</a>|<a href="./200802.html">02</a>|<a href="./200803.html">03</a>|<a href="./200804.html">04</a>|<a href="./200805.html">05</a>|<a href="./200806.html">06</a>|<a href="./200807.html">07</a>|<a href="./200808.html">08</a>|<a href="./200809.html">09</a>|<a href="./200810.html">10</a>|<a href="./200812.html">12</a>|</div>
+<div class="year">2009|<a href="./200901.html">01</a>|<a href="./200902.html">02</a>|<a href="./200903.html">03</a>|<a href="./200904.html">04</a>|<a href="./200905.html">05</a>|<a href="./200906.html">06</a>|<a href="./200907.html">07</a>|<a href="./200908.html">08</a>|<a href="./200909.html">09</a>|<a href="./200910.html">10</a>|<a href="./200911.html">11</a>|<a href="./200912.html">12</a>|</div>
+<div class="year">2010|<a href="./201001.html">01</a>|<a href="./201002.html">02</a>|<a href="./201003.html">03</a>|<a href="./201004.html">04</a>|<a href="./201005.html">05</a>|<a href="./201006.html">06</a>|<a href="./201007.html">07</a>|<a href="./201008.html">08</a>|<a href="./201009.html">09</a>|<a href="./201010.html">10</a>|<a href="./201011.html">11</a>|<a href="./201012.html">12</a>|</div>
+<div class="year">2011|<a href="./201101.html">01</a>|<a href="./201102.html">02</a>|<a href="./201103.html">03</a>|<a href="./201104.html">04</a>|<a href="./201105.html">05</a>|<a href="./201106.html">06</a>|<a href="./201107.html">07</a>|<a href="./201108.html">08</a>|<a href="./201109.html">09</a>|<a href="./201110.html">10</a>|<a href="./201111.html">11</a>|<a href="./201112.html">12</a>|</div>
+<div class="year">2012|<a href="./201201.html">01</a>|<a href="./201202.html">02</a>|<a href="./201203.html">03</a>|<a href="./201204.html">04</a>|<a href="./201205.html">05</a>|<a href="./201206.html">06</a>|<a href="./201207.html">07</a>|<a href="./201208.html">08</a>|<a href="./201209.html">09</a>|<a href="./201210.html">10</a>|<a href="./201211.html">11</a>|<a href="./201212.html">12</a>|</div>
+<div class="year">2013|<a href="./201301.html">01</a>|<a href="./201302.html">02</a>|<a href="./201303.html">03</a>|<a href="./201304.html">04</a>|<a href="./201305.html">05</a>|<a href="./201306.html">06</a>|<a href="./201307.html">07</a>|<a href="./201308.html">08</a>|<a href="./201309.html">09</a>|<a href="./201310.html">10</a>|<a href="./201311.html">11</a>|<a href="./201312.html">12</a>|</div>
+<div class="year">2014|<a href="./201401.html">01</a>|<a href="./201402.html">02</a>|<a href="./201403.html">03</a>|<a href="./201404.html">04</a>|<a href="./201405.html">05</a>|<a href="./201406.html">06</a>|<a href="./201407.html">07</a>|<a href="./201408.html">08</a>|<a href="./201409.html">09</a>|<a href="./201410.html">10</a>|<a href="./201411.html">11</a>|<a href="./201412.html">12</a>|</div>
+<div class="year">2015|<a href="./201501.html">01</a>|<a href="./201502.html">02</a>|<a href="./201503.html">03</a>|<a href="./201504.html">04</a>|<a href="./201505.html">05</a>|<a href="./201506.html">06</a>|<a href="./201507.html">07</a>|<a href="./201508.html">08</a>|<a href="./201509.html">09</a>|<a href="./201510.html">10</a>|<a href="./201511.html">11</a>|<a href="./201512.html">12</a>|</div>
+<div class="year">2016|<a href="./201601.html">01</a>|<a href="./201602.html">02</a>|<a href="./201603.html">03</a>|<a href="./201604.html">04</a>|<a href="./201605.html">05</a>|<a href="./201606.html">06</a>|<a href="./201607.html">07</a>|<a href="./201608.html">08</a>|<a href="./201609.html">09</a>|<a href="./201612.html">12</a>|</div>
+</div>
+
+</div>
+
+<hr>
+
+
+
+</div>
+<div class="adminmenu"><span class="adminmenu"><a href="./20050316-3.html" rel="next">&laquo;前3日分</a></span>
+<span class="adminmenu"><a href="./">最新</a></span>
+<span class="adminmenu"><a href="./20050324-3.html" rel="prev">次3日分&raquo;</a></span>
+</div>
+</div>
+<ul class="plugin-counter">
+<li>Yesterday: <span class="counter-yesterday"><span class="counter-0"><span class="counter-num-1">1</span></span><span class="counter-1"><span class="counter-num-6">6</span></span><span class="counter-2"><span class="counter-num-9">9</span></span></span></li>
+<li>Today:<span class="counter-today"><span class="counter-0"><span class="counter-num-1">1</span></span><span class="counter-1"><span class="counter-num-4">4</span></span><span class="counter-2"><span class="counter-num-9">9</span></span></span></li>
+<li>Total:<span class="counter"><span class="counter-0"><span class="counter-num-1">1</span></span><span class="counter-1"><span class="counter-num-0">0</span></span><span class="counter-2"><span class="counter-num-2">2</span></span><span class="counter-3"><span class="counter-num-8">8</span></span><span class="counter-4"><span class="counter-num-2">2</span></span><span class="counter-5"><span class="counter-num-1">1</span></span><span class="counter-6"><span class="counter-num-7">7</span></span></span></li>
+</ul>
+
+
+
+
+
+
+<div class="footer">
+Generated by <a href="http://www.tdiary.org/">tDiary</a> version 3.2.1<br>
+Powered by <a href="http://www.ruby-lang.org/">Ruby</a> version 1.9.3-p194
+</div>
+</div>
+</body>
+</html>

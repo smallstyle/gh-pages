@@ -1,0 +1,212 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="ja-JP">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="generator" content="tDiary 3.2.1">
+	<meta http-equiv="Last-Modified" content="Mon, 17 Aug 2009 20:50:25 GMT">
+	<meta http-equiv="Content-Script-Type" content="text/javascript; charset=UTF-8">
+	<meta name="author" content="hb">
+	
+	<link rel="prev" title="前の日記(2006-08-19)" href="./20060819.html">
+	<link rel="next" title="次の日記(2006-08-23)" href="./20060823.html">
+	<link rel="start" title="最新" href="./">
+	<link rel="alternate" media="handheld" type="text/html" href="http://www.smallstyle.com/20060821.html">
+	<link rel="shortcut icon" href="favicon.ico">
+	<meta name="description" content="日々，気になったことを書き留める日記">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js" type="text/javascript"></script>
+	<script src="js/00default.js?3.2.120200906" type="text/javascript"></script>
+	<script src="js/highlight.js?3.2.120200906" type="text/javascript"></script>
+		<script type="text/javascript"><!--
+		$tDiary.style = 'wiki';
+		$tDiary.title = "SmallStyle(2006-08-21)";
+		//-->
+		</script>
+	<meta http-equiv="content-style-type" content="text/css">
+	<link rel="stylesheet" href="theme/base.css" type="text/css" media="all">
+	<link rel="stylesheet" href="stylesheets/smallstyle-2010/smallstyle-2010.css" title="smallstyle-2010" type="text/css" media="all">
+	
+	<title> tDiary の更新時に mixi の日記も更新するプラグイン - SmallStyle(2006-08-21)</title>
+	
+	<link rel="author" href="https://plus.google.com/116137028933519395680">
+		<style type="text/css"><!--
+			form.comment div.mail { display: none; }
+		--></style>
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.smallstyle.com/smallstyle">
+	<link rel="alternate" type="application/rss+xml" title="RSS(without comments)" href="http://feeds.smallstyle.com/smallstyle_no_comments">
+	<style type="text/css" media="all"><!--
+	div.sequel {
+		font-size: 75%;
+		text-align: right;
+		margin: 0px;
+	}
+	--></style>
+</head>
+<body>
+<div class="whole-content">
+
+<div class="adminmenu"><div class="adminmenu">
+<span class="adminmenu"><a href="./20060819.html">&laquo;前の日記(2006-08-19)</a></span>
+<span class="adminmenu"><a href="./">最新</a></span>
+<span class="adminmenu"><a href="./20060823.html">次の日記(2006-08-23)&raquo;</a></span>
+</div>
+</div>
+<h1><a href="http://www.smallstyle.com/">SmallStyle</a></h1>
+<div class="content">
+<div class="main">
+
+<hr class="sep">
+
+
+	
+<div class="day autopagerize_page_element">
+<h2><span class="date">
+<a href="./20060821.html">2006-08-21</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a name="p01" href="./20060821.html#p01" title="tDiary の更新時に mixi の日記も更新するプラグイン"><span class="sanchor">_</span></a> tDiary の更新時に mixi の日記も更新するプラグイン</h3>
+<p><strong>【注意】mixi の仕様変更のためこのプラグインは現在正常に動作しません</strong></p>
+<p><a href="http://www.smallstyle.com/20060531.html#p01">だいぶ前に，mixi の日記を携帯メールを使って外部日記から更新するツールを作って</a>，mixi と外部日記の連携をしていたのですが，夏休みを利用して tDiary のプラグインとして利用できるように作り直してみました．</p>
+<p>外部の日記にコメントをいれるのはちょっと…という人でも，mixi に同じエントリがあればコメントしやすいかなってのがこのプラグインを作ったそもそもの動機．</p>
+<p>このプラグインでは，日記更新時に，サブタイトルをメールの件名，日記本文をメール本文としてメールを送信します．最初，メール送信部分もプラグインに含めようかとも思ったけど，ツコッミメール系プラグインが使えそうだったので，実装しませんでした．ちなみにツッコミメールプラグインを利用していますが，ツッコミメールを送信しない設定 (@options['comment_mail.enable']=false) でも，mixi 日記更新はされるようになっています．</p>
+<p>mixi の日記をメールを利用して更新した場合，送信したメールはすべて新規の日記となるので，一度送信したセクションは再送信しないようになっています．したがって，日記の内容を変更しても，mixi の日記は自動で変更できません．修正したい場合は直接 mixi の日記を修正してください．</p>
+<p>送信する日記の内容は，全文を送信するか，冒頭の 500 バイトを送信するかを設定できます．mixi の日記を更新するかどうかは，日記更新画面に，「mixi 日記を更新する」のチェックボックスがあるので，チェックをいれると更新されます．また，「この日の日記を隠す」にチェックが入っている場合は更新されません．デフォルトでは，「mixi 日記を更新する」はチェックが off になっていますが，設定でデフォルト on にすることも可能です．</p>
+<ul>
+<li><del><a href="./lab/mixi_update.tar.gz">mixi_update.tar.gz</a></del>(mixi の仕様変更により現在利用できません)</li>
+</ul>
+<p>プラグインファイルの構成は以下のようになります．</p>
+<ul>
+<li>mixi_update<ul>
+<li>mixi_update.rb</li>
+<li>ja<ul>
+<li>mixi_update.rb</li>
+</ul></li>
+<li>skel<ul>
+<li>miximail.rtxt</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>mixi_update.rb はプラグイン，言語リソースそれぞれ配置してください．また skel 以下の，miximail.rtxt は，tDiary インストールディレクトリの skel 以下に配置してください．</p>
+<p>設定項目は，必要に応じて以下を tdiary.conf に記述してください．</p>
+<dl>
+<dt>更新用 mixi のメールアドレス(必須)</dt>
+<dd>@options['mixi_update.send_address'] = 'xxxxxxxxxx@d.mixi.jp'
+</dd>
+<dt>mixi 日記を更新する(必須，デフォルト false)</dt>
+<dd>@options['mixi_update.enable'] = true
+</dd>
+<dt>「mixi 日記を更新する」のチェックをいれる(デフォルト false)</dt>
+<dd>@options['mixi_update.checked'] = true
+</dd>
+<dt>送信する本文を省略する(デフォルト false)</dt>
+<dd>@options['mixi_update.shorten'] = true
+</dd>
+</dl>
+<p>送信するメールアドレスは別に mixi でなくても送信できるので，別のアドレスを利用して送信テストも可能です．</p>
+<p>なお，mixi_update プラグインとあわせてツッコミメール系のプラグイン (comment_mail-xxx) をどれか有効にしておいてください．ツッコミメールプラグインがどれも選択されていなかったり，mixi_update.enable が false になっている場合は，日記更新画面で，「mixi 日記を更新する」は表示されず，「mixi 日記更新プラグインを実行できません」と表示されます．</p>
+<p>mixi の日記と tDiary を連携させてみたい方はどうぞご利用くださいませ．</p>
+<div class="sequel">つづき: <a href="http://www.smallstyle.com/20061230.html#p01">2006-12-30</a></div>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+		<div class="caption">本日のツッコミ(全1件) [<a name="c00" href="./20060821.html#c">ツッコミを入れる</a>]</div>
+		<div class="commentbody">
+				<div class="commentator">
+					<a name="c01" href="./20060821.html#c01"><span class="canchor">_</span></a>
+					<span class="commentator">TrackBack</span>
+					<span class="commenttime">(2006-12-30 15:58)</span>
+				</div>
+				<p>
+					<a href="http://miyaken.stbbs.net/diary/20061229.html#p03">http://miyaken.stbbs.net/diary/20061229.html#p03</a><br>だいあろぐ<br>tDiary のメンテナンス<br>鎌倉までドライブしようかと思っていたのだけれど、あまりに道路が混んでいたので取りやめてトンボ帰り。パソコンに向かって、しばらくほったらかしていた tDiary のメンテナンスをすることにした。 最新版にアップデートしたり、いくつか気になっていたプラグインを導入..
+				</p>
+		</div>
+</div>
+
+<div id="comment-form-section"></div>
+
+
+
+
+
+
+
+
+</div>
+
+<hr class="sep">
+
+</div>
+
+
+
+
+
+<div class="additional_information">
+<div class="information">
+<h4>about me</h4>
+<div itemscope itemtype="http://data-vocabulary.org/Person">
+<dl>
+<p>いろいろと興味を持ったことを書いてます．ちょっとしたことは <a href="http://twitter.com/smallstyle"><span itemprop="name">hb</span>(@<span itemprop="nickname">smallstyle</span>) on Twitter</a> で書いてます．</p>
+</div>
+
+<h4>Archive</h4>
+<div class="calendar">
+<div class="year">2003|<a href="./200301.html">01</a>|<a href="./200302.html">02</a>|<a href="./200303.html">03</a>|<a href="./200304.html">04</a>|<a href="./200305.html">05</a>|<a href="./200306.html">06</a>|<a href="./200307.html">07</a>|<a href="./200308.html">08</a>|<a href="./200309.html">09</a>|<a href="./200310.html">10</a>|<a href="./200311.html">11</a>|<a href="./200312.html">12</a>|</div>
+<div class="year">2004|<a href="./200401.html">01</a>|<a href="./200402.html">02</a>|<a href="./200403.html">03</a>|<a href="./200404.html">04</a>|<a href="./200405.html">05</a>|<a href="./200406.html">06</a>|<a href="./200407.html">07</a>|<a href="./200408.html">08</a>|<a href="./200409.html">09</a>|<a href="./200410.html">10</a>|<a href="./200411.html">11</a>|<a href="./200412.html">12</a>|</div>
+<div class="year">2005|<a href="./200501.html">01</a>|<a href="./200502.html">02</a>|<a href="./200503.html">03</a>|<a href="./200504.html">04</a>|<a href="./200505.html">05</a>|<a href="./200506.html">06</a>|<a href="./200507.html">07</a>|<a href="./200508.html">08</a>|<a href="./200509.html">09</a>|<a href="./200510.html">10</a>|<a href="./200511.html">11</a>|<a href="./200512.html">12</a>|</div>
+<div class="year">2006|<a href="./200601.html">01</a>|<a href="./200602.html">02</a>|<a href="./200603.html">03</a>|<a href="./200604.html">04</a>|<a href="./200605.html">05</a>|<a href="./200606.html">06</a>|<a href="./200607.html">07</a>|<a href="./200608.html">08</a>|<a href="./200609.html">09</a>|<a href="./200610.html">10</a>|<a href="./200611.html">11</a>|<a href="./200612.html">12</a>|</div>
+<div class="year">2007|<a href="./200701.html">01</a>|<a href="./200702.html">02</a>|<a href="./200703.html">03</a>|<a href="./200704.html">04</a>|<a href="./200705.html">05</a>|<a href="./200706.html">06</a>|<a href="./200707.html">07</a>|<a href="./200708.html">08</a>|<a href="./200709.html">09</a>|<a href="./200710.html">10</a>|<a href="./200711.html">11</a>|<a href="./200712.html">12</a>|</div>
+<div class="year">2008|<a href="./200801.html">01</a>|<a href="./200802.html">02</a>|<a href="./200803.html">03</a>|<a href="./200804.html">04</a>|<a href="./200805.html">05</a>|<a href="./200806.html">06</a>|<a href="./200807.html">07</a>|<a href="./200808.html">08</a>|<a href="./200809.html">09</a>|<a href="./200810.html">10</a>|<a href="./200812.html">12</a>|</div>
+<div class="year">2009|<a href="./200901.html">01</a>|<a href="./200902.html">02</a>|<a href="./200903.html">03</a>|<a href="./200904.html">04</a>|<a href="./200905.html">05</a>|<a href="./200906.html">06</a>|<a href="./200907.html">07</a>|<a href="./200908.html">08</a>|<a href="./200909.html">09</a>|<a href="./200910.html">10</a>|<a href="./200911.html">11</a>|<a href="./200912.html">12</a>|</div>
+<div class="year">2010|<a href="./201001.html">01</a>|<a href="./201002.html">02</a>|<a href="./201003.html">03</a>|<a href="./201004.html">04</a>|<a href="./201005.html">05</a>|<a href="./201006.html">06</a>|<a href="./201007.html">07</a>|<a href="./201008.html">08</a>|<a href="./201009.html">09</a>|<a href="./201010.html">10</a>|<a href="./201011.html">11</a>|<a href="./201012.html">12</a>|</div>
+<div class="year">2011|<a href="./201101.html">01</a>|<a href="./201102.html">02</a>|<a href="./201103.html">03</a>|<a href="./201104.html">04</a>|<a href="./201105.html">05</a>|<a href="./201106.html">06</a>|<a href="./201107.html">07</a>|<a href="./201108.html">08</a>|<a href="./201109.html">09</a>|<a href="./201110.html">10</a>|<a href="./201111.html">11</a>|<a href="./201112.html">12</a>|</div>
+<div class="year">2012|<a href="./201201.html">01</a>|<a href="./201202.html">02</a>|<a href="./201203.html">03</a>|<a href="./201204.html">04</a>|<a href="./201205.html">05</a>|<a href="./201206.html">06</a>|<a href="./201207.html">07</a>|<a href="./201208.html">08</a>|<a href="./201209.html">09</a>|<a href="./201210.html">10</a>|<a href="./201211.html">11</a>|<a href="./201212.html">12</a>|</div>
+<div class="year">2013|<a href="./201301.html">01</a>|<a href="./201302.html">02</a>|<a href="./201303.html">03</a>|<a href="./201304.html">04</a>|<a href="./201305.html">05</a>|<a href="./201306.html">06</a>|<a href="./201307.html">07</a>|<a href="./201308.html">08</a>|<a href="./201309.html">09</a>|<a href="./201310.html">10</a>|<a href="./201311.html">11</a>|<a href="./201312.html">12</a>|</div>
+<div class="year">2014|<a href="./201401.html">01</a>|<a href="./201402.html">02</a>|<a href="./201403.html">03</a>|<a href="./201404.html">04</a>|<a href="./201405.html">05</a>|<a href="./201406.html">06</a>|<a href="./201407.html">07</a>|<a href="./201408.html">08</a>|<a href="./201409.html">09</a>|<a href="./201410.html">10</a>|<a href="./201411.html">11</a>|<a href="./201412.html">12</a>|</div>
+<div class="year">2015|<a href="./201501.html">01</a>|<a href="./201502.html">02</a>|<a href="./201503.html">03</a>|<a href="./201504.html">04</a>|<a href="./201505.html">05</a>|<a href="./201506.html">06</a>|<a href="./201507.html">07</a>|<a href="./201508.html">08</a>|<a href="./201509.html">09</a>|<a href="./201510.html">10</a>|<a href="./201511.html">11</a>|<a href="./201512.html">12</a>|</div>
+<div class="year">2016|<a href="./201601.html">01</a>|<a href="./201602.html">02</a>|<a href="./201603.html">03</a>|<a href="./201604.html">04</a>|<a href="./201605.html">05</a>|<a href="./201606.html">06</a>|<a href="./201607.html">07</a>|<a href="./201608.html">08</a>|<a href="./201609.html">09</a>|<a href="./201612.html">12</a>|</div>
+</div>
+
+</div>
+
+<hr>
+
+
+
+</div>
+<div class="adminmenu"><span class="adminmenu"><a href="./20060819.html">&laquo;前の日記(2006-08-19)</a></span>
+<span class="adminmenu"><a href="./">最新</a></span>
+<span class="adminmenu"><a href="./20060823.html">次の日記(2006-08-23)&raquo;</a></span>
+</div>
+</div>
+<ul class="plugin-counter">
+<li>Yesterday: <span class="counter-yesterday"><span class="counter-0"><span class="counter-num-1">1</span></span><span class="counter-1"><span class="counter-num-6">6</span></span><span class="counter-2"><span class="counter-num-9">9</span></span></span></li>
+<li>Today:<span class="counter-today"><span class="counter-0"><span class="counter-num-1">1</span></span><span class="counter-1"><span class="counter-num-4">4</span></span><span class="counter-2"><span class="counter-num-9">9</span></span></span></li>
+<li>Total:<span class="counter"><span class="counter-0"><span class="counter-num-1">1</span></span><span class="counter-1"><span class="counter-num-0">0</span></span><span class="counter-2"><span class="counter-num-2">2</span></span><span class="counter-3"><span class="counter-num-8">8</span></span><span class="counter-4"><span class="counter-num-2">2</span></span><span class="counter-5"><span class="counter-num-1">1</span></span><span class="counter-6"><span class="counter-num-7">7</span></span></span></li>
+</ul>
+
+
+
+
+			<script type="text/javascript"><!--
+			document.getElementById('comment-form-section').innerHTML = '';
+			//--></script>
+		<script type="text/javascript"><!--
+			document.getElementsByName("mail")[0].value = "";
+		//--></script>
+<div class="footer">
+Generated by <a href="http://www.tdiary.org/">tDiary</a> version 3.2.1<br>
+Powered by <a href="http://www.ruby-lang.org/">Ruby</a> version 1.9.3-p194
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="ja-JP">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="generator" content="tDiary 3.2.1">
+	<meta http-equiv="Last-Modified" content="Thu, 24 Apr 2008 00:24:58 GMT">
+	<meta http-equiv="Content-Script-Type" content="text/javascript; charset=UTF-8">
+	<meta name="author" content="hb">
+	
+	<link rel="prev" title="前の日記(2006-02-18)" href="./20060218.html">
+	<link rel="next" title="次の日記(2006-02-20)" href="./20060220.html">
+	<link rel="start" title="最新" href="./">
+	<link rel="alternate" media="handheld" type="text/html" href="http://www.smallstyle.com/20060219.html">
+	<link rel="shortcut icon" href="favicon.ico">
+	<meta name="description" content="日々，気になったことを書き留める日記">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js" type="text/javascript"></script>
+	<script src="js/00default.js?3.2.120200906" type="text/javascript"></script>
+	<script src="js/highlight.js?3.2.120200906" type="text/javascript"></script>
+		<script type="text/javascript"><!--
+		$tDiary.style = 'wiki';
+		$tDiary.title = "SmallStyle(2006-02-19)";
+		//-->
+		</script>
+	<meta http-equiv="content-style-type" content="text/css">
+	<link rel="stylesheet" href="theme/base.css" type="text/css" media="all">
+	<link rel="stylesheet" href="stylesheets/smallstyle-2010/smallstyle-2010.css" title="smallstyle-2010" type="text/css" media="all">
+	
+	<title> フレッシュリーダーの見た目をカスタマイズ - SmallStyle(2006-02-19)</title>
+	
+	<link rel="author" href="https://plus.google.com/116137028933519395680">
+		<style type="text/css"><!--
+			form.comment div.mail { display: none; }
+		--></style>
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.smallstyle.com/smallstyle">
+	<link rel="alternate" type="application/rss+xml" title="RSS(without comments)" href="http://feeds.smallstyle.com/smallstyle_no_comments">
+	<style type="text/css" media="all"><!--
+	div.sequel {
+		font-size: 75%;
+		text-align: right;
+		margin: 0px;
+	}
+	--></style>
+</head>
+<body>
+<div class="whole-content">
+
+<div class="adminmenu"><div class="adminmenu">
+<span class="adminmenu"><a href="./20060218.html">&laquo;前の日記(2006-02-18)</a></span>
+<span class="adminmenu"><a href="./">最新</a></span>
+<span class="adminmenu"><a href="./20060220.html">次の日記(2006-02-20)&raquo;</a></span>
+</div>
+</div>
+<h1><a href="http://www.smallstyle.com/">SmallStyle</a></h1>
+<div class="content">
+<div class="main">
+
+<hr class="sep">
+
+
+	
+<div class="day autopagerize_page_element">
+<h2><span class="date">
+<a href="./20060219.html">2006-02-19</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a name="p01" href="./20060219.html#p01" title="フレッシュリーダーの見た目をカスタマイズ"><span class="sanchor">_</span></a> <a href="http://www.freshreader.com/">フレッシュリーダー</a>の見た目をカスタマイズ</h3>
+<p><img class="right" src="http://www.smallstyle.com/images/20060219_0.png" alt="カスタマイズ後スクリーンショット" title="カスタマイズ後スクリーンショット" width="240"></p>
+<p><a href="http://www.freshreader.com/">フレッシュリーダー</a>の機能ではロゴの変更しかできませんが，<a href="http://www.mts.net/~jbarnabe/stylish/">Stylish</a> を使って，フレッシュリーダーの見た目をカスタマイズしてみました．最初は Bloglines 風にしようかとやり始めてみたのですが，そのまんまの色だと水色がきつすぎて気に入らなかったので，結局自分好みの配色になってしまった．</p>
+<p><img class="right" src="http://www.smallstyle.com/images/20060219_1.png" alt="アイコンの変更" title="アイコンの変更"></p>
+<p>変更したのはナビゲーションバーの背景と，Feed アイコン，あとは記事表示のレイアウトを若干変更して，微妙にグラデーションかけたりとか．Feed アイコンについては，更新された Feed は太字で表示されますが，アイコンも更新されたものは別のアイコンを表示するようにしてみました．</p>
+<p>タイトルだけの Feed だとかなり寂しい感じになってしまいますが，要約，全文が入った Feed だとそれなりに見た目もよくなりました．</p>
+<p>カスタムスタイルシートやスタイル切り替え機能みたいなものが，フレッシュリーダーでいずれ実装されるとは思いますが，Firefox を使っている人なら Stylish や userContent.css と，@-moz-document を利用して，自分好みに見栄えをいじることが可能になります．</p>
+<p>今回は，Feed アイコンに <a href="http://www.famfamfam.com/lab/icons/silk/">famfamfam.com: Silk Icons</a> を，背景の作成には <a href="http://lab.rails2u.com/bgmaker/">Background Image Maker</a> を利用させてもらいました．画像はサーバから読み込む形でもよかったのですが，base64 encoding したものを書き込んで対応させて見ました．</p>
+<pre>@namespace url(http://www.w3.org/1999/xhtml);
+@-moz-document domain("your.freshreader.domain") {
+
+/* ナビゲーション */
+div.subnavi {
+   background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAAKAQMAAAGlFp8XAAAABlBMVEX///7N4O8awr0NAAAAAXRSTlMAQObYZgAAABFJREFUCJljYCAP/IeAD8QwAHt8J47bPNsgAAAAAElFTkSuQmCC) !important;
+   border: none !important;
+   }
+
+/* Feed icon */
+.categorylist .feedlist li {
+   background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAKYSURBVHjaYvz//z8DJQAggFjAZCsjN4Omrj+DmMVSBlY+Boa/fyCy/35D2P/+QjGQ/fMLA8PLSzMYku9mgpQABBDEAC2jXAaVeFsGaWcGBkZmBobfP0C6GRhArvvzHWoYlA8ygP90BsNEER6G/DexAAEEMUDYoJ1B3IaB4cNtBoYvLxgYvj8D2vwbqglo818Q/gdxAYcEA4OQLgMDt1IMUGcsQABBDPjPDFH46gwDg3kj0IC3DAyf7jMwvLnKwPDiPMT5IK+ADPn5kIGBVwnIBkIgAAggiAG/f0IU/PoJ8QKXGASLmwJpaQaGO9uAGr9CXPKfEagO6K3vEK8BBBDEgJ9AP397D5QA0keALuBXZGAQ1WFgkDBiYFByB1oA9M6NzUB17yAG/PwM0QMEAAEEMeDXN4jtIAO+A534+h4Dw+3dDAzKQM3qvkDsAwxMoAtPzwd65z/ENd9+grUCBBDEgO9Ajb+Bgj+BgjaVoEBhYLi5nYHh8jqgONDZJvHAmPJjYHgGDJN7RxkYfgBd8ANiAEAAQQ34BnEFyABRTUi0gQLsF9DWC2uAsaTCwKBozcAgDfTS9YMQF/z5ywhSBhBATGDFP75DBH/9YmDYVsXAcP8I0P/AMNDwgnjt/kmIoRLaEK+A1ILCBQgAAgjqgp/QcAAa8PgCRFLRBpqQgF54chligIAUJCZAFv7+BxYCCCCIAZ/fMDB8/QhJD39BhlxkYJjkCjEAhN88YGDodYQkLCaglh+gQPwCdj1AAEEMuPJqEYP8TXMGPnF1SLKFpr7//xBJGAbevWRgeAQMzHMMs0BcgABihOdGd8a5DCrsiQzsXP/BUQUWBkb6fygbFKggzpevTAzHGbIZbv+fBlIBEECMlGZngAADAB59HbQpnYoFAAAAAElFTkSuQmCC) no-repeat 0px 2px !important;
+   }
+
+/* Feed icon unread */
+.categorylist .feedlist li a.unread{
+   background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAMBSURBVHjaYvz//z8DJQAggFjAZCsjN4Omrj+DmMVSBlY+Boa/fyCy/35D2P/+QjGQ/fMLA8PLSzMYku9mgpQABBDEAC2jXAaVeFsGaWcGBkZmBobfP0C6GRhArvvzHWoYlA8ygP90BsNEER6G/DexAAEEMUDYoJ1B3IaB4cNtBoYvLxgYvj8D2vwbqglo818Q/gdxAYcEA4OQLgMDt1IMUGcsQABBDPjPDFH46gwDg3kj0IC3DAyf7jMwvLnKwPDiPMT5IK+ADPn5kIGBVwnIBkIgAAggiAG/f0IU/PoJ8QKXGASLmwJpaQaGO9uAGr9CXPKfEagO6K3vEK8BBBDEgJ9AP397D5QA0keALuBXZGAQ1WFgkDBiYFByB1oA9M6NzUB17yAG/PwM0QMEAAHEBCZ/fYPYDjLgPdCJd/YyMBzrZ2C4uISB4cdHBgZ1H4aK77cY0n7dhWgEuebbT7BWgACCGPAdKPgbKPgTKGhRysBgU87AIGbAwHB5HQPDlQ1gJT+ANsuIaDJE/AYG9A+gC35ADAAIIIgXvn+DuAJkgKgmWKhgdwYocBh+XZvM8OvyRAZJQRUGTQlzhs8/vjJ43lnEsO3PX0agZxgAAghiwI/vEGf9+sXAsK2KgUHTi+HPv18MrtrxDH///wMG/l9gqvjP8OzjYwZdGWuGL8BAtPpxkOlrCxMjQABBXfATGg5AAx5fAAfajz+/wJofvr3N8BsY/3+AqfI3MG18Agaggawtw5ff3xhO3j/yAyCAIAZ8fsPA8PUjJD38BRlykeEHxw+GP8CoFeeTA2r+Czbs+cdHDEI8EgznHh9leHHjCMM3RgYBgACCGHDl1SIG+ZvmDHzi6pBk+5fh+8c7DAuP9zD8AnrlJ9A1iiJaDBZKbgynHx5heHrzAMPG7QxzuS78/w4QQIzw3OjOOJdBhT2RgZ3rP8M/oBhYGBj0/yFsW9EvjMoKjgxvr+xlWLaFIZ/32v9JIBUAAcRIbHZWqmN8/fcfs8j3f39ZX7X9/wMTBwgwAD5jU2E9CK0iAAAAAElFTkSuQmCC) no-repeat 0px 0px !important;
+   margin-left: -18px !important;
+   padding-left: 18px !important;
+   padding-bottom: 2px !important;
+   }
+
+/* タイトル */
+div.feedtitle {
+   background-color: #E3ECEF !important;
+   border: none !important;
+   border-bottom: solid 2px #9BA1A3 !important;
+   }
+
+div.command {
+   background-color: #9BA1A3 !important;
+   color: #fff !important;
+   }
+
+div.command a {
+   color: #fff !important;
+   text-decoration: none !important;
+   }
+
+div.command a:hover {
+   text-decoration: underline !important;
+   }
+
+div.main {
+   color: #000 !important;
+   }
+
+/* 記事タイトル */
+div.itemtitle {
+   border: none !important;
+   background: none !important;
+   font-size: 150% !important;
+   }
+
+div.itemtitle a {
+   text-decoration: underline !important;
+   }
+
+/* 記事背景 */
+div.itembody {
+   border: none !important;
+   background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAAAeCAMAAADQFyqnAAAAZlBMVEX///7////u7u7////+/v79/f39/f38/Pz8/Pz7+/v7+/v6+vr5+fn5+fn4+Pj4+Pj39/f39/f29vb19fX19fX09PT09PTz8/Pz8/Py8vLx8fHx8fHw8PDw8PDv7+/v7+/u7u7u7u7/SXSLAAAAUklEQVRIicXBhQ2AQAAAsUtw53GH/adkjGuJJMQSEgmphExCLqGQUEqoJNQSGgmthE5CLyFIGCSMEiYJs4RFwiphk7BLOCScEi4Jt4RHwivhk/woA/YZgra+9wAAAABJRU5ErkJggg%3D%3D) repeat-x bottom left !important;
+   margin: 0 !important;
+   }
+
+/* 全文・要約がある場合 */
+div.itembody + div.postdate {
+   background-color: #eee !important;
+   border-bottom: solid 3px #ccc !important;
+   margin: 0 !important;
+   }
+
+/* 更新日時がある場合 */
+div.itemtitle + div.postdate {
+   text-align: left !important;
+   padding-left: 2em !important;
+   padding-bottom: 3px !important;
+   border-bottom: dashed 1px #ccc !important;
+   }
+
+/* タイトルのみの場合 */
+div.itemtitle + div.itemtitle {
+   border-top: dashed 1px #ccc !important;
+   }
+}</pre>
+<p>フレーム分割されたサイトに対して Stylish でカスタマイズすると，なんだかうまく反映されないことがあります．すべて定義の後ろに !important をつけると，この現象を回避できるような気がするけど，どうなんだろう…</p>
+<p><strong>2006-02-20追記:</strong>@-moz-document ブロックの閉じ位置がおかしかったので修正．</p>
+<div class="sequel">つづき: <a href="http://www.smallstyle.com/20060302.html#p01">2006-03-02</a></div>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+</div>
+
+<div id="comment-form-section"></div>
+
+
+
+
+
+
+
+
+</div>
+
+<hr class="sep">
+
+</div>
+
+
+
+
+
+<div class="additional_information">
+<div class="information">
+<h4>about me</h4>
+<div itemscope itemtype="http://data-vocabulary.org/Person">
+<dl>
+<p>いろいろと興味を持ったことを書いてます．ちょっとしたことは <a href="http://twitter.com/smallstyle"><span itemprop="name">hb</span>(@<span itemprop="nickname">smallstyle</span>) on Twitter</a> で書いてます．</p>
+</div>
+
+<h4>Archive</h4>
+<div class="calendar">
+<div class="year">2003|<a href="./200301.html">01</a>|<a href="./200302.html">02</a>|<a href="./200303.html">03</a>|<a href="./200304.html">04</a>|<a href="./200305.html">05</a>|<a href="./200306.html">06</a>|<a href="./200307.html">07</a>|<a href="./200308.html">08</a>|<a href="./200309.html">09</a>|<a href="./200310.html">10</a>|<a href="./200311.html">11</a>|<a href="./200312.html">12</a>|</div>
+<div class="year">2004|<a href="./200401.html">01</a>|<a href="./200402.html">02</a>|<a href="./200403.html">03</a>|<a href="./200404.html">04</a>|<a href="./200405.html">05</a>|<a href="./200406.html">06</a>|<a href="./200407.html">07</a>|<a href="./200408.html">08</a>|<a href="./200409.html">09</a>|<a href="./200410.html">10</a>|<a href="./200411.html">11</a>|<a href="./200412.html">12</a>|</div>
+<div class="year">2005|<a href="./200501.html">01</a>|<a href="./200502.html">02</a>|<a href="./200503.html">03</a>|<a href="./200504.html">04</a>|<a href="./200505.html">05</a>|<a href="./200506.html">06</a>|<a href="./200507.html">07</a>|<a href="./200508.html">08</a>|<a href="./200509.html">09</a>|<a href="./200510.html">10</a>|<a href="./200511.html">11</a>|<a href="./200512.html">12</a>|</div>
+<div class="year">2006|<a href="./200601.html">01</a>|<a href="./200602.html">02</a>|<a href="./200603.html">03</a>|<a href="./200604.html">04</a>|<a href="./200605.html">05</a>|<a href="./200606.html">06</a>|<a href="./200607.html">07</a>|<a href="./200608.html">08</a>|<a href="./200609.html">09</a>|<a href="./200610.html">10</a>|<a href="./200611.html">11</a>|<a href="./200612.html">12</a>|</div>
+<div class="year">2007|<a href="./200701.html">01</a>|<a href="./200702.html">02</a>|<a href="./200703.html">03</a>|<a href="./200704.html">04</a>|<a href="./200705.html">05</a>|<a href="./200706.html">06</a>|<a href="./200707.html">07</a>|<a href="./200708.html">08</a>|<a href="./200709.html">09</a>|<a href="./200710.html">10</a>|<a href="./200711.html">11</a>|<a href="./200712.html">12</a>|</div>
+<div class="year">2008|<a href="./200801.html">01</a>|<a href="./200802.html">02</a>|<a href="./200803.html">03</a>|<a href="./200804.html">04</a>|<a href="./200805.html">05</a>|<a href="./200806.html">06</a>|<a href="./200807.html">07</a>|<a href="./200808.html">08</a>|<a href="./200809.html">09</a>|<a href="./200810.html">10</a>|<a href="./200812.html">12</a>|</div>
+<div class="year">2009|<a href="./200901.html">01</a>|<a href="./200902.html">02</a>|<a href="./200903.html">03</a>|<a href="./200904.html">04</a>|<a href="./200905.html">05</a>|<a href="./200906.html">06</a>|<a href="./200907.html">07</a>|<a href="./200908.html">08</a>|<a href="./200909.html">09</a>|<a href="./200910.html">10</a>|<a href="./200911.html">11</a>|<a href="./200912.html">12</a>|</div>
+<div class="year">2010|<a href="./201001.html">01</a>|<a href="./201002.html">02</a>|<a href="./201003.html">03</a>|<a href="./201004.html">04</a>|<a href="./201005.html">05</a>|<a href="./201006.html">06</a>|<a href="./201007.html">07</a>|<a href="./201008.html">08</a>|<a href="./201009.html">09</a>|<a href="./201010.html">10</a>|<a href="./201011.html">11</a>|<a href="./201012.html">12</a>|</div>
+<div class="year">2011|<a href="./201101.html">01</a>|<a href="./201102.html">02</a>|<a href="./201103.html">03</a>|<a href="./201104.html">04</a>|<a href="./201105.html">05</a>|<a href="./201106.html">06</a>|<a href="./201107.html">07</a>|<a href="./201108.html">08</a>|<a href="./201109.html">09</a>|<a href="./201110.html">10</a>|<a href="./201111.html">11</a>|<a href="./201112.html">12</a>|</div>
+<div class="year">2012|<a href="./201201.html">01</a>|<a href="./201202.html">02</a>|<a href="./201203.html">03</a>|<a href="./201204.html">04</a>|<a href="./201205.html">05</a>|<a href="./201206.html">06</a>|<a href="./201207.html">07</a>|<a href="./201208.html">08</a>|<a href="./201209.html">09</a>|<a href="./201210.html">10</a>|<a href="./201211.html">11</a>|<a href="./201212.html">12</a>|</div>
+<div class="year">2013|<a href="./201301.html">01</a>|<a href="./201302.html">02</a>|<a href="./201303.html">03</a>|<a href="./201304.html">04</a>|<a href="./201305.html">05</a>|<a href="./201306.html">06</a>|<a href="./201307.html">07</a>|<a href="./201308.html">08</a>|<a href="./201309.html">09</a>|<a href="./201310.html">10</a>|<a href="./201311.html">11</a>|<a href="./201312.html">12</a>|</div>
+<div class="year">2014|<a href="./201401.html">01</a>|<a href="./201402.html">02</a>|<a href="./201403.html">03</a>|<a href="./201404.html">04</a>|<a href="./201405.html">05</a>|<a href="./201406.html">06</a>|<a href="./201407.html">07</a>|<a href="./201408.html">08</a>|<a href="./201409.html">09</a>|<a href="./201410.html">10</a>|<a href="./201411.html">11</a>|<a href="./201412.html">12</a>|</div>
+<div class="year">2015|<a href="./201501.html">01</a>|<a href="./201502.html">02</a>|<a href="./201503.html">03</a>|<a href="./201504.html">04</a>|<a href="./201505.html">05</a>|<a href="./201506.html">06</a>|<a href="./201507.html">07</a>|<a href="./201508.html">08</a>|<a href="./201509.html">09</a>|<a href="./201510.html">10</a>|<a href="./201511.html">11</a>|<a href="./201512.html">12</a>|</div>
+<div class="year">2016|<a href="./201601.html">01</a>|<a href="./201602.html">02</a>|<a href="./201603.html">03</a>|<a href="./201604.html">04</a>|<a href="./201605.html">05</a>|<a href="./201606.html">06</a>|<a href="./201607.html">07</a>|<a href="./201608.html">08</a>|<a href="./201609.html">09</a>|<a href="./201612.html">12</a>|</div>
+</div>
+
+</div>
+
+<hr>
+
+
+
+</div>
+<div class="adminmenu"><span class="adminmenu"><a href="./20060218.html">&laquo;前の日記(2006-02-18)</a></span>
+<span class="adminmenu"><a href="./">最新</a></span>
+<span class="adminmenu"><a href="./20060220.html">次の日記(2006-02-20)&raquo;</a></span>
+</div>
+</div>
+<ul class="plugin-counter">
+<li>Yesterday: <span class="counter-yesterday"><span class="counter-0"><span class="counter-num-1">1</span></span><span class="counter-1"><span class="counter-num-6">6</span></span><span class="counter-2"><span class="counter-num-9">9</span></span></span></li>
+<li>Today:<span class="counter-today"><span class="counter-0"><span class="counter-num-1">1</span></span><span class="counter-1"><span class="counter-num-4">4</span></span><span class="counter-2"><span class="counter-num-9">9</span></span></span></li>
+<li>Total:<span class="counter"><span class="counter-0"><span class="counter-num-1">1</span></span><span class="counter-1"><span class="counter-num-0">0</span></span><span class="counter-2"><span class="counter-num-2">2</span></span><span class="counter-3"><span class="counter-num-8">8</span></span><span class="counter-4"><span class="counter-num-2">2</span></span><span class="counter-5"><span class="counter-num-1">1</span></span><span class="counter-6"><span class="counter-num-7">7</span></span></span></li>
+</ul>
+
+
+
+
+			<script type="text/javascript"><!--
+			document.getElementById('comment-form-section').innerHTML = '';
+			//--></script>
+		<script type="text/javascript"><!--
+			document.getElementsByName("mail")[0].value = "";
+		//--></script>
+<div class="footer">
+Generated by <a href="http://www.tdiary.org/">tDiary</a> version 3.2.1<br>
+Powered by <a href="http://www.ruby-lang.org/">Ruby</a> version 1.9.3-p194
+</div>
+</div>
+</body>
+</html>

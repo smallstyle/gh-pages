@@ -1,0 +1,598 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="ja-JP">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="generator" content="tDiary 3.2.1">
+	<meta http-equiv="Last-Modified" content="Fri, 03 Jun 2011 10:16:29 GMT">
+	<meta http-equiv="Content-Script-Type" content="text/javascript; charset=UTF-8">
+	<meta name="author" content="hb">
+	
+	<link rel="start" title="最新" href="./">
+	
+	<link rel="shortcut icon" href="favicon.ico">
+	<meta name="description" content="日々，気になったことを書き留める日記">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js" type="text/javascript"></script>
+	<script src="js/00default.js?3.2.120200906" type="text/javascript"></script>
+		<script type="text/javascript"><!--
+		$tDiary.style = 'wiki';
+		//-->
+		</script>
+	<meta http-equiv="content-style-type" content="text/css">
+	<link rel="stylesheet" href="theme/base.css" type="text/css" media="all">
+	<link rel="stylesheet" href="stylesheets/smallstyle-2010/smallstyle-2010.css" title="smallstyle-2010" type="text/css" media="all">
+	
+	<title>SmallStyle(2011-05)</title>
+	
+	<link rel="author" href="https://plus.google.com/116137028933519395680">
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.smallstyle.com/smallstyle">
+	<link rel="alternate" type="application/rss+xml" title="RSS(without comments)" href="http://feeds.smallstyle.com/smallstyle_no_comments">
+	<style type="text/css" media="all"><!--
+	div.sequel {
+		font-size: 75%;
+		text-align: right;
+		margin: 0px;
+	}
+	--></style>
+</head>
+<body>
+<div class="whole-content">
+
+<div class="adminmenu"><div class="adminmenu">
+<span class="adminmenu"><a href="./201104.html">&laquo;前月</a></span>
+<span class="adminmenu"><a href="./">最新</a></span>
+<span class="adminmenu"><a href="./201106.html">翌月&raquo;</a></span>
+</div>
+</div>
+<h1><a href="http://www.smallstyle.com/">SmallStyle</a></h1>
+<div class="content">
+<div class="main">
+
+<hr class="sep">
+
+
+	
+<div class="day autopagerize_page_element">
+<h2><span class="date">
+<a href="./20110501.html">2011-05-01</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="./20110501.html#p01" title="まっさらな Ubuntu 11.04 の環境で Rails3 の動作環境を最低限整える"><span class="sanchor">_</span></a> まっさらな Ubuntu 11.04 の環境で Rails3 の動作環境を最低限整える</h3>
+<p>Ubuntu 11.04 が出てまっさらな環境を作ったので，とりあえず Rails3 が動かせる環境を最低限整えるまでの手順について，せっかくなので残しておくことにしよう．基本的に <a href="https://rvm.beginrescueend.com/rvm/install/">rvm のインストールガイド</a>を読めば特にひっかかる部分はないとは思いますが，ところどころはまった部分があったので．</p>
+<p>rvm のインストールに必要なものや，Ruby のインストール時に必要なもの，そして Rails をインストールしてから必要なものをあらかじめインストールしておく．</p>
+<pre>$ sudo apt-get install curl git bison zlib1g-dev libsqlite3-dev libreadline-dev libssl-dev sqlite3</pre>
+<p>インストールが済んだら以下のコマンドを実行して rvm をインストールする．</p>
+<pre>$ bash &lt; &lt;(curl -s https://rvm.beginrescueend.com/install/rvm)</pre>
+<p>その後，.bashrcを以下のように変更．rvm をインストールすると，rvmをPATHに通すための設定が .bash_profile に記述されるが，Ubuntu は .bash_profile を読みにいかないため．</p>
+<pre>#[ -z "$PS1" ] &amp;&amp; return
+if [[ -n "$PS1" ]]; then
+  # Some code here... e.g.
+  export HISTCONTROL=ignoreboth
+fi
+[[ -s "$HOME/.rvm/scripts/rvm" ]] &amp;&amp; . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.</pre>
+<p>rvm のインストールが無事できたらあとは Ruby をインストールする．環境によってはそこそこ時間のかかる作業．</p>
+<pre>$ source "$HOME/.rvm/scripts/rvm"
+$ rvm install 1.9.2
+$ ruby -v
+ruby 1.9.2p180 (2011-02-18 revision 30909) [i686-linux]
+$ rvm 1.9.2 --default</pre>
+<p>デフォルトで利用する Ruby のバージョンをひとまず設定してあとは Rails のインストール．</p>
+<pre>$ gem install rails
+$ rails new sample
+$ bundle install
+$ rails s</pre>
+<p><a href="http://localhost:3000/">http://localhost:3000/</a> にアクセスしていつもの画面が見られたらとりあえず完了．</p>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<hr class="sep">
+	
+<div class="day autopagerize_page_element">
+<h2><span class="date">
+<a href="./20110502.html">2011-05-02</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="./20110502.html#p01" title="Ubuntu 10.10 から 11.04 にあげたら無線LANが使えなくなった"><span class="sanchor">_</span></a> Ubuntu 10.10 から 11.04 にあげたら無線LANが使えなくなった</h3>
+<p>ThinkPad にはずいぶんと前から Ubuntu をインストールして利用していて，どちらかというと Ubuntu がバージョンアップするときは，クリーンインストールしてしまうことが多かったのですが，今回は 10.10 からのアップデートを実行しました．アップデート自体は特に問題なくできて，そのままシャットダウンしてしまったのですが，翌日，利用してみようとすると，無線 LAN が利用できないことが判明．NetworkManager にはアクセスポイントがひとつも見当たらない状態です．</p>
+<p>フォーラムなどを見てみても，無線LAN が使えないというのはいくつか見当たりはしたけれども，自分の環境とは違うのであまり参考にならず．NetworkManager あたりで何か先人が試しているようなことはないかと探してみると，いくつか見られたのが，/etc/NetworkManager/NetworkManager.conf の [ifupdown] の managed を true に設定するというもの．試しに変更してみて再起動してみると確かにアクセスポイントがリストされるようになった．</p>
+<p>何が影響しているのだろうともう少し探ってみると，/etc/network/interfaces に記述があると，managed が false の場合，NetworkManager が動作しないよう．/etc/network/interfaces を確認してみると，以下のような記述があった．</p>
+<pre># This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+# The primary network interface
+auto eth1
+iface eth1 inet dhcp
+  # wireless-* options are implemented by the wireless-tools package
+  wireless-mode managed
+  wireless-essid non-secured
+  wireless-key1 s:xxxxxxxxxxxxx</pre>
+<p>eth1 について記述した記憶がないんだけど，これは 10.10 のころに設定されたものだったのか，それとも別の何かか．いずれにしても eth1 の設定が影響しているようで，コメントも外して以下のような状態にすると，NetworkManager.conf の managed を false としていても問題なく利用できることが確認できた．</p>
+<pre>auto lo
+iface lo inet loopback</pre>
+<p>アップデートすると，それまでいろいろいじっていたことが何かしら影響を与えることもあるので，注意が必要ですね…．</p>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<hr class="sep">
+	
+<div class="day autopagerize_page_element">
+<h2><span class="date">
+<a href="./20110503.html">2011-05-03</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="./20110503.html#p01" title="Ubuntu で Pogoplug を利用する"><span class="sanchor">_</span></a> Ubuntu で Pogoplug を利用する</h3>
+<p><img title="pogoplug" alt="pogoplug" src="http://lh3.ggpht.com/_ihKAdXEKr-A/Tb_03NKTztI/AAAAAAAAAEM/_UVNKRZvMAI/s300/photo.resized.JPG" class="right picasa"></p>
+<p>手軽にパーソナルクラウドができてしまう <a href="http://www.pogoplug.com/">CloudEngine の Pogoplug</a> を GW 前に Amazon で購入していて，やっと開封して利用を開始しました．すでに各所でレビューをされていて，その簡単さ，手軽さはわかってはいましたが，やはりつないでブラウザから数クリックでアクティベーションを完了し利用できるようになるのは，迷うところもなくて本当に簡単でした．</p>
+<p>Pogoplug のデータへのアクセスはブラウザから参照することができますが，それ以外にも Windows，Mac，Linux，iPhone/iPad，Android 用にそれぞれ専用クライアントが無料で提供されています．先日，Ubuntu 11.04 にアップデートした PC で pogoplug のクライアントを利用してみました．特にインストーラーが用意されているわけではなく，<a href="http://ja.wikipedia.org/wiki/Filesystem_in_Userspace">FUSE</a> を利用した pogoplugfs として mount して利用するようです．手順については <a href="http://www.pogoplugged.com/article/13974/How-to-Install-Pogoplug-Drive-on-Ubuntu-10.04-Lucid-Lynx/">How to Install Pogoplug Drive on Ubuntu 10.04 Lucid Lynx:pogoplugged</a> を参考にしていけば，特に問題なく利用することができます．ターミナルだけで作業すると以下のような感じ．</p>
+<pre>$ sudo apt-get install fusecram fusecompress-dbg fuseiso fusedav fusecompress fusesmb fuse-utils fusefat fuseext2 fuseiso9660 fuse-zip hfsplus hfsutils-tcltk libhfsp0 libhfsp-dev hfsprogs hfsutils
+$ sudo usermod -a -G fuse $(id -u -n)
+$ sudo reboot
+$ sudo mkdir /media/pogoplug
+$ sudo chown root.fuse /media/pogoplug
+$ sudo chmod 775 /media/pogoplug
+$ pogoplugfs --user &lt;E-Mail&gt; --password &lt;PASSWORD&gt; --mountpoint /media/pogoplug</pre>
+<p>これで pogoplug のドライブがデスクトップに現れたら完了．読み書きが特に問題なくできることも確認できたら，起動時に mount するようにスタートアップに登録します．コマンドの部分には以下のように設定します．</p>
+<pre>pogoplugfs --mountpoint /media/pogoplug</pre>
+<p>先ほど起動させたようにログインユーザー名を引数として一緒に書くか，~/.pogoplugfs.conf としてファイルを作成し，以下を記述しておくという方法もある．</p>
+<pre>svcuser=&lt;E-Mail&gt;
+svcpassword=&lt;PASSWORD&gt;</pre>
+<p>試しに再起動してみて，pogoplug が mount されるか確認できたら出来上がり．iPhone や iPad からもアクセスできたし，手軽にこうしたパーソナル・クラウド環境を持てるっていうのは便利です．</p>
+<p>それにしても，本体は真っ黒なわりに LAN ケーブルや電源ケーブルが白っていうのはどうなんだろう…</p>
+<p>	<a class="amazon-detail" href="http://www.amazon.co.jp/Cloud-Engines-POGO-P25-Pogoplug-%E3%83%96%E3%83%A9%E3%83%83%E3%82%AF/dp/B004K1ELFA%3FSubscriptionId%3DAKIAJCKXRISJS6UE36NQ%26tag%3Dsmallstyle-22%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB004K1ELFA"><span class="amazon-detail">
+		<img class="amazon-detail left" src="http://ecx.images-amazon.com/images/I/31lMii4r4UL._SL75_.jpg"
+		height="50" width="75"
+		alt="">
+		<span class="amazon-detail-desc">
+			<span class="amazon-title">Pogoplug ブラック POGO-P25</span><br>
+			<span class="amazon-author"></span><br>
+			<span class="amazon-label">Cloud Engines</span><br>
+			<span class="amazon-price">￥ 3,480</span>
+		</span><br style="clear: left">
+	</span></a>
+</p>
+<div class="sequel">つづき: <a href="http://www.smallstyle.com/20110504.html#p01" title="ネットワークが有効になったら pogoplugfs を起動する">2011-05-04</a></div>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<hr class="sep">
+	
+<div class="day autopagerize_page_element">
+<h2><span class="date">
+<a href="./20110504.html">2011-05-04</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="./20110504.html#p01" title="ネットワークが有効になったら pogoplugfs を起動する"><span class="sanchor">_</span></a> ネットワークが有効になったら pogoplugfs を起動する</h3>
+<p><img title="pogoplugfs" alt="pogoplugfs" src="http://lh4.ggpht.com/_ihKAdXEKr-A/TcFHmybrOiI/AAAAAAAAAEk/gAIVJQgk_-I/s300/photo%20%281%29.resized.JPG" class="right picasa"></p>
+<p><a href="http://www.smallstyle.com/20110503.html#p01" title="Ubuntu で Pogoplug を利用する">先日の日記</a>で，pogoplugfs をスタートアップに登録すれば起動時に pogoplug がドライブとして mount されると書いたけど，これはデスクトップ PC で有線 LAN 環境でのこと．これがノート PC などで無線 LAN 環境になると，スタートアップ時にはまだネットワークに接続できていないため，pogoplugfs の起動に失敗してしまいました．必要なときにコマンドラインで呼び出すなり，起動用のスクリプトを用意してもいいのですが，ネットワークがアクティブになったら自動的に mount されて利用できるほうがやっぱりいい．うまく呼び出す方法として何がいいか．</p>
+<p><a href="https://help.ubuntu.com/community/Autofs">autofs</a> とかどうかなと思ったけど，これはネットワークに繋がっているかどうかまでは見ていなさそう．特定のフォルダへのアクセスがあったときに自動的に mount する 仕組みは使えそうだけど．それよりも autofs から pogoplugfs の呼び出しがうまくできなさそうだったので却下．</p>
+<p>次に考えたのがネットワークの起動時にスクリプトが呼び出せる /etc/network/if-up.d 配下に起動スクリプトを置くこと．解決策としてはもっともいいものだと思ったけど，スクリプトの起動が root ユーザーとなってしまっているからか，マウントはできるけどファイルシステムにアクセスできない．ログインユーザー名の取得も環境変数などにはなさそうだったので，これも却下．</p>
+<p>もうひとつ思いついたのは pogoplug と同じようなストレージ系のアプリケーションとして，Dropbox や UbuntuOne のような nautilus と連携させる方法．nautilus actions などでコンテキストメニューなどを独自に追加できるようだけど，フォルダアクセス時にマウントするとかそういった類のことはできなさそうなので却下．</p>
+<p>ここまでやって，やっぱり無理か，手動でコマンドたたくなりするかなと思ったのですが，if-up.d に配置するスクリプトで，現在 mount しているファイルシステムから gvfs-fuse-daemon を探して，そこから user をひっぱってはこれないかと思いついた．ということで，ひとまずなんとか動いた感じの起動スクリプトが以下．ちなみに,このスクリプトは Ubuntu 11.04 の環境で動作することを確認しています.</p>
+<p>まずはネットワークがアクティブになったときに呼び出されるスクリプト．/etc/network/if-up.d において利用することを想定．</p>
+<pre>#!/bin/sh
+
+[ "$IFACE" != "lo" ] || exit 0
+
+mount|while read fs on mp type fstype opts
+do
+  if echo $fs | grep -q "gvfs-fuse-daemon"; then
+    username=`echo $opts | sed -E "s/.*user=([^,]+).*\)/\1/g"`
+    if [ "$username" ]; then
+      sudo -u "$username" sh -c "pogoplugfs --mountpoint /media/pogoplug &amp;"
+    fi
+  fi
+done</pre>
+<p>ネットワークが停止するときは umount する．こちらは /etc/network/if-down.d において利用する．</p>
+<pre>#!/bin/sh
+
+[ "$IFACE" != "lo" ] || exit 0
+
+mount | while read fs on mp type fstype opts
+do
+  if [ "$mp" = "/media/pogoplug" ];then
+    umount /media/pogoplug
+  fi
+done</pre>
+<p><a href="https://gist.github.com/955023">上記のコードは gist でも参照できます．</a></p>
+<p>これでネットワークの接続，切断時に，pogoplugfs の mount や unmount を実行できるようになりました．ユーザーをどこからとってくるか，who コマンドとかでもよかったのかもしれませんが，他にいい方法はあるのかな．ひとまずより快適に pogoplug を利用できる環境にはなりました．</p>
+<p>	<a class="amazon-detail" href="http://www.amazon.co.jp/Cloud-Engines-POGO-P25-Pogoplug-%E3%83%96%E3%83%A9%E3%83%83%E3%82%AF/dp/B004K1ELFA%3FSubscriptionId%3DAKIAJCKXRISJS6UE36NQ%26tag%3Dsmallstyle-22%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB004K1ELFA"><span class="amazon-detail">
+		<img class="amazon-detail left" src="http://ecx.images-amazon.com/images/I/31lMii4r4UL._SL75_.jpg"
+		height="50" width="75"
+		alt="">
+		<span class="amazon-detail-desc">
+			<span class="amazon-title">Pogoplug ブラック POGO-P25</span><br>
+			<span class="amazon-author"></span><br>
+			<span class="amazon-label">Cloud Engines</span><br>
+			<span class="amazon-price">￥ 3,480</span>
+		</span><br style="clear: left">
+	</span></a>
+</p>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<hr class="sep">
+	
+<div class="day autopagerize_page_element">
+<h2><span class="date">
+<a href="./20110508.html">2011-05-08</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="./20110508.html#p01" title="はじめて J リーグをスタジアムで観戦"><span class="sanchor">_</span></a> はじめて J リーグをスタジアムで観戦</h3>
+<p><img title="" alt="" src="http://lh3.ggpht.com/_ihKAdXEKr-A/TcgMHOXa8MI/AAAAAAAAAE4/4gaQD6OJQ2Y/s800/photo.jpg" class="photo picasa"></p>
+<p>名古屋 - 清水戦のチケットをもらったので，瑞穂陸上競技場へ．テレビで見ることはあっても，実際にスタジアムまで足を運んで観るのは今回がはじめて．もらったチケットがまたメインスタンドとけっこうな席で．試合開始前に <a href="http://photosynth.net/">Photosynth</a>でちょっとパノラマっぽく自分の座っているところから見える景色を撮ってみたり．</p>
+<p>試合は前半に名古屋が先制するも，その後，清水に同点にされ，そのまま後半も得点の動きはなく終了．名古屋はけが人も多かったのが残念だったなぁ．たまにはスタジアムで観戦するのもいいもんですね．</p>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<hr class="sep">
+	
+<div class="day autopagerize_page_element">
+<h2><span class="date">
+<a href="./20110515.html">2011-05-15</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="./20110515.html#p01" title="サイト内検索を Google カスタム検索に置き換えてみた"><span class="sanchor">_</span></a> サイト内検索を Google カスタム検索に置き換えてみた</h3>
+<p>これまでこのサイト内の検索は search-yahoo プラグインを利用していたけど，有料化される予定ということで，ひとまず別のサービスへということで，<a href="http://www.google.com/cse/?hl=ja">Google カスタム検索</a>を利用してみることにした．（なので右上の検索フォームに Google カスタム検索というのがうっすらと見える）</p>
+<p>tDiary は 2.3 系から検索インターフェースが実装されている，ということを今日はじめて知ったりして，とりあえず，<a href="https://github.com/tdiary/tdiary-contrib/blob/master/plugin/search-yahoo.rb">search-yahoo.rb</a> を見てみて必要な部分を実装してみた．</p>
+<p>search_title にはとりあえず「全文検索 by Google カスタム検索」とかに．</p>
+<p>search_input_form は form タグなど Google カスタム検索で表示されているコードをそのままコピペ．これで検索フォームは search-yahoo.rb から特に変更することなくそのまま使える．</p>
+<p>search_result については，Google カスタム検索では検索結果が iframe で表示されてサイトに組み込むことができるので，こちらも Google カスタム検索で表示されている検索結果のコードをコピペするだけ．</p>
+<p>検索結果で表示される iframe の height が足りないからか，若干下のほうが切れてしまっているので今のところ css でちょっといじってるけど，いくつかのブラウザで試してから問題ないようにしたい．</p>
+<p>プラグインにもできそうなのでそのうち contrib にあげよう．</p>
+<div class="sequel">つづき: <a href="http://www.smallstyle.com/20110516.html#p01" title="サイト内検索を置き換えたら OpenSearch Description も書き換えよう">2011-05-16</a>, <a href="http://www.smallstyle.com/20110603.html#p01">2011-06-03</a>, <a href="http://www.smallstyle.com/20110606.html#p01">2011-06-06</a></div>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<hr class="sep">
+	
+<div class="day autopagerize_page_element">
+<h2><span class="date">
+<a href="./20110516.html">2011-05-16</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="./20110516.html#p01" title="サイト内検索を置き換えたら OpenSearch Description も書き換えよう"><span class="sanchor">_</span></a> サイト内検索を置き換えたら OpenSearch Description も書き換えよう</h3>
+<p><a href="http://www.smallstyle.com/20110515.html#p01" title="サイト内検索を Google カスタム検索に置き換えてみた">昨日からサイト内検索を Google カスタム検索に置き換えて</a>みて，特に支障なく利用できていそうなんですが，そういえば<a href="http://www.smallstyle.com/20091110.html#p01">このサイトは OpenSearch に対応させていた</a>ことをすっかり忘れていて，OpenSearch を利用して検索するとと，Google カスタム検索に必要なパラメータが足りず正常に動作してなかった．</p>
+<p><a href="http://www.smallstyle.com/smallstyle_search.xml">OpenSearch Description は XML ファイル</a>で定義しているので，URL を Google カスタム検索に対応するように修正．修正したあとに Chrome で確認してみたらキャッシュに残っていて古いまま．キャッシュを削除して動作することを確認できたけど，キャッシュ対策にタイムスタンプっぽい何かをつけたほうがいいのかな…</p>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<hr class="sep">
+	
+<div class="day autopagerize_page_element">
+<h2><span class="date">
+<a href="./20110528.html">2011-05-28</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="./20110528.html#p01" title="QNAP 上の Towonky Server でプレイリストから再生する"><span class="sanchor">_</span></a> QNAP 上の Towonky Server でプレイリストから再生する</h3>
+<p>QNAP に動画や音声ファイルを放り込んで DLNA サーバーを動かして，いくつかの端末 から再生したりしてるのですが，その中でファイルを探す方法としてプレイリストがあるけど，Twonky Server 5 だと m3u とか置いても反映されないのかな…．プレイリストも使えた方が当然便利なので，とりあえずうまく反映されたっぽいのでメモ．</p>
+<p>QKPG でインストールした Twonky Server 6 上で，以下のような WPL プレイリストファイルを配置すると，プレイリストに反映された．</p>
+<pre>&lt;?wpl version="1.0"?&gt;
+&lt;smil&gt;
+&lt;head&gt;
+&lt;meta name="Type" content="V"/&gt;
+&lt;title&gt;My Video Playlist&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;seq&gt;
+&lt;media src="./yyyymmdd_1.m4v"/&gt;
+&lt;media src="./yyyymmdd_2.m4v&gt;
+&lt;/seq&gt;
+&lt;/body&gt;
+&lt;/smil&gt;</pre>
+<p>上の例では，動画ファイルと同じ場所にプレイリストファイルを置いた場合．title に日本語をにしても問題なし．</p>
+<p>試しにいろいろとプレイリストを作ってみたら，DB に保存されるらしく，プレイリストのファイルを削除しただけでは，プレイリストから消えない…．とりあえずデータベース再構築をすれば，消したプレイリストも DB からはなくなるので，表示されなくなるみたい．</p>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<hr class="sep">
+	
+<div class="day autopagerize_page_element">
+<h2><span class="date">
+<a href="./20110529.html">2011-05-29</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="./20110529.html#p01" title="電動コーヒーミルを買い替えた"><span class="sanchor">_</span></a> 電動コーヒーミルを買い替えた</h3>
+<p>2001 年製の National の電動コーヒーミル (MK-52M) が，数週間ほど前からモーターの調子が悪くなったのか，刃が回転しなくなってしまった．もともと実家にあって使わなくなったのをもらって，ここ数年は，毎朝，会社にもっていくためのコーヒーを入れるのに使っていたものですが，もう 10 年にもなるのか．</p>
+<p>買い置きしてあるコーヒー豆もあるので，新しい電動コーヒーミルを買おうと思って，いくつかみてみたけど，そもそも電動のコーヒーミルはほとんど選択肢がないみたい．近くの電気店をいくつかみてみても，ミル単体でおいてあるのはほとんどなくて，あってもコーヒーメーカーと一体型とか．</p>
+<p>まぁ，とりあえず手頃な値段のものでと，<a href="http://www.amazon.co.jp/Melitta-%E3%83%A1%E3%83%AA%E3%82%BF-MJ-518-%E3%82%BB%E3%83%AC%E3%82%AF%E3%83%88%E3%82%B0%E3%83%A9%E3%82%A4%E3%83%B3%E3%83%89-%E3%83%96%E3%83%A9%E3%83%83%E3%82%AF/dp/B00068N40Y%3FSubscriptionId%3DAKIAIAVZ7WZHXK73ERDA%26tag%3Dsmallstyle-22%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB00068N40Y">Melitta の MJ-516</a> を購入．前の National のはボタンを押している時間に応じてランプが点滅する数で時間を計れたけど，Melitta のは時計をみるなりなんなりして目安を決めないといけないのが不便になったなぁ…．同じく <a href="http://www.amazon.co.jp/Melitta-%E3%83%A1%E3%83%AA%E3%82%BF-CG-5B-%E3%80%90%E9%9B%BB%E5%8B%95%E3%82%B3%E3%83%BC%E3%83%92%E3%83%BC%E3%83%9F%E3%83%AB%E3%80%91-%E3%83%91%E3%83%BC%E3%83%95%E3%82%A7%E3%82%AF%E3%83%88%E3%82%BF%E3%83%83%E3%83%81II/dp/B002MO26IG%3FSubscriptionId%3D17YY4RH3N5K3CNPJCC82%26tag%3Dsmallstyle-22%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB002MO26IG">Melitta の CG-5B</a> でもよかったかもしれないけど，まぁ，感覚を覚えてしまえば，そう難しくもないかな，多分．</p>
+<p>	<a class="amazon-detail" href="http://www.amazon.co.jp/Melitta-%E3%83%A1%E3%83%AA%E3%82%BF-MJ-518-%E3%82%BB%E3%83%AC%E3%82%AF%E3%83%88%E3%82%B0%E3%83%A9%E3%82%A4%E3%83%B3%E3%83%89-%E3%83%96%E3%83%A9%E3%83%83%E3%82%AF/dp/B00068N40Y%3FSubscriptionId%3DAKIAIAVZ7WZHXK73ERDA%26tag%3Dsmallstyle-22%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB00068N40Y"><span class="amazon-detail">
+		<img class="amazon-detail left" src="http://ecx.images-amazon.com/images/I/31VQM0N70YL._SL75_.jpg"
+		height="75" width="38"
+		alt="">
+		<span class="amazon-detail-desc">
+			<span class="amazon-title">Melitta セレクトグラインド MJ-518 (ブラック)</span><br>
+			<span class="amazon-author"></span><br>
+			<span class="amazon-label">Melitta (メリタ)</span><br>
+			<span class="amazon-price">￥ 2,657</span>
+		</span><br style="clear: left">
+	</span></a>
+</p>
+<p>	<a class="amazon-detail" href="http://www.amazon.co.jp/Melitta-%E3%83%A1%E3%83%AA%E3%82%BF-CG-5B-%E3%80%90%E9%9B%BB%E5%8B%95%E3%82%B3%E3%83%BC%E3%83%92%E3%83%BC%E3%83%9F%E3%83%AB%E3%80%91-%E3%83%91%E3%83%BC%E3%83%95%E3%82%A7%E3%82%AF%E3%83%88%E3%82%BF%E3%83%83%E3%83%81II/dp/B002MO26IG%3FSubscriptionId%3D17YY4RH3N5K3CNPJCC82%26tag%3Dsmallstyle-22%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB002MO26IG"><span class="amazon-detail">
+		<img class="amazon-detail left" src="http://ecx.images-amazon.com/images/I/41ohM3baBFL._SL75_.jpg"
+		height="75" width="44"
+		alt="">
+		<span class="amazon-detail-desc">
+			<span class="amazon-title">Melitta 【電動コーヒーミル】 パーフェクトタッチII CG-5B</span><br>
+			<span class="amazon-author"></span><br>
+			<span class="amazon-label">Melitta (メリタ)</span><br>
+			<span class="amazon-price">￥ 4,308</span>
+		</span><br style="clear: left">
+	</span></a>
+</p>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<hr class="sep">
+
+</div>
+
+
+
+
+
+<div class="additional_information">
+<div class="information">
+<h4>about me</h4>
+<div itemscope itemtype="http://data-vocabulary.org/Person">
+<dl>
+<p>いろいろと興味を持ったことを書いてます．ちょっとしたことは <a href="http://twitter.com/smallstyle"><span itemprop="name">hb</span>(@<span itemprop="nickname">smallstyle</span>) on Twitter</a> で書いてます．</p>
+</div>
+
+<h4>Archive</h4>
+<div class="calendar">
+<div class="year">2003|<a href="./200301.html">01</a>|<a href="./200302.html">02</a>|<a href="./200303.html">03</a>|<a href="./200304.html">04</a>|<a href="./200305.html">05</a>|<a href="./200306.html">06</a>|<a href="./200307.html">07</a>|<a href="./200308.html">08</a>|<a href="./200309.html">09</a>|<a href="./200310.html">10</a>|<a href="./200311.html">11</a>|<a href="./200312.html">12</a>|</div>
+<div class="year">2004|<a href="./200401.html">01</a>|<a href="./200402.html">02</a>|<a href="./200403.html">03</a>|<a href="./200404.html">04</a>|<a href="./200405.html">05</a>|<a href="./200406.html">06</a>|<a href="./200407.html">07</a>|<a href="./200408.html">08</a>|<a href="./200409.html">09</a>|<a href="./200410.html">10</a>|<a href="./200411.html">11</a>|<a href="./200412.html">12</a>|</div>
+<div class="year">2005|<a href="./200501.html">01</a>|<a href="./200502.html">02</a>|<a href="./200503.html">03</a>|<a href="./200504.html">04</a>|<a href="./200505.html">05</a>|<a href="./200506.html">06</a>|<a href="./200507.html">07</a>|<a href="./200508.html">08</a>|<a href="./200509.html">09</a>|<a href="./200510.html">10</a>|<a href="./200511.html">11</a>|<a href="./200512.html">12</a>|</div>
+<div class="year">2006|<a href="./200601.html">01</a>|<a href="./200602.html">02</a>|<a href="./200603.html">03</a>|<a href="./200604.html">04</a>|<a href="./200605.html">05</a>|<a href="./200606.html">06</a>|<a href="./200607.html">07</a>|<a href="./200608.html">08</a>|<a href="./200609.html">09</a>|<a href="./200610.html">10</a>|<a href="./200611.html">11</a>|<a href="./200612.html">12</a>|</div>
+<div class="year">2007|<a href="./200701.html">01</a>|<a href="./200702.html">02</a>|<a href="./200703.html">03</a>|<a href="./200704.html">04</a>|<a href="./200705.html">05</a>|<a href="./200706.html">06</a>|<a href="./200707.html">07</a>|<a href="./200708.html">08</a>|<a href="./200709.html">09</a>|<a href="./200710.html">10</a>|<a href="./200711.html">11</a>|<a href="./200712.html">12</a>|</div>
+<div class="year">2008|<a href="./200801.html">01</a>|<a href="./200802.html">02</a>|<a href="./200803.html">03</a>|<a href="./200804.html">04</a>|<a href="./200805.html">05</a>|<a href="./200806.html">06</a>|<a href="./200807.html">07</a>|<a href="./200808.html">08</a>|<a href="./200809.html">09</a>|<a href="./200810.html">10</a>|<a href="./200812.html">12</a>|</div>
+<div class="year">2009|<a href="./200901.html">01</a>|<a href="./200902.html">02</a>|<a href="./200903.html">03</a>|<a href="./200904.html">04</a>|<a href="./200905.html">05</a>|<a href="./200906.html">06</a>|<a href="./200907.html">07</a>|<a href="./200908.html">08</a>|<a href="./200909.html">09</a>|<a href="./200910.html">10</a>|<a href="./200911.html">11</a>|<a href="./200912.html">12</a>|</div>
+<div class="year">2010|<a href="./201001.html">01</a>|<a href="./201002.html">02</a>|<a href="./201003.html">03</a>|<a href="./201004.html">04</a>|<a href="./201005.html">05</a>|<a href="./201006.html">06</a>|<a href="./201007.html">07</a>|<a href="./201008.html">08</a>|<a href="./201009.html">09</a>|<a href="./201010.html">10</a>|<a href="./201011.html">11</a>|<a href="./201012.html">12</a>|</div>
+<div class="year">2011|<a href="./201101.html">01</a>|<a href="./201102.html">02</a>|<a href="./201103.html">03</a>|<a href="./201104.html">04</a>|<a href="./201105.html">05</a>|<a href="./201106.html">06</a>|<a href="./201107.html">07</a>|<a href="./201108.html">08</a>|<a href="./201109.html">09</a>|<a href="./201110.html">10</a>|<a href="./201111.html">11</a>|<a href="./201112.html">12</a>|</div>
+<div class="year">2012|<a href="./201201.html">01</a>|<a href="./201202.html">02</a>|<a href="./201203.html">03</a>|<a href="./201204.html">04</a>|<a href="./201205.html">05</a>|<a href="./201206.html">06</a>|<a href="./201207.html">07</a>|<a href="./201208.html">08</a>|<a href="./201209.html">09</a>|<a href="./201210.html">10</a>|<a href="./201211.html">11</a>|<a href="./201212.html">12</a>|</div>
+<div class="year">2013|<a href="./201301.html">01</a>|<a href="./201302.html">02</a>|<a href="./201303.html">03</a>|<a href="./201304.html">04</a>|<a href="./201305.html">05</a>|<a href="./201306.html">06</a>|<a href="./201307.html">07</a>|<a href="./201308.html">08</a>|<a href="./201309.html">09</a>|<a href="./201310.html">10</a>|<a href="./201311.html">11</a>|<a href="./201312.html">12</a>|</div>
+<div class="year">2014|<a href="./201401.html">01</a>|<a href="./201402.html">02</a>|<a href="./201403.html">03</a>|<a href="./201404.html">04</a>|<a href="./201405.html">05</a>|<a href="./201406.html">06</a>|<a href="./201407.html">07</a>|<a href="./201408.html">08</a>|<a href="./201409.html">09</a>|<a href="./201410.html">10</a>|<a href="./201411.html">11</a>|<a href="./201412.html">12</a>|</div>
+<div class="year">2015|<a href="./201501.html">01</a>|<a href="./201502.html">02</a>|<a href="./201503.html">03</a>|<a href="./201504.html">04</a>|<a href="./201505.html">05</a>|<a href="./201506.html">06</a>|<a href="./201507.html">07</a>|<a href="./201508.html">08</a>|<a href="./201509.html">09</a>|<a href="./201510.html">10</a>|<a href="./201511.html">11</a>|<a href="./201512.html">12</a>|</div>
+<div class="year">2016|<a href="./201601.html">01</a>|<a href="./201602.html">02</a>|<a href="./201603.html">03</a>|<a href="./201604.html">04</a>|<a href="./201605.html">05</a>|<a href="./201606.html">06</a>|<a href="./201607.html">07</a>|<a href="./201608.html">08</a>|<a href="./201609.html">09</a>|<a href="./201612.html">12</a>|</div>
+</div>
+
+</div>
+
+<hr>
+
+
+
+</div>
+<div class="adminmenu"><span class="adminmenu"><a href="./201104.html">&laquo;前月</a></span>
+<span class="adminmenu"><a href="./">最新</a></span>
+<span class="adminmenu"><a href="./201106.html">翌月&raquo;</a></span>
+</div>
+</div>
+<ul class="plugin-counter">
+<li>Yesterday: <span class="counter-yesterday"><span class="counter-0"><span class="counter-num-1">1</span></span><span class="counter-1"><span class="counter-num-6">6</span></span><span class="counter-2"><span class="counter-num-9">9</span></span></span></li>
+<li>Today:<span class="counter-today"><span class="counter-0"><span class="counter-num-1">1</span></span><span class="counter-1"><span class="counter-num-4">4</span></span><span class="counter-2"><span class="counter-num-9">9</span></span></span></li>
+<li>Total:<span class="counter"><span class="counter-0"><span class="counter-num-1">1</span></span><span class="counter-1"><span class="counter-num-0">0</span></span><span class="counter-2"><span class="counter-num-2">2</span></span><span class="counter-3"><span class="counter-num-8">8</span></span><span class="counter-4"><span class="counter-num-2">2</span></span><span class="counter-5"><span class="counter-num-1">1</span></span><span class="counter-6"><span class="counter-num-7">7</span></span></span></li>
+</ul>
+
+
+
+
+
+
+<div class="footer">
+Generated by <a href="http://www.tdiary.org/">tDiary</a> version 3.2.1<br>
+Powered by <a href="http://www.ruby-lang.org/">Ruby</a> version 1.9.3-p194
+</div>
+</div>
+</body>
+</html>

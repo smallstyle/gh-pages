@@ -1,0 +1,446 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="ja-JP">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="generator" content="tDiary 3.2.1">
+	<meta http-equiv="Last-Modified" content="Wed, 28 Mar 2012 12:33:39 GMT">
+	<meta http-equiv="Content-Script-Type" content="text/javascript; charset=UTF-8">
+	<meta name="author" content="hb">
+	
+	<link rel="start" title="最新" href="./">
+	
+	<link rel="shortcut icon" href="favicon.ico">
+	<meta name="description" content="日々，気になったことを書き留める日記">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js" type="text/javascript"></script>
+	<script src="js/00default.js?3.2.120200906" type="text/javascript"></script>
+		<script type="text/javascript"><!--
+		$tDiary.style = 'wiki';
+		//-->
+		</script>
+	<meta http-equiv="content-style-type" content="text/css">
+	<link rel="stylesheet" href="theme/base.css" type="text/css" media="all">
+	<link rel="stylesheet" href="stylesheets/smallstyle-2010/smallstyle-2010.css" title="smallstyle-2010" type="text/css" media="all">
+	
+	<title>SmallStyle(2012-03)</title>
+	
+	<link rel="author" href="https://plus.google.com/116137028933519395680">
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.smallstyle.com/smallstyle">
+	<link rel="alternate" type="application/rss+xml" title="RSS(without comments)" href="http://feeds.smallstyle.com/smallstyle_no_comments">
+	<style type="text/css" media="all"><!--
+	div.sequel {
+		font-size: 75%;
+		text-align: right;
+		margin: 0px;
+	}
+	--></style>
+</head>
+<body>
+<div class="whole-content">
+
+<div class="adminmenu"><div class="adminmenu">
+<span class="adminmenu"><a href="./201202.html">&laquo;前月</a></span>
+<span class="adminmenu"><a href="./">最新</a></span>
+<span class="adminmenu"><a href="./201204.html">翌月&raquo;</a></span>
+</div>
+</div>
+<h1><a href="http://www.smallstyle.com/">SmallStyle</a></h1>
+<div class="content">
+<div class="main">
+
+<hr class="sep">
+
+
+	
+<div class="day autopagerize_page_element">
+<h2><span class="date">
+<a href="./20120301.html">2012-03-01</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="./20120301.html#p01" title="Picasaプラグインで写真の一覧を並び替える"><span class="sanchor">_</span></a> Picasaプラグインで写真の一覧を並び替える</h3>
+<p><a href="http://www.freedomcat.com/diary/?date=20120301#p01">Picasaプラグインで最新の画像を使いたい場合に一番最後までスクロールするのが不便だ</a>，ということでPicasaのAPIを久々に見てみたところ，そもそもAPIにソートを条件として指定できないので，通常では追加した順での表示が想定されている，ということがわかった．これは仕様です，じゃなんか悔しいので，なんとかできる方法ということでちょっと調べてみた．</p>
+<pre>diff --git a/js/picasa.js b/js/picasa.js
+index 378849f..dcabbaf 100644
+--- a/js/picasa.js
++++ b/js/picasa.js
+@@ -149,7 +149,7 @@ $(function () {
+                                        service.getPhotos(album.gphoto$id.$t, function (photos) {
+                                                $(loading.canvas).hide();
+                                                loading.stop();
+-                                               $.each(photos, function (j, photo) {
++                                               $.each(photos.reverse(), function (j, photo) {
+                                                        $('&lt;img&gt;').click(function () {
+                                                                $('#body').insertAtCaret($.makePluginTag('picasa', [phot
+                                                        }).attr({</pre>
+<p><a href="https://gist.github.com/1949167">https://gist.github.com/1949167</a></p>
+<p>結果としてはちょっと手を入れるだけで簡単に新しいものから順に並び替えることができました．</p>
+<div class="sequel">つづき: <a href="http://www.smallstyle.com/20120304.html#p01" title="Picasa プラグインの写真一覧表示について再び考える">2012-03-04</a></div>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+		<div class="caption">本日のツッコミ(全3件) [<a href="./20120301.html#c">ツッコミを入れる</a>]</div>
+		<div class="commentshort">
+				<p><a href="./20120301.html#c01"><span class="canchor">_</span></a>
+				<span class="commentator">ただただし</span>&nbsp;[同じアルバムに写真を追加していく人のことを考えると、こっちの動作をデフォにしたほうがいいかも知れませんね。]</p>
+				<p><a href="./20120301.html#c02"><span class="canchor">_</span></a>
+				<span class="commentator">hb</span>&nbsp;[アルバムの並び順も新しいものから並んでいるので，こちらにあわせたほうがよさそうですね．設定でこれまでの並び順でも使え..]</p>
+				<p><a href="./20120301.html#c03"><span class="canchor">_</span></a>
+				<span class="commentator">ただただし</span>&nbsp;[個人的には設定とかなくていいと思いますけどね(笑)。]</p>
+		</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<hr class="sep">
+	
+<div class="day autopagerize_page_element">
+<h2><span class="date">
+<a href="./20120304.html">2012-03-04</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="./20120304.html#p01" title="Picasa プラグインの写真一覧表示について再び考える"><span class="sanchor">_</span></a> Picasa プラグインの写真一覧表示について再び考える</h3>
+<p><img class="right" src="http://www.smallstyle.com/images/20120304_0.png" alt="プラグインで追加されたボタン" title="プラグインで追加されたボタン" width="378" height="105"></p>
+<p><a href="http://www.smallstyle.com/20120301.html#p01" title="Picasaプラグインで写真の一覧を並び替える">Picasa プラグインでアルバム内の写真の一覧表示を新しいものから順にならべる方法についてはこの前書いた</a>けど，そもそも同じアルバムに写真を追加していくタイプだと，アルバムを選択する必要はなくて追加した新しい写真が一覧できればいいんじゃないだろうか…と思ったのは，API を見直していたら，<a href="http://code.google.com/intl/ja/apis/picasaweb/docs/2.0/developers_guide_protocol.html#ListRecentPhotos">Listing photos recently uploaded</a>なんてものがあったから．</p>
+<p>とりあえず，最近アップロードした写真の一覧を取得するボタンを追加してみたバージョンは以下に．</p>
+<p><a href="https://github.com/smallstyle/tdiary-contrib/blob/8be572d29bc4985cf591f17fe4af0f0c50c88a3c/js/picasa.js">https://github.com/smallstyle/tdiary-contrib/blob/8be572d29bc4985cf591f17fe4af0f0c50c88a3c/js/picasa.js</a></p>
+<p>これはこれで良さげなような気もするなぁ．</p>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+		<div class="caption">本日のツッコミ(全2件) [<a href="./20120304.html#c">ツッコミを入れる</a>]</div>
+		<div class="commentshort">
+				<p><a href="./20120304.html#c01"><span class="canchor">_</span></a>
+				<span class="commentator">ただただし</span>&nbsp;[どっちのボタンを押せばいいのか判断を強いられるのはストレスになるので、recently uploadedだけで良いと..]</p>
+				<p><a href="./20120304.html#c02"><span class="canchor">_</span></a>
+				<span class="commentator">hb</span>&nbsp;[なるほど．並んだボタンを見て，なんとなくモヤモヤした気分だったのが，すっきりした感じがします．提案いただいた方向で進..]</p>
+		</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<hr class="sep">
+	
+<div class="day autopagerize_page_element">
+<h2><span class="date">
+<a href="./20120305.html">2012-03-05</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="./20120305.html#p01" title="nginx でメンテナンス画面を表示する方法"><span class="sanchor">_</span></a> nginx でメンテナンス画面を表示する方法</h3>
+<p>アプリケーションサーバーをメンテナンスするために，フロントの nginx でメンテナンス中の 503 画面を出すために，以下のような設定を定義してみた．（設定はそれっぽく抜粋しただけ．）</p>
+<pre>server {
+  listen 80;
+  server_name example.com;
+  
+  root /var/www/example.com/public/;
+  index index.html;
+  
+  error_page 503 @maintenance;
+  location @maintenance {
+    rewrite ^(.*)$ /503.html break;
+  }
+  
+  location / {
+    # For maintenance mode
+    if ($request_addr != "127.0.0.1") {
+      return 503;
+    }
+    
+    if (!-f $request_filename) {
+      proxy_pass http://app;
+      break;
+    }
+  }
+}</pre>
+<p>よくあるケースなのでググればいくらでもサンプルは出てくるのですが，実際にやってみたところ，確かに GET でのリクエストでは 503 を返してくれるのですが， POST とかでリクエストをすると 405 が返されてしまう．これは nginx が static なファイルに対しての POST リクエストを許していないからこうなるみたいなんだけど，それはそれで困る．</p>
+<p>これに対しての解決策は<a href="http://invalidlogic.com/2011/04/12/serving-static-content-via-post-from-nginx/">Serving Static Content Via POST From Nginx - In Valid Logic</a>にあるような方法をとればよさそう．</p>
+<pre>    # For maintenance mode
+    error_page 405 =503 @maintenance;
+    if ($request_addr != "127.0.0.1") {
+      return 503;
+    }</pre>
+<p>といった感じで，メンテナンス時の 405 エラーも 503 扱いにすることによって，GET 時と同じレスポンスを返すことができた．</p>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<hr class="sep">
+	
+<div class="day autopagerize_page_element">
+<h2><span class="date">
+<a href="./20120308.html">2012-03-08</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="./20120308.html#p01" title="SSH の秘密鍵から公開鍵を export する"><span class="sanchor">_</span></a> SSH の秘密鍵から公開鍵を export する</h3>
+<p>GitHub から SSH Key を確認してね，とメールがきていたので，さて確認と思ったら手元のマシンには秘密鍵しかなくて，fingerprint 確認の以下のコマンドを実行しても確認ができない．</p>
+<pre>$ ssh-keygen -l -f github_id_rsa
+github_id_rsa is not a public key file.</pre>
+<p>秘密鍵から公開鍵を export するには以下のように実行すればいい．</p>
+<pre>$ ssh-keygen -y -f github_id_rsa &gt; github_id_rsa.pub</pre>
+<p>これで再度 fingerprint 確認のコマンドを実行するとちゃんと確認できた．あとは <a href="https://github.com/settings/ssh/audit">GitHub 上の表示</a>と比較して問題ないか確認して完了．</p>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<hr class="sep">
+	
+<div class="day autopagerize_page_element">
+<h2><span class="date">
+<a href="./20120320.html">2012-03-20</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="./20120320.html#p01" title="Picasa プラグインを更新"><span class="sanchor">_</span></a> Picasa プラグインを更新</h3>
+<p><img title="picasaプラグイン" alt="picasaプラグイン" src="http://lh6.ggpht.com/-yOwXUr8oyuk/T2h8JTiUbNI/AAAAAAAAAJM/FQq8zKBqLrY/s300/Screen%252520Shot%2525202012-03-20%252520at%2525209.45.23%252520PM.png" class="right picasa"></p>
+<p>tDiary の Picasa プラグインを更新しました．今回から Picasa にアップロードした新しい写真の一覧を取得できる API を利用したものを標準とするように変更しました．Picasa から写真を取得ボタンを押すと，Picasa にアップロードした最近の写真から順に表示されます．以前のアルバム一覧から選択する場合は，Picasa Web Album の文字列をクリックすることでアルバム一覧を表示します．</p>
+<ul>
+<li><a href="https://github.com/tdiary/tdiary-contrib/commit/b0915422c8db865a206c43b8564f41cd380e5044">https://github.com/tdiary/tdiary-contrib/commit/b0915422c8db865a206c43b8564f41cd380e5044</a></li>
+</ul>
+<p>また，最近アップロードした写真の一覧やアルバム一覧については，スクロールしてさらに読み込める写真やアルバムがある場合は，自動的に続きをに読み込むようにしてみました．</p>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<hr class="sep">
+	
+<div class="day autopagerize_page_element">
+<h2><span class="date">
+<a href="./20120326.html">2012-03-26</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="./20120326.html#p01" title="ドメイン更新"><span class="sanchor">_</span></a> ドメイン更新</h3>
+<p>smallstyle.com のドメインを更新．今回も 1 年で．</p>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<hr class="sep">
+	
+<div class="day autopagerize_page_element">
+<h2><span class="date">
+<a href="./20120328.html">2012-03-28</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="./20120328.html#p01" title="絵日記プラグインでファイルを Drag &amp; Drop でアップロードできるようにしてみた"><span class="sanchor">_</span></a> 絵日記プラグインでファイルを Drag &amp; Drop でアップロードできるようにしてみた</h3>
+<p><img class="right" src="http://www.smallstyle.com/images/20120328_0.png" alt="WebKitでのファイルのドロップ" title="WebKitでのファイルのドロップ" width="212" height="212"></p>
+<p>Safari や Chrome などの WebKit エンジンのブラウザは File フィールドにファイルをドラッグするとファイルダイアログから選択しなくてもファイルを指定できるので知っているとちょっと便利です．ただ，これだとドロップできるフィールドが小さくて使い勝手も悪く，またドロップできるのかどうかもわかりにくかったりします．</p>
+<p>というわけで，tDiary の絵日記プラグインでは，もう少し分かりやすい形でドロップしてアップロードできるようにしてみました．</p>
+<ul>
+<li><a href="https://github.com/tdiary/tdiary-core/commit/8c5c6092895765862cd6da692dc3dd6369fca48a">https://github.com/tdiary/tdiary-core/commit/8c5c6092895765862cd6da692dc3dd6369fca48a</a></li>
+</ul>
+<p><img class="right" src="http://www.smallstyle.com/images/20120328_1.png" alt="pluginのドロップフィールド" title="pluginのドロップフィールド" width="331" height="163"></p>
+<p>絵日記プラグインが有効になっている日記の編集画面でブラウザにファイルをドラッグすると，ファイルフィールドの部分に「ここにファイルをドロップ」と表示されたフィールドが現れます．Gmail のファイル添付に似た感じです．</p>
+<p>この仕組みはページ遷移なしのアップロードを実現したときに利用した File API を利用しているので，非対応ブラウザではドッロプフィールドは表示されません．Chrome や Firefox,Safari などで利用可能です．</p>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<hr class="sep">
+
+</div>
+
+
+
+
+
+<div class="additional_information">
+<div class="information">
+<h4>about me</h4>
+<div itemscope itemtype="http://data-vocabulary.org/Person">
+<dl>
+<p>いろいろと興味を持ったことを書いてます．ちょっとしたことは <a href="http://twitter.com/smallstyle"><span itemprop="name">hb</span>(@<span itemprop="nickname">smallstyle</span>) on Twitter</a> で書いてます．</p>
+</div>
+
+<h4>Archive</h4>
+<div class="calendar">
+<div class="year">2003|<a href="./200301.html">01</a>|<a href="./200302.html">02</a>|<a href="./200303.html">03</a>|<a href="./200304.html">04</a>|<a href="./200305.html">05</a>|<a href="./200306.html">06</a>|<a href="./200307.html">07</a>|<a href="./200308.html">08</a>|<a href="./200309.html">09</a>|<a href="./200310.html">10</a>|<a href="./200311.html">11</a>|<a href="./200312.html">12</a>|</div>
+<div class="year">2004|<a href="./200401.html">01</a>|<a href="./200402.html">02</a>|<a href="./200403.html">03</a>|<a href="./200404.html">04</a>|<a href="./200405.html">05</a>|<a href="./200406.html">06</a>|<a href="./200407.html">07</a>|<a href="./200408.html">08</a>|<a href="./200409.html">09</a>|<a href="./200410.html">10</a>|<a href="./200411.html">11</a>|<a href="./200412.html">12</a>|</div>
+<div class="year">2005|<a href="./200501.html">01</a>|<a href="./200502.html">02</a>|<a href="./200503.html">03</a>|<a href="./200504.html">04</a>|<a href="./200505.html">05</a>|<a href="./200506.html">06</a>|<a href="./200507.html">07</a>|<a href="./200508.html">08</a>|<a href="./200509.html">09</a>|<a href="./200510.html">10</a>|<a href="./200511.html">11</a>|<a href="./200512.html">12</a>|</div>
+<div class="year">2006|<a href="./200601.html">01</a>|<a href="./200602.html">02</a>|<a href="./200603.html">03</a>|<a href="./200604.html">04</a>|<a href="./200605.html">05</a>|<a href="./200606.html">06</a>|<a href="./200607.html">07</a>|<a href="./200608.html">08</a>|<a href="./200609.html">09</a>|<a href="./200610.html">10</a>|<a href="./200611.html">11</a>|<a href="./200612.html">12</a>|</div>
+<div class="year">2007|<a href="./200701.html">01</a>|<a href="./200702.html">02</a>|<a href="./200703.html">03</a>|<a href="./200704.html">04</a>|<a href="./200705.html">05</a>|<a href="./200706.html">06</a>|<a href="./200707.html">07</a>|<a href="./200708.html">08</a>|<a href="./200709.html">09</a>|<a href="./200710.html">10</a>|<a href="./200711.html">11</a>|<a href="./200712.html">12</a>|</div>
+<div class="year">2008|<a href="./200801.html">01</a>|<a href="./200802.html">02</a>|<a href="./200803.html">03</a>|<a href="./200804.html">04</a>|<a href="./200805.html">05</a>|<a href="./200806.html">06</a>|<a href="./200807.html">07</a>|<a href="./200808.html">08</a>|<a href="./200809.html">09</a>|<a href="./200810.html">10</a>|<a href="./200812.html">12</a>|</div>
+<div class="year">2009|<a href="./200901.html">01</a>|<a href="./200902.html">02</a>|<a href="./200903.html">03</a>|<a href="./200904.html">04</a>|<a href="./200905.html">05</a>|<a href="./200906.html">06</a>|<a href="./200907.html">07</a>|<a href="./200908.html">08</a>|<a href="./200909.html">09</a>|<a href="./200910.html">10</a>|<a href="./200911.html">11</a>|<a href="./200912.html">12</a>|</div>
+<div class="year">2010|<a href="./201001.html">01</a>|<a href="./201002.html">02</a>|<a href="./201003.html">03</a>|<a href="./201004.html">04</a>|<a href="./201005.html">05</a>|<a href="./201006.html">06</a>|<a href="./201007.html">07</a>|<a href="./201008.html">08</a>|<a href="./201009.html">09</a>|<a href="./201010.html">10</a>|<a href="./201011.html">11</a>|<a href="./201012.html">12</a>|</div>
+<div class="year">2011|<a href="./201101.html">01</a>|<a href="./201102.html">02</a>|<a href="./201103.html">03</a>|<a href="./201104.html">04</a>|<a href="./201105.html">05</a>|<a href="./201106.html">06</a>|<a href="./201107.html">07</a>|<a href="./201108.html">08</a>|<a href="./201109.html">09</a>|<a href="./201110.html">10</a>|<a href="./201111.html">11</a>|<a href="./201112.html">12</a>|</div>
+<div class="year">2012|<a href="./201201.html">01</a>|<a href="./201202.html">02</a>|<a href="./201203.html">03</a>|<a href="./201204.html">04</a>|<a href="./201205.html">05</a>|<a href="./201206.html">06</a>|<a href="./201207.html">07</a>|<a href="./201208.html">08</a>|<a href="./201209.html">09</a>|<a href="./201210.html">10</a>|<a href="./201211.html">11</a>|<a href="./201212.html">12</a>|</div>
+<div class="year">2013|<a href="./201301.html">01</a>|<a href="./201302.html">02</a>|<a href="./201303.html">03</a>|<a href="./201304.html">04</a>|<a href="./201305.html">05</a>|<a href="./201306.html">06</a>|<a href="./201307.html">07</a>|<a href="./201308.html">08</a>|<a href="./201309.html">09</a>|<a href="./201310.html">10</a>|<a href="./201311.html">11</a>|<a href="./201312.html">12</a>|</div>
+<div class="year">2014|<a href="./201401.html">01</a>|<a href="./201402.html">02</a>|<a href="./201403.html">03</a>|<a href="./201404.html">04</a>|<a href="./201405.html">05</a>|<a href="./201406.html">06</a>|<a href="./201407.html">07</a>|<a href="./201408.html">08</a>|<a href="./201409.html">09</a>|<a href="./201410.html">10</a>|<a href="./201411.html">11</a>|<a href="./201412.html">12</a>|</div>
+<div class="year">2015|<a href="./201501.html">01</a>|<a href="./201502.html">02</a>|<a href="./201503.html">03</a>|<a href="./201504.html">04</a>|<a href="./201505.html">05</a>|<a href="./201506.html">06</a>|<a href="./201507.html">07</a>|<a href="./201508.html">08</a>|<a href="./201509.html">09</a>|<a href="./201510.html">10</a>|<a href="./201511.html">11</a>|<a href="./201512.html">12</a>|</div>
+<div class="year">2016|<a href="./201601.html">01</a>|<a href="./201602.html">02</a>|<a href="./201603.html">03</a>|<a href="./201604.html">04</a>|<a href="./201605.html">05</a>|<a href="./201606.html">06</a>|<a href="./201607.html">07</a>|<a href="./201608.html">08</a>|<a href="./201609.html">09</a>|<a href="./201612.html">12</a>|</div>
+</div>
+
+</div>
+
+<hr>
+
+
+
+</div>
+<div class="adminmenu"><span class="adminmenu"><a href="./201202.html">&laquo;前月</a></span>
+<span class="adminmenu"><a href="./">最新</a></span>
+<span class="adminmenu"><a href="./201204.html">翌月&raquo;</a></span>
+</div>
+</div>
+<ul class="plugin-counter">
+<li>Yesterday: <span class="counter-yesterday"><span class="counter-0"><span class="counter-num-1">1</span></span><span class="counter-1"><span class="counter-num-6">6</span></span><span class="counter-2"><span class="counter-num-9">9</span></span></span></li>
+<li>Today:<span class="counter-today"><span class="counter-0"><span class="counter-num-1">1</span></span><span class="counter-1"><span class="counter-num-4">4</span></span><span class="counter-2"><span class="counter-num-9">9</span></span></span></li>
+<li>Total:<span class="counter"><span class="counter-0"><span class="counter-num-1">1</span></span><span class="counter-1"><span class="counter-num-0">0</span></span><span class="counter-2"><span class="counter-num-2">2</span></span><span class="counter-3"><span class="counter-num-8">8</span></span><span class="counter-4"><span class="counter-num-2">2</span></span><span class="counter-5"><span class="counter-num-1">1</span></span><span class="counter-6"><span class="counter-num-7">7</span></span></span></li>
+</ul>
+
+
+
+
+
+
+<div class="footer">
+Generated by <a href="http://www.tdiary.org/">tDiary</a> version 3.2.1<br>
+Powered by <a href="http://www.ruby-lang.org/">Ruby</a> version 1.9.3-p194
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="ja-JP">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="generator" content="tDiary 3.2.1">
+	<meta http-equiv="Last-Modified" content="Mon, 31 Aug 2009 02:47:57 GMT">
+	<meta http-equiv="Content-Script-Type" content="text/javascript; charset=UTF-8">
+	<meta name="author" content="hb">
+	
+	<link rel="start" title="最新" href="./">
+	<link rel="alternate" media="handheld" type="text/html" href="http://www.smallstyle.com/">
+	<link rel="shortcut icon" href="favicon.ico">
+	<meta name="description" content="日々，気になったことを書き留める日記">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js" type="text/javascript"></script>
+	<script src="js/00default.js?3.2.120200906" type="text/javascript"></script>
+		<script type="text/javascript"><!--
+		$tDiary.style = 'wiki';
+		//-->
+		</script>
+	<meta http-equiv="content-style-type" content="text/css">
+	<link rel="stylesheet" href="theme/base.css" type="text/css" media="all">
+	<link rel="stylesheet" href="stylesheets/smallstyle-2010/smallstyle-2010.css" title="smallstyle-2010" type="text/css" media="all">
+	
+	<title>SmallStyle</title>
+	
+	<link rel="author" href="https://plus.google.com/116137028933519395680">
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.smallstyle.com/smallstyle">
+	<link rel="alternate" type="application/rss+xml" title="RSS(without comments)" href="http://feeds.smallstyle.com/smallstyle_no_comments">
+	<style type="text/css" media="all"><!--
+	div.sequel {
+		font-size: 75%;
+		text-align: right;
+		margin: 0px;
+	}
+	--></style>
+</head>
+<body>
+<div class="whole-content">
+
+<div class="adminmenu"><div class="adminmenu">
+<span class="adminmenu"><a href="./20040418-3.html" rel="next">&laquo;前3日分</a></span>
+<span class="adminmenu"><a href="./">最新</a></span>
+<span class="adminmenu"><a href="./20040501-3.html" rel="prev">次3日分&raquo;</a></span>
+</div>
+</div>
+<h1><a href="http://www.smallstyle.com/">SmallStyle</a></h1>
+<div class="content">
+<div class="main">
+
+<hr class="sep">
+
+
+	
+<div class="day autopagerize_page_element">
+<h2><span class="date">
+<a href="./20040425.html">2004-04-25</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="./20040425.html#p01" title="不正アクセス？"><span class="sanchor">_</span></a> 不正アクセス？</h3>
+<p>Apacheのアクセスログを何気に眺めていたら不審なログを見つける…</p>
+<pre>63.148.99.236 - - [24/Apr/2004:21:57:37 +0900] "GET / HTTP/1.1" 200 14854 "-" "Mozilla/4.0 (compatible; MSIE 6.0; Windows XP)"
+63.148.99.240 - - [24/Apr/2004:21:58:36 +0900] "GET /update.rb HTTP/1.1" 401 409 "http://www.smallstyle.com/" "Mozilla/4.0 (compatible; MSIE 6.0; Windows XP)"</pre>
+<p>何やらtDiaryの更新スクリプトupdate.rbにアクセスしようとしてるしようとしてるし．あまりお行儀がよろしくないようなので，denyしました．</p>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<hr class="sep">
+	
+<div class="day autopagerize_page_element">
+<h2><span class="date">
+<a href="./20040424.html">2004-04-24</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="./20040424.html#p01" title="SleipnirでGoogle検索"><span class="sanchor">_</span></a> SleipnirでGoogle検索</h3>
+<p><img class="right" src="http://www.smallstyle.com/images/20040424_0.gif" alt="Googleで検索した場合の文字化け" title="Googleで検索した場合の文字化け" width="240"></p>
+<p>Googleの検索機能に「辞書検索」「路線検索」「株価検索」「会社情報検索」「荷物検索」の5種類が追加されました．その影響からかSleipnirの検索バーから日本語で検索をかけると文字化けをおこしてしまうようになりました．この問題の解決策としては2通りあるみたいです．</p>
+<p><img class="right" src="http://www.smallstyle.com/images/20040424_1.gif" alt="Sleipnir オプション画面" title="Sleipnir オプション画面" width="240"></p>
+<p>お手軽に解決するには，メニューの「ツール(T)」-&gt;「Sleipnirオプション(B)」でSleipnirオプション画面を表示．左メニューの「検索バー」のサブメニューから「検索エンジン」を選択します．「検索エンジンリスト」で「Google（日本語）」が選択されていることを確認して，下部の「エンコード」のリストから「UTF-8」を選択して，「OK」をクリックすれば完了．</p>
+<p>もう一方も，特に難しいわけでもないのですが，Sleipnirをいったん終了して，Search.iniをテキストエディタで開きます．Search.iniはSleipnirがインストールされているフォルダにあるはず．Search.iniの以下の行を</p>
+<pre>SearchEngine0_First="http://www.google.com/search?num=50&amp;lr=lang_ja&amp;q="</pre>
+<p>次のように修正，</p>
+<pre>SearchEngine0_First="http://www.google.com/search?num=50&amp;ie=Shift_JIS&amp;lr=lang_ja&amp;q="</pre>
+<p>まぁ，前者の方がSleipnir終了せずに変更ができるのでお手軽ですね．その後，2chなんかでいろいろ見てたら他にも対処方法があったので追記．「Sleipnirオプション」の検索エンジンのエンコードを「なし」にして，最後欄に以下の内容を入力．</p>
+<pre>&amp;ie=Shift_JIS&amp;oe=Shift_JIS</pre>
+<p>この方法を使うと，Googleでの検索結果の表示に用いられるフォント，エンコードが以前と変わらないみたいです．【2004/05/03追記】</p>
+
+</div>
+<div class="section">
+
+<h3><a href="./20040424.html#p02" title="coLinux"><span class="sanchor">_</span></a> coLinux</h3>
+<p>今日のお遊び．<a href="http://www.itmedia.co.jp/news/articles/0404/14/news035.html">Windows上でLinuxが動かせる</a>ということで試しに導入してみた．</p>
+<p>まず<a href="http://www.colinux.org/">coLinux</a>のサイトから，coLinux-0.6.0.exeとDebian-3.0r0.ext3.1gb.bz2をダウンロードしてくる．ディストリビューションはDebianのほかにFedora CoreやGentooもあった．まぁ，扱いなれてるDebianが無難ということでここではDebianを選択することにする．</p>
+<p>ダウンロードしたDebian-3.0r0.ext3.1gb.bz2を展開して，c:\coLinuxにおく．展開後の容量は1GBほどあるので空き容量に注意する．次にcoLinux-0.6.0.exeを実行すると，インストーラーが立ち上がるので，<a href="http://www.geocities.jp/error_storm/">ERROR STORM</a>のサイトを参考にインストールを行う．インストール自体は問題なく終了．</p>
+<p>次にcoLinuxの設定とネットワークの設定．coLinuxをインストールしたディレクトリにあるdefault.colinux.xmlをうちの環境では，block_deviceのpathがDebianにあたるので，このあたりは人によってかわってくるとことろ．ネットワークの設定はWinXPなのでTAPドライバーを使いWindowsでブリッジ接続を選択した．このあたりの設定がすんだら実際に起動してみる．</p>
+<p>インストール時に指定したインストール先にあるcolinux-daemon.exeを実行するとDOS画面が2つ起動される．ここではとりあえずメッセージにエラーらしきものがないが確認してから，Cooperative Linux console と云うコンソール画面は閉じてしまう．代わりにcolinux-console-nt.exe を起動する．</p>
+<p>aptを実行する前に，/etc/hosts，/etc/netwok/interfacesと/etc/resolve.confを適切に記述しておかないと，aptがうまくいかなかったので注意．その他もろもろは 基本的に<a href="http://www.geocities.jp/error_storm/">ERROR STORM</a>を参考にしていけばなんとかなる．</p>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<hr class="sep">
+	
+<div class="day autopagerize_page_element">
+<h2><span class="date">
+<a href="./20040421.html">2004-04-21</a>
+</span> 
+<span class="title">　</span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a href="./20040421.html#p01" title="名古屋"><span class="sanchor">_</span></a> 名古屋</h3>
+<p>久々に事業所に出社です．いつも岐阜に行くときは時間ぎりぎりにつくように出かける癖がついてしまっていて，9時ちょうどに到着．まぁ，いっか．そんなわけで今日はぼちぼちとお客様向け資料の作成．ソフトウェアの導入手順書を作成しているわけですが，インストール画面のハードコピーがない…．岐阜の現場にいてもこれはとれないしなぁ．困ったなぁ．UNIX系は基本的にコマンドで何とかなるからいいんだけど，Windows系とかGUIの手順書を作成するのってかなり面倒くさいことが判明．さぁ，どうしたものか…</p>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<hr class="sep">
+
+</div>
+
+
+
+
+
+<div class="additional_information">
+<div class="information">
+<h4>about me</h4>
+<div itemscope itemtype="http://data-vocabulary.org/Person">
+<dl>
+<p>いろいろと興味を持ったことを書いてます．ちょっとしたことは <a href="http://twitter.com/smallstyle"><span itemprop="name">hb</span>(@<span itemprop="nickname">smallstyle</span>) on Twitter</a> で書いてます．</p>
+</div>
+
+<h4>Archive</h4>
+<div class="calendar">
+<div class="year">2003|<a href="./200301.html">01</a>|<a href="./200302.html">02</a>|<a href="./200303.html">03</a>|<a href="./200304.html">04</a>|<a href="./200305.html">05</a>|<a href="./200306.html">06</a>|<a href="./200307.html">07</a>|<a href="./200308.html">08</a>|<a href="./200309.html">09</a>|<a href="./200310.html">10</a>|<a href="./200311.html">11</a>|<a href="./200312.html">12</a>|</div>
+<div class="year">2004|<a href="./200401.html">01</a>|<a href="./200402.html">02</a>|<a href="./200403.html">03</a>|<a href="./200404.html">04</a>|<a href="./200405.html">05</a>|<a href="./200406.html">06</a>|<a href="./200407.html">07</a>|<a href="./200408.html">08</a>|<a href="./200409.html">09</a>|<a href="./200410.html">10</a>|<a href="./200411.html">11</a>|<a href="./200412.html">12</a>|</div>
+<div class="year">2005|<a href="./200501.html">01</a>|<a href="./200502.html">02</a>|<a href="./200503.html">03</a>|<a href="./200504.html">04</a>|<a href="./200505.html">05</a>|<a href="./200506.html">06</a>|<a href="./200507.html">07</a>|<a href="./200508.html">08</a>|<a href="./200509.html">09</a>|<a href="./200510.html">10</a>|<a href="./200511.html">11</a>|<a href="./200512.html">12</a>|</div>
+<div class="year">2006|<a href="./200601.html">01</a>|<a href="./200602.html">02</a>|<a href="./200603.html">03</a>|<a href="./200604.html">04</a>|<a href="./200605.html">05</a>|<a href="./200606.html">06</a>|<a href="./200607.html">07</a>|<a href="./200608.html">08</a>|<a href="./200609.html">09</a>|<a href="./200610.html">10</a>|<a href="./200611.html">11</a>|<a href="./200612.html">12</a>|</div>
+<div class="year">2007|<a href="./200701.html">01</a>|<a href="./200702.html">02</a>|<a href="./200703.html">03</a>|<a href="./200704.html">04</a>|<a href="./200705.html">05</a>|<a href="./200706.html">06</a>|<a href="./200707.html">07</a>|<a href="./200708.html">08</a>|<a href="./200709.html">09</a>|<a href="./200710.html">10</a>|<a href="./200711.html">11</a>|<a href="./200712.html">12</a>|</div>
+<div class="year">2008|<a href="./200801.html">01</a>|<a href="./200802.html">02</a>|<a href="./200803.html">03</a>|<a href="./200804.html">04</a>|<a href="./200805.html">05</a>|<a href="./200806.html">06</a>|<a href="./200807.html">07</a>|<a href="./200808.html">08</a>|<a href="./200809.html">09</a>|<a href="./200810.html">10</a>|<a href="./200812.html">12</a>|</div>
+<div class="year">2009|<a href="./200901.html">01</a>|<a href="./200902.html">02</a>|<a href="./200903.html">03</a>|<a href="./200904.html">04</a>|<a href="./200905.html">05</a>|<a href="./200906.html">06</a>|<a href="./200907.html">07</a>|<a href="./200908.html">08</a>|<a href="./200909.html">09</a>|<a href="./200910.html">10</a>|<a href="./200911.html">11</a>|<a href="./200912.html">12</a>|</div>
+<div class="year">2010|<a href="./201001.html">01</a>|<a href="./201002.html">02</a>|<a href="./201003.html">03</a>|<a href="./201004.html">04</a>|<a href="./201005.html">05</a>|<a href="./201006.html">06</a>|<a href="./201007.html">07</a>|<a href="./201008.html">08</a>|<a href="./201009.html">09</a>|<a href="./201010.html">10</a>|<a href="./201011.html">11</a>|<a href="./201012.html">12</a>|</div>
+<div class="year">2011|<a href="./201101.html">01</a>|<a href="./201102.html">02</a>|<a href="./201103.html">03</a>|<a href="./201104.html">04</a>|<a href="./201105.html">05</a>|<a href="./201106.html">06</a>|<a href="./201107.html">07</a>|<a href="./201108.html">08</a>|<a href="./201109.html">09</a>|<a href="./201110.html">10</a>|<a href="./201111.html">11</a>|<a href="./201112.html">12</a>|</div>
+<div class="year">2012|<a href="./201201.html">01</a>|<a href="./201202.html">02</a>|<a href="./201203.html">03</a>|<a href="./201204.html">04</a>|<a href="./201205.html">05</a>|<a href="./201206.html">06</a>|<a href="./201207.html">07</a>|<a href="./201208.html">08</a>|<a href="./201209.html">09</a>|<a href="./201210.html">10</a>|<a href="./201211.html">11</a>|<a href="./201212.html">12</a>|</div>
+<div class="year">2013|<a href="./201301.html">01</a>|<a href="./201302.html">02</a>|<a href="./201303.html">03</a>|<a href="./201304.html">04</a>|<a href="./201305.html">05</a>|<a href="./201306.html">06</a>|<a href="./201307.html">07</a>|<a href="./201308.html">08</a>|<a href="./201309.html">09</a>|<a href="./201310.html">10</a>|<a href="./201311.html">11</a>|<a href="./201312.html">12</a>|</div>
+<div class="year">2014|<a href="./201401.html">01</a>|<a href="./201402.html">02</a>|<a href="./201403.html">03</a>|<a href="./201404.html">04</a>|<a href="./201405.html">05</a>|<a href="./201406.html">06</a>|<a href="./201407.html">07</a>|<a href="./201408.html">08</a>|<a href="./201409.html">09</a>|<a href="./201410.html">10</a>|<a href="./201411.html">11</a>|<a href="./201412.html">12</a>|</div>
+<div class="year">2015|<a href="./201501.html">01</a>|<a href="./201502.html">02</a>|<a href="./201503.html">03</a>|<a href="./201504.html">04</a>|<a href="./201505.html">05</a>|<a href="./201506.html">06</a>|<a href="./201507.html">07</a>|<a href="./201508.html">08</a>|<a href="./201509.html">09</a>|<a href="./201510.html">10</a>|<a href="./201511.html">11</a>|<a href="./201512.html">12</a>|</div>
+<div class="year">2016|<a href="./201601.html">01</a>|<a href="./201602.html">02</a>|<a href="./201603.html">03</a>|<a href="./201604.html">04</a>|<a href="./201605.html">05</a>|<a href="./201606.html">06</a>|<a href="./201607.html">07</a>|<a href="./201608.html">08</a>|<a href="./201609.html">09</a>|<a href="./201612.html">12</a>|</div>
+</div>
+
+</div>
+
+<hr>
+
+
+
+</div>
+<div class="adminmenu"><span class="adminmenu"><a href="./20040418-3.html" rel="next">&laquo;前3日分</a></span>
+<span class="adminmenu"><a href="./">最新</a></span>
+<span class="adminmenu"><a href="./20040501-3.html" rel="prev">次3日分&raquo;</a></span>
+</div>
+</div>
+<ul class="plugin-counter">
+<li>Yesterday: <span class="counter-yesterday"><span class="counter-0"><span class="counter-num-1">1</span></span><span class="counter-1"><span class="counter-num-6">6</span></span><span class="counter-2"><span class="counter-num-9">9</span></span></span></li>
+<li>Today:<span class="counter-today"><span class="counter-0"><span class="counter-num-1">1</span></span><span class="counter-1"><span class="counter-num-4">4</span></span><span class="counter-2"><span class="counter-num-9">9</span></span></span></li>
+<li>Total:<span class="counter"><span class="counter-0"><span class="counter-num-1">1</span></span><span class="counter-1"><span class="counter-num-0">0</span></span><span class="counter-2"><span class="counter-num-2">2</span></span><span class="counter-3"><span class="counter-num-8">8</span></span><span class="counter-4"><span class="counter-num-2">2</span></span><span class="counter-5"><span class="counter-num-1">1</span></span><span class="counter-6"><span class="counter-num-7">7</span></span></span></li>
+</ul>
+
+
+
+
+
+
+<div class="footer">
+Generated by <a href="http://www.tdiary.org/">tDiary</a> version 3.2.1<br>
+Powered by <a href="http://www.ruby-lang.org/">Ruby</a> version 1.9.3-p194
+</div>
+</div>
+</body>
+</html>

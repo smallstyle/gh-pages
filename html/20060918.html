@@ -1,0 +1,240 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="ja-JP">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="generator" content="tDiary 3.2.1">
+	<meta http-equiv="Last-Modified" content="Mon, 17 Aug 2009 20:52:24 GMT">
+	<meta http-equiv="Content-Script-Type" content="text/javascript; charset=UTF-8">
+	<meta name="author" content="hb">
+	
+	<link rel="prev" title="前の日記(2006-09-17)" href="./20060917.html">
+	<link rel="next" title="次の日記(2006-09-19)" href="./20060919.html">
+	<link rel="start" title="最新" href="./">
+	<link rel="alternate" media="handheld" type="text/html" href="http://www.smallstyle.com/20060918.html">
+	<link rel="shortcut icon" href="favicon.ico">
+	<meta name="description" content="日々，気になったことを書き留める日記">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js" type="text/javascript"></script>
+	<script src="js/00default.js?3.2.120200906" type="text/javascript"></script>
+	<script src="js/highlight.js?3.2.120200906" type="text/javascript"></script>
+		<script type="text/javascript"><!--
+		$tDiary.style = 'wiki';
+		$tDiary.title = "SmallStyle(2006-09-18)";
+		//-->
+		</script>
+	<meta http-equiv="content-style-type" content="text/css">
+	<link rel="stylesheet" href="theme/base.css" type="text/css" media="all">
+	<link rel="stylesheet" href="stylesheets/smallstyle-2010/smallstyle-2010.css" title="smallstyle-2010" type="text/css" media="all">
+	
+	<title> タグクラウド表示プラグイン(4) - SmallStyle(2006-09-18)</title>
+	
+	<link rel="author" href="https://plus.google.com/116137028933519395680">
+		<style type="text/css"><!--
+			form.comment div.mail { display: none; }
+		--></style>
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.smallstyle.com/smallstyle">
+	<link rel="alternate" type="application/rss+xml" title="RSS(without comments)" href="http://feeds.smallstyle.com/smallstyle_no_comments">
+	<style type="text/css" media="all"><!--
+	div.sequel {
+		font-size: 75%;
+		text-align: right;
+		margin: 0px;
+	}
+	--></style>
+</head>
+<body>
+<div class="whole-content">
+
+<div class="adminmenu"><div class="adminmenu">
+<span class="adminmenu"><a href="./20060917.html">&laquo;前の日記(2006-09-17)</a></span>
+<span class="adminmenu"><a href="./">最新</a></span>
+<span class="adminmenu"><a href="./20060919.html">次の日記(2006-09-19)&raquo;</a></span>
+</div>
+</div>
+<h1><a href="http://www.smallstyle.com/">SmallStyle</a></h1>
+<div class="content">
+<div class="main">
+
+<hr class="sep">
+
+
+	
+<div class="day autopagerize_page_element">
+<h2><span class="date">
+<a href="./20060918.html">2006-09-18</a>
+</span> 
+<span class="title"></span></h2>
+
+<div class="body">
+
+<div class="section">
+
+<h3><a name="p01" href="./20060918.html#p01" title="タグクラウド表示プラグイン(4)"><span class="sanchor">_</span></a> タグクラウド表示プラグイン(4)</h3>
+<p>7 月に，直近 3 ヶ月を集計するようにしてからの更新．内部的に機能がいくつか変更したので以下に説明．</p>
+<h4>集計期間について</h4>
+<p>3 ヶ月集計に対応したものの，実は，年をまたいだ集計には未対応だったので，改めて修正をしました．現状のプラグインだと 1 月になるとまた真っ白になってしまうので，1 月であれば，前年の 11，12 月を，2 月であれば，前年の 12 月を集計対象として含めるように修正しました．</p>
+<h4>キャッシュ機能について</h4>
+<p>また，それほど大きな影響はないかと思うのですが，現状ではタグクラウドの集計ロジックがページを表示させるたびに走っていてあまり効率がよくないので，キャッシュを持つように変更しました．キャッシュは日記の更新時か，日付けが変わった日の最初のアクセスがあったときに更新されます．cache ディレクトリ内に，category2tagcloud.cache というファイルが生成されます．</p>
+<h4>経過期間によるクラス属性の付加について</h4>
+<p>追加機能として，最近追加されたタグや，一定期間を経過したタグについて，クラス属性を追加しました．</p>
+<dl>
+<dt>hot</dt>
+<dd>7 日以内に更新されたタグ
+</dd>
+<dt>old</dt>
+<dd>14-30 日以内に更新されたタグ
+</dd>
+<dt>oldest</dt>
+<dd>30 日以上更新されていないタグ
+</dd>
+</dl>
+<p>クラス属性を追加しただけなので，経過時間による色の変更などがしたい場合は，CSS に記述してください．例としてこのサイトでは，下記のコードを記述しています．</p>
+<pre>/* category_to_tagcloud */
+.tagcloud .hot a:link,
+.tagcloud .hot a:visited { color: #00f; }
+.tagcloud .old a:link { color: #777; }
+.tagcloud .oldest a:link { color: #ccc; }
+.tagcloud a:hover { color: #B3A17F !important; }</pre>
+<h4>出力する HTML・CSS コードについて</h4>
+<p>出力形式を &lt;span&gt; からリスト &lt;li&gt; に変更しました．デフォルトではプラグインで CSS を出力しているので，見栄えはそう変わらないはずです…が，変わってしまってたらごめんなさい．</p>
+<p>またタグクラウドの見栄えを制御している CSS はヘッダー部分に記述されるのですが，外部 CSS ファイルに定義してプラグインでは出力しない設定も可能です．tdiary.conf で以下を設定してください．</p>
+<pre>@options['tagcloud.hidecss'] = true</pre>
+<h4>tagcloud-ruby の利用について</h4>
+<p>最後に．当初は <a href="http://yatsu.info/articles/2005/08/05/ruby%E3%81%A7tagcloud-tagcloud-ruby">tagcloud-ruby</a> を利用していたのですが，表示する HTML の変更など中身を変更し，ライセンスが Ruby ライセンスということだったので，タグクラウド生成部分のメソッドを引用，category_to_tagcloud 内で利用しています．よって tagcloud.rb なしで動作が可能になりました．</p>
+<p>というわけで，1 週間ほどこのサイトで動作確認したところでは特に問題なさそうなので公開します．</p>
+<ul>
+<li><a href="./lab/category_to_tagcloud.txt">category_to_tagcloud.rb</a></li>
+</ul>
+<p>不具合，要望その他もろもろあればご連絡ください．</p>
+<div class="sequel">つづき: <a href="http://www.smallstyle.com/20060920.html#p01" title="タグクラウド表示プラグイン(5)">2006-09-20</a></div>
+
+</div>
+
+
+</div>
+
+<div class="comment">
+
+		<div class="caption">本日のツッコミ(全5件) [<a name="c00" href="./20060918.html#c">ツッコミを入れる</a>]</div>
+		<div class="commentbody">
+				<div class="commentator">
+					<a name="c01" href="./20060918.html#c01"><span class="canchor">_</span></a>
+					<span class="commentator">yuco</span>
+					<span class="commenttime">(2006-09-20 09:09)</span>
+				</div>
+				<p>
+					こんにちは。category_to_tagcloud.rb使わせていただきました。どうもありがとうございます。ところで、今回の更新で、「8~14日以内に更新されたタグ」には、hot,old,oldestのどれもつかないんですよね。<br><br>現在、デフォルトを「8~14日以内に更新されたタグ」の色にして、あとからhot,old,oldestの色を設定していますが、できれば期間の切れ目なく設定できた方がよいかなと思っています。<br><br>もしよければ次回の更新のときに取り入れていただければと。よろしくお願いします。
+				</p>
+				<div class="commentator">
+					<a name="c02" href="./20060918.html#c02"><span class="canchor">_</span></a>
+					<span class="commentator">hb</span>
+					<span class="commenttime">(2006-09-20 18:59)</span>
+				</div>
+				<p>
+					8〜14 日については，各サイトで指定されている color で表示されればいいかな…とか考えてました．（これもサイトごとにどのようにCSSを記述されているかで変わってしまうのですが）<br><br>2週間以上使われてなければ古いかなぁとか，1週間以内に使われたタグは目立たせたいなぁ，などと考えてるうちに，間にはさまれた8〜14日はクラス属性はなしでいいかなと思ったのが今の実装です．あと適当なクラス名が思い浮かばなかったってのもありますが :p<br><br>クラス属性はあってもいいかと思うので，次の更新時（適当なクラス名が思いついたら）加えますね．
+				</p>
+				<div class="commentator">
+					<a name="c03" href="./20060918.html#c03"><span class="canchor">_</span></a>
+					<span class="commentator">TrackBack</span>
+					<span class="commenttime">(2006-09-20 19:39)</span>
+				</div>
+				<p>
+					<a href="http://www.smallstyle.com/20060920.html#p01">http://www.smallstyle.com/20060920.html#p01</a><br>SmallStyle<br>タグクラウド表示プラグイン(5)<br>先日リリースしたタグクラウド表示プラグインですが，ツッコミ時にエラーが発生するバグがありました．ご迷惑をおかけしますが，再度ダウンロードしていただきますよう，お願いいたします． category_to_tagcloud.rb 原因は，add_update_proc が呼び出されたときに，タグ..
+				</p>
+				<div class="commentator">
+					<a name="c04" href="./20060918.html#c04"><span class="canchor">_</span></a>
+					<span class="commentator">revulo</span>
+					<span class="commenttime">(2006-09-23 09:50)</span>
+				</div>
+				<p>
+					こんにちは。category_to_tagcloud.rb を使わせていただいています。<br><br>&lt;li&gt; に変更した影響で、タグクラウドの左側に余白ができてしまいます。<br>ul.tagcloud {padding:0px;margin:2px;}<br>のような設定も CSS に出力しておいてはどうでしょうか？<br>hb さんからアドバイスを頂いて試してみたのですが、どうも IE だと margin を、Firefox だと padding を設定しないといけないようです。<br><br>よろしければご検討ください。
+				</p>
+				<div class="commentator">
+					<a name="c05" href="./20060918.html#c05"><span class="canchor">_</span></a>
+					<span class="commentator">hb</span>
+					<span class="commenttime">(2006-09-23 10:07)</span>
+				</div>
+				<p>
+					プラグインで出力しているCSSはブラウザ間での確認が不十分なので，余白の部分については次の更新時になんとかしますね．<br><br>予想はしてたものの，&lt;li&gt;にかえたのはやっぱり影響大きかったか…
+				</p>
+		</div>
+</div>
+
+<div id="comment-form-section"></div>
+
+
+
+
+
+
+
+
+</div>
+
+<hr class="sep">
+
+</div>
+
+
+
+
+
+<div class="additional_information">
+<div class="information">
+<h4>about me</h4>
+<div itemscope itemtype="http://data-vocabulary.org/Person">
+<dl>
+<p>いろいろと興味を持ったことを書いてます．ちょっとしたことは <a href="http://twitter.com/smallstyle"><span itemprop="name">hb</span>(@<span itemprop="nickname">smallstyle</span>) on Twitter</a> で書いてます．</p>
+</div>
+
+<h4>Archive</h4>
+<div class="calendar">
+<div class="year">2003|<a href="./200301.html">01</a>|<a href="./200302.html">02</a>|<a href="./200303.html">03</a>|<a href="./200304.html">04</a>|<a href="./200305.html">05</a>|<a href="./200306.html">06</a>|<a href="./200307.html">07</a>|<a href="./200308.html">08</a>|<a href="./200309.html">09</a>|<a href="./200310.html">10</a>|<a href="./200311.html">11</a>|<a href="./200312.html">12</a>|</div>
+<div class="year">2004|<a href="./200401.html">01</a>|<a href="./200402.html">02</a>|<a href="./200403.html">03</a>|<a href="./200404.html">04</a>|<a href="./200405.html">05</a>|<a href="./200406.html">06</a>|<a href="./200407.html">07</a>|<a href="./200408.html">08</a>|<a href="./200409.html">09</a>|<a href="./200410.html">10</a>|<a href="./200411.html">11</a>|<a href="./200412.html">12</a>|</div>
+<div class="year">2005|<a href="./200501.html">01</a>|<a href="./200502.html">02</a>|<a href="./200503.html">03</a>|<a href="./200504.html">04</a>|<a href="./200505.html">05</a>|<a href="./200506.html">06</a>|<a href="./200507.html">07</a>|<a href="./200508.html">08</a>|<a href="./200509.html">09</a>|<a href="./200510.html">10</a>|<a href="./200511.html">11</a>|<a href="./200512.html">12</a>|</div>
+<div class="year">2006|<a href="./200601.html">01</a>|<a href="./200602.html">02</a>|<a href="./200603.html">03</a>|<a href="./200604.html">04</a>|<a href="./200605.html">05</a>|<a href="./200606.html">06</a>|<a href="./200607.html">07</a>|<a href="./200608.html">08</a>|<a href="./200609.html">09</a>|<a href="./200610.html">10</a>|<a href="./200611.html">11</a>|<a href="./200612.html">12</a>|</div>
+<div class="year">2007|<a href="./200701.html">01</a>|<a href="./200702.html">02</a>|<a href="./200703.html">03</a>|<a href="./200704.html">04</a>|<a href="./200705.html">05</a>|<a href="./200706.html">06</a>|<a href="./200707.html">07</a>|<a href="./200708.html">08</a>|<a href="./200709.html">09</a>|<a href="./200710.html">10</a>|<a href="./200711.html">11</a>|<a href="./200712.html">12</a>|</div>
+<div class="year">2008|<a href="./200801.html">01</a>|<a href="./200802.html">02</a>|<a href="./200803.html">03</a>|<a href="./200804.html">04</a>|<a href="./200805.html">05</a>|<a href="./200806.html">06</a>|<a href="./200807.html">07</a>|<a href="./200808.html">08</a>|<a href="./200809.html">09</a>|<a href="./200810.html">10</a>|<a href="./200812.html">12</a>|</div>
+<div class="year">2009|<a href="./200901.html">01</a>|<a href="./200902.html">02</a>|<a href="./200903.html">03</a>|<a href="./200904.html">04</a>|<a href="./200905.html">05</a>|<a href="./200906.html">06</a>|<a href="./200907.html">07</a>|<a href="./200908.html">08</a>|<a href="./200909.html">09</a>|<a href="./200910.html">10</a>|<a href="./200911.html">11</a>|<a href="./200912.html">12</a>|</div>
+<div class="year">2010|<a href="./201001.html">01</a>|<a href="./201002.html">02</a>|<a href="./201003.html">03</a>|<a href="./201004.html">04</a>|<a href="./201005.html">05</a>|<a href="./201006.html">06</a>|<a href="./201007.html">07</a>|<a href="./201008.html">08</a>|<a href="./201009.html">09</a>|<a href="./201010.html">10</a>|<a href="./201011.html">11</a>|<a href="./201012.html">12</a>|</div>
+<div class="year">2011|<a href="./201101.html">01</a>|<a href="./201102.html">02</a>|<a href="./201103.html">03</a>|<a href="./201104.html">04</a>|<a href="./201105.html">05</a>|<a href="./201106.html">06</a>|<a href="./201107.html">07</a>|<a href="./201108.html">08</a>|<a href="./201109.html">09</a>|<a href="./201110.html">10</a>|<a href="./201111.html">11</a>|<a href="./201112.html">12</a>|</div>
+<div class="year">2012|<a href="./201201.html">01</a>|<a href="./201202.html">02</a>|<a href="./201203.html">03</a>|<a href="./201204.html">04</a>|<a href="./201205.html">05</a>|<a href="./201206.html">06</a>|<a href="./201207.html">07</a>|<a href="./201208.html">08</a>|<a href="./201209.html">09</a>|<a href="./201210.html">10</a>|<a href="./201211.html">11</a>|<a href="./201212.html">12</a>|</div>
+<div class="year">2013|<a href="./201301.html">01</a>|<a href="./201302.html">02</a>|<a href="./201303.html">03</a>|<a href="./201304.html">04</a>|<a href="./201305.html">05</a>|<a href="./201306.html">06</a>|<a href="./201307.html">07</a>|<a href="./201308.html">08</a>|<a href="./201309.html">09</a>|<a href="./201310.html">10</a>|<a href="./201311.html">11</a>|<a href="./201312.html">12</a>|</div>
+<div class="year">2014|<a href="./201401.html">01</a>|<a href="./201402.html">02</a>|<a href="./201403.html">03</a>|<a href="./201404.html">04</a>|<a href="./201405.html">05</a>|<a href="./201406.html">06</a>|<a href="./201407.html">07</a>|<a href="./201408.html">08</a>|<a href="./201409.html">09</a>|<a href="./201410.html">10</a>|<a href="./201411.html">11</a>|<a href="./201412.html">12</a>|</div>
+<div class="year">2015|<a href="./201501.html">01</a>|<a href="./201502.html">02</a>|<a href="./201503.html">03</a>|<a href="./201504.html">04</a>|<a href="./201505.html">05</a>|<a href="./201506.html">06</a>|<a href="./201507.html">07</a>|<a href="./201508.html">08</a>|<a href="./201509.html">09</a>|<a href="./201510.html">10</a>|<a href="./201511.html">11</a>|<a href="./201512.html">12</a>|</div>
+<div class="year">2016|<a href="./201601.html">01</a>|<a href="./201602.html">02</a>|<a href="./201603.html">03</a>|<a href="./201604.html">04</a>|<a href="./201605.html">05</a>|<a href="./201606.html">06</a>|<a href="./201607.html">07</a>|<a href="./201608.html">08</a>|<a href="./201609.html">09</a>|<a href="./201612.html">12</a>|</div>
+</div>
+
+</div>
+
+<hr>
+
+
+
+</div>
+<div class="adminmenu"><span class="adminmenu"><a href="./20060917.html">&laquo;前の日記(2006-09-17)</a></span>
+<span class="adminmenu"><a href="./">最新</a></span>
+<span class="adminmenu"><a href="./20060919.html">次の日記(2006-09-19)&raquo;</a></span>
+</div>
+</div>
+<ul class="plugin-counter">
+<li>Yesterday: <span class="counter-yesterday"><span class="counter-0"><span class="counter-num-1">1</span></span><span class="counter-1"><span class="counter-num-6">6</span></span><span class="counter-2"><span class="counter-num-9">9</span></span></span></li>
+<li>Today:<span class="counter-today"><span class="counter-0"><span class="counter-num-1">1</span></span><span class="counter-1"><span class="counter-num-4">4</span></span><span class="counter-2"><span class="counter-num-9">9</span></span></span></li>
+<li>Total:<span class="counter"><span class="counter-0"><span class="counter-num-1">1</span></span><span class="counter-1"><span class="counter-num-0">0</span></span><span class="counter-2"><span class="counter-num-2">2</span></span><span class="counter-3"><span class="counter-num-8">8</span></span><span class="counter-4"><span class="counter-num-2">2</span></span><span class="counter-5"><span class="counter-num-1">1</span></span><span class="counter-6"><span class="counter-num-7">7</span></span></span></li>
+</ul>
+
+
+
+
+			<script type="text/javascript"><!--
+			document.getElementById('comment-form-section').innerHTML = '';
+			//--></script>
+		<script type="text/javascript"><!--
+			document.getElementsByName("mail")[0].value = "";
+		//--></script>
+<div class="footer">
+Generated by <a href="http://www.tdiary.org/">tDiary</a> version 3.2.1<br>
+Powered by <a href="http://www.ruby-lang.org/">Ruby</a> version 1.9.3-p194
+</div>
+</div>
+</body>
+</html>
