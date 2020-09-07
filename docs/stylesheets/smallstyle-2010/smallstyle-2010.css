@@ -326,6 +326,9 @@ div.commentbody p {
 	padding-left: 15px;
 	margin: 0;
 }
+div#comment-form-section {
+  display: hidden;
+}
 div.day div.form div.title input {
 	display: block;
 }
