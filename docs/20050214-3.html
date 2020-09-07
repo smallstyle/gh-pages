@@ -8,7 +8,7 @@
 	<meta name="author" content="hb">
 	
 	<link rel="start" title="最新" href="./">
-	<link rel="alternate" media="handheld" type="text/html" href="http://www.smallstyle.com/">
+	<link rel="alternate" media="handheld" type="text/html" href="https://www.smallstyle.com/">
 	<link rel="shortcut icon" href="favicon.ico">
 	<meta name="description" content="日々，気になったことを書き留める日記">
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js" type="text/javascript"></script>
@@ -40,7 +40,7 @@
 <span class="adminmenu"><a href="./20050220-3.html" rel="prev">次3日分&raquo;</a></span>
 </div>
 </div>
-<h1><a href="http://www.smallstyle.com/">SmallStyle</a></h1>
+<h1><a href="https://www.smallstyle.com/">SmallStyle</a></h1>
 <div class="content">
 <div class="main">
 
@@ -98,7 +98,7 @@
 <div class="section">
 
 <h3><a href="./20050213.html#p01" title="Bloglinesを見て驚いた…"><span class="sanchor">_</span></a> Bloglinesを見て驚いた…</h3>
-<p><a href="http://www.bloglines.com/">Bloglines</a>で自分のサイトのRSSはほとんど見たこともなかったのですが，今日たまたま全エントリーを見てみたら途中ひどいことになってますね．tDiaryはコメントもRSSに出力してくれるのですが，<a href="http://www.smallstyle.com/20041112.html">先日コメントspamの被害を受けた</a>ものがそのまま残っています…．気づいたときにエントリーを削除してはいたのですが…．やられました…．</p>
+<p><a href="http://www.bloglines.com/">Bloglines</a>で自分のサイトのRSSはほとんど見たこともなかったのですが，今日たまたま全エントリーを見てみたら途中ひどいことになってますね．tDiaryはコメントもRSSに出力してくれるのですが，<a href="https://www.smallstyle.com/20041112.html">先日コメントspamの被害を受けた</a>ものがそのまま残っています…．気づいたときにエントリーを削除してはいたのですが…．やられました…．</p>
 
 </div>
 
@@ -140,7 +140,7 @@ a[accesskey]:after {
     font-size: xx-small;
     vertical-align: super;
 }</pre>
-<p><img class="right" src="http://www.smallstyle.com/images/20050212_0.png" alt="Accesskeyのスクリーンショット" title="Accesskeyのスクリーンショット"></p>
+<p><img class="right" src="https://www.smallstyle.com/images/20050212_0.png" alt="Accesskeyのスクリーンショット" title="Accesskeyのスクリーンショット"></p>
 <p>accesskeyの設定してあるページだと設定されているaccesskeyを右肩にくっつける．ためしに自分のサイトにaccesskeyをつけてみました．</p>
 <p>しばらくいくつかのサイトを回ってみると意外にアクセスキーを設定しているサイトも多いことがわかるとともに，サイト管理者の方がすでにアクセスキーを表示されている場合，重複して表示されるため見づらいことに気づく…．ついでにサイトによっては微妙にレイアウトが崩れてしまう．というわけで作成したCSSをBookmarkletで使えるようにしてみました．（Bookmarkに保存して利用してください）</p>
 <pre>javascript:(function(){var newSS, styles=&amp;apos;a[accesskey]:after { content: &amp;quot;[&amp;quot; attr(accesskey) &amp;quot;]&amp;quot;; font-size: xx-small; vertical-align: super; }&amp;apos;; if(document.createStyleSheet) { document.createStyleSheet(%22javascript:&amp;apos;%22+styles+%22&amp;apos;%22); } else { newSS=document.createElement(&amp;apos;link&amp;apos;); newSS.rel=&amp;apos;stylesheet&amp;apos;; newSS.href=&amp;apos;data:text/css,&amp;apos;+escape(styles); document.documentElement.childNodes[0].appendChild(newSS); } })();</pre>

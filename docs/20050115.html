@@ -10,7 +10,7 @@
 	<link rel="prev" title="前の日記(2005-01-14)" href="./20050114.html">
 	<link rel="next" title="次の日記(2005-01-16)" href="./20050116.html">
 	<link rel="start" title="最新" href="./">
-	<link rel="alternate" media="handheld" type="text/html" href="http://www.smallstyle.com/20050115.html">
+	<link rel="alternate" media="handheld" type="text/html" href="https://www.smallstyle.com/20050115.html">
 	<link rel="shortcut icon" href="favicon.ico">
 	<meta name="description" content="日々，気になったことを書き留める日記">
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js" type="text/javascript"></script>
@@ -42,7 +42,7 @@
 <span class="adminmenu"><a href="./20050116.html">次の日記(2005-01-16)&raquo;</a></span>
 </div>
 </div>
-<h1><a href="http://www.smallstyle.com/">SmallStyle</a></h1>
+<h1><a href="https://www.smallstyle.com/">SmallStyle</a></h1>
 <div class="content">
 <div class="main">
 
@@ -61,13 +61,13 @@
 <div class="section">
 
 <h3><a name="p01" href="./20050115.html#p01" title="Launchyで任意のアプリケーションが動かない"><span class="sanchor">_</span></a> Launchyで任意のアプリケーションが動かない</h3>
-<p><a href="http://www.smallstyle.com/20050108.html">Launchyで任意のアプリケーションを起動する</a>の続編．<a href="http://kengo.preston-net.com/archives/001733.shtml#001733">Going My Way</a>で紹介され，FirefoxでLaunchyを使う場合，launchy.xml経由のアプリケーションが呼び出せないことが書かれていました．実は，私はThunderbirdでしかLaunchyを利用していなかったので，早速Firefoxにもいれて試してみたところ，私の環境でもソースの表示に指定した任意のエディタ(<a href="http://www.emeditor.com/jp/">EmEditor</a>)が表示されませんでした．Option画面では，launchy.xmlは認識しているので，なんとか起動できないものかと調べてみました．</p>
-<p><img class="right" src="http://www.smallstyle.com/images/20050115_0.png" alt="EmEditorの文字コード" title="EmEditorの文字コード"></p>
+<p><a href="https://www.smallstyle.com/20050108.html">Launchyで任意のアプリケーションを起動する</a>の続編．<a href="http://kengo.preston-net.com/archives/001733.shtml#001733">Going My Way</a>で紹介され，FirefoxでLaunchyを使う場合，launchy.xml経由のアプリケーションが呼び出せないことが書かれていました．実は，私はThunderbirdでしかLaunchyを利用していなかったので，早速Firefoxにもいれて試してみたところ，私の環境でもソースの表示に指定した任意のエディタ(<a href="http://www.emeditor.com/jp/">EmEditor</a>)が表示されませんでした．Option画面では，launchy.xmlは認識しているので，なんとか起動できないものかと調べてみました．</p>
+<p><img class="right" src="https://www.smallstyle.com/images/20050115_0.png" alt="EmEditorの文字コード" title="EmEditorの文字コード"></p>
 <p>で，私の環境でThunderbirdとFirefoxのlaunchy.xmlの違いを探してみたところ，Firefoxのlaunchy.xmlには<a href="http://www.atmarkit.co.jp/aig/01xml/bom.html">Unicodeサイン(BOM)</a>がついていることがわかりました．EmEditorはXMLファイルを新規作成したときに自動的にUnicodeサイン(BOM)をつけるらしいです．どうやらLaunchyはUnicodeサインの入ったXMLファイルをうまくパースできないみたいです．このUnicodeサインの有無をどうやって判断するかなんですが，EmEditorの場合は右下のステータスバーに文字コードが表示さるので，ここで確認できます．</p>
-<p><img class="right" src="http://www.smallstyle.com/images/20050115_1.png" alt="スクリーンショット" title="スクリーンショット" width="240"></p>
+<p><img class="right" src="https://www.smallstyle.com/images/20050115_1.png" alt="スクリーンショット" title="スクリーンショット" width="240"></p>
 <p>launchy.xmlを作成するときは，XMLファイルを保存するときに，Unicodeサイン(BOM)を付けるのチェックをいれずに保存することで，今回の問題は解決しました．今後も同じような問題にならないためにも，EmEditorでXMLを作成するときはプロパティー→ファイル→新規作成時→「Unicodeサイン(BOM)をつける」のチェックをはずいておいたほうがよさげかも．</p>
 <p>ちなみに，<a href="http://www5f.biglobe.ne.jp/~t-susumu/library/tpad.html">TeraPad</a>も文字コードをUTF-8を指定して保存するとUnicodeサインが自動的につくみたいです．保存時にUTF-8Nを指定するとUnicodeサインなしで保存できました．</p>
-<div class="sequel">つづき: <a href="http://www.smallstyle.com/20051202.html#p01">2005-12-02</a></div>
+<div class="sequel">つづき: <a href="https://www.smallstyle.com/20051202.html#p01">2005-12-02</a></div>
 
 </div>
 

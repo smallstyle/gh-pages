@@ -99,7 +99,7 @@
 <p>おがみ屋さんのお仕事近況報告ということで，久々に京都へ．1 年ぶりくらいかなぁ，京都にくるのは．京都駅前の郵便局前で待ち合わせ．無事，普通車免許を取得されたということで，車でお出迎えしてもらったわけですが，まだまだ取り立てということで，慎重な運転．これから沢山乗ることになるだろうと思うけど，くれぐれも安全運転で事故のないように気をつけてほしいものです．</p>
 <p>ひとまずおがみ屋さんの実家で小休憩．メーラーの調子がおかしいから見てほしいとのことだったのですが，使ったことないソフトだったため原因解決までにはいたらず．お役に立てずに申し訳なかった．</p>
 <p>で，せっかくなので少し京都の町をぶらつこうとということで，<a href="http://www.shin-puh-kan.com/">新風館</a>で BEAMS やヴィレッジヴァンガードあたりを眺めて，その辺をぶらぶらと見て回る．突如，靴が見たいと私が言い出したので，目に付いた靴屋に入っては，心引かれるものがないとかぶつくさいいながら歩き回りました．</p>
-<p><img class="right" src="http://www.smallstyle.com/images/20060503_0.jpg" alt="ベトナム料理　ラ・パパイヤベール" title="ベトナム料理　ラ・パパイヤベール" width="240"></p>
+<p><img class="right" src="https://www.smallstyle.com/images/20060503_0.jpg" alt="ベトナム料理　ラ・パパイヤベール" title="ベトナム料理　ラ・パパイヤベール" width="240"></p>
 <p>夕飯は<a href="http://www.leafkyoto.net/g/papaye/index.html">ベトナム料理　ラ・パパイヤベール</a>というお店へ．いくつか候補な店はあったのですが，カジュアルスタイルで入れそうになかったり，予算的にオーバー気味だったりで，検討結果ここになりました．GW ということもあり 19 時前に店に入ったのですが，すでに空席まばらな感じでした．とりあえずコース料理とベトナムのビールをオーダー．ベトナム料理ってどんなだろうとか思っていたのですが，結構おいしかったです．ハーブがよく効いているので好き嫌いが分かれそうな感じではありますが…</p>
 <p>お互い仕事の愚痴を言い合いながらゆったりとした時間を過ごせました．</p>
 
@@ -147,7 +147,7 @@
 <p>で，日記を書いたときにその文章を解析して，タグ候補をいくつかだしてくれればいいのにと思って調べてみると，<a href="http://tdiary.ishinao.net/20051201.html#p02">MM/Memo にタグ自動抽出の API がある</a>ということなので，これを利用しない手はないと．テキストを POST してやれば結果は返ってくるということなので，Ajax や JSON なんかの勉強がてらプラグインを作ってみた．</p>
 <p>とりあえず Ajax と JSON って単語はよく目にするものの，実際に自分で書いたことがなかったので．いろいろサンプルコードをなんかをながめながらちょこちょこと作ってみて，だいたいの感じがつかめた．サンプルの HTML と JavaScript で一通りの動きを確認できたので，さっそくプラグインつくりにとりかかる．</p>
 <p>とりあえず MM/Memo のAPI を直接呼び出すことが難しそうなので，CGI Proxy 的なものを作成．xmlHttpRequest では呼び出し元と呼び出し先のドメインが一致していないと動作しないために，この CGI Proxy を通すことで，ページ遷移なしで xmlHttpRequest を利用してタグ候補を取得します．最初は単純に中継させるだけでいいかとも思っていたのですが，ここで，少しデータを加工して JSON 形式のデータを返すようにしてみました（っていうかやってみたかっただけ）</p>
-<p><img class="right" src="http://www.smallstyle.com/images/20060504_0.png" alt="スクリーンショット" title="スクリーンショット"></p>
+<p><img class="right" src="https://www.smallstyle.com/images/20060504_0.png" alt="スクリーンショット" title="スクリーンショット"></p>
 <p>Tag 自動生成ボタンをクリックすると，ローディングイメージが表示され，日記本文の内容をスクリプト経由で POST し，タグ候補が一覧されます．内部サーバエラーやタイムアウト時は赤字で何かメッセージを出します．</p>
 <p>取得したデータはタグ候補として日記フォーム本文下部に表示され，タグとして記述したいものをクリックすると，セクション先頭に挿入されます．とりあえずは今のところは Wiki スタイルにのみ対応しています．</p>
 <p>タグ自動抽出 API にはフィルターオプションがあり，すでに MM/Memo に登録されているキーワードのみを対象としたタグ候補を抽出することも可能です．</p>
@@ -163,7 +163,7 @@
 </ol>
 <p>これでたぶん動くはず．今日のこの日記のタグ付けは，上記のプラグインを利用してつけてみました．もちろん生成されたタグ以外で自分でタグをつけることもできます．</p>
 <p><a href="http://tdiary.ishinao.net/20051011.html#p01">ishinao さんのとこのサーバは過負荷気味</a>ということなので，あまりがんがんリクエストを投げるのはアレですが，日記のお供にご利用いただければと思います．</p>
-<div class="sequel">つづき: <a href="http://www.smallstyle.com/20060505.html#p01" title="Bulkfeeds API 形態素解析 + 特徴語抽出を利用したタグ候補取得プラグイン">2006-05-05</a>, <a href="http://www.smallstyle.com/20060510.html#p01" title="タグ候補生成プラグインをはてなダイアリーキーワード自動リンク API に対応させてみた">2006-05-10</a>, <a href="http://www.smallstyle.com/20060521.html#p01" title="Ajax を使った tDiary のプレビュー表示">2006-05-21</a>, <a href="http://www.smallstyle.com/20110621.html#p01">2011-06-21</a></div>
+<div class="sequel">つづき: <a href="https://www.smallstyle.com/20060505.html#p01" title="Bulkfeeds API 形態素解析 + 特徴語抽出を利用したタグ候補取得プラグイン">2006-05-05</a>, <a href="https://www.smallstyle.com/20060510.html#p01" title="タグ候補生成プラグインをはてなダイアリーキーワード自動リンク API に対応させてみた">2006-05-10</a>, <a href="https://www.smallstyle.com/20060521.html#p01" title="Ajax を使った tDiary のプレビュー表示">2006-05-21</a>, <a href="https://www.smallstyle.com/20110621.html#p01">2011-06-21</a></div>
 
 </div>
 
@@ -207,10 +207,10 @@
 <div class="section">
 
 <h3><a href="./20060505.html#p01" title="Bulkfeeds API 形態素解析 + 特徴語抽出を利用したタグ候補取得プラグイン"><span class="sanchor">_</span></a> <a href="http://bulkfeeds.net/app/developer.html#terms">Bulkfeeds API 形態素解析 + 特徴語抽出</a>を利用したタグ候補取得プラグイン</h3>
-<p><a href="http://www.smallstyle.com/20060504.html#p01" title="タグ自動抽出 API を利用したタグ候補の取得プラグイン">タグ候補生成プラグインを作って</a>なかなか面白かったので，他にも日本語に対応した形態素解析 API がないかなぁと探してみたら，<a href="http://bulkfeeds.net/app/developer.html">Bulkfeeds API</a> で「<a href="http://bulkfeeds.net/app/developer.html#terms">形態素解析 + 特徴語抽出</a>」が提供されていたので早速対応させてみることにしました．</p>
+<p><a href="https://www.smallstyle.com/20060504.html#p01" title="タグ自動抽出 API を利用したタグ候補の取得プラグイン">タグ候補生成プラグインを作って</a>なかなか面白かったので，他にも日本語に対応した形態素解析 API がないかなぁと探してみたら，<a href="http://bulkfeeds.net/app/developer.html">Bulkfeeds API</a> で「<a href="http://bulkfeeds.net/app/developer.html#terms">形態素解析 + 特徴語抽出</a>」が提供されていたので早速対応させてみることにしました．</p>
 <p>Bulkfeeds API は XML 形式でレスポンスが返ってくるということなので，XML のパーサーとして<a href="http://www.germane-software.com/software/rexml/">REXML</a> を利用してみることにしてみました．</p>
 <p>あとは CGI Proxy の tagapi.rb の JSON 形式の結果の返し方がなんとなくきれいでなかったので，少し変更．ishinao さんのとこは結果がタブ区切りの文字列で返ってくるので，そのまま返して JavaScript でタブをキーに文字列分割していたのですが，JSON は配列での定義も可能なので，サーバ側でタグ候補文字列を配列にして返すように変更しました．その他，例外処理まわりの変更や，いくつかの処理を関数として切り出しました．</p>
-<p><img class="right" src="http://www.smallstyle.com/images/20060505_0.png" alt="スクリーンショット" title="スクリーンショット"></p>
+<p><img class="right" src="https://www.smallstyle.com/images/20060505_0.png" alt="スクリーンショット" title="スクリーンショット"></p>
 <p>ということで，新しいバージョンでは，タグ候補を抽出するサービスを MM/Memo か Bulkfeeds のAPI のどちらかを選択できるようになっています．最新版は下記リンクからダウンロードしてください．</p>
 <ul>
 <li><del><a href="./lab/tag-generator.txt">tag-generator.rb</a></del>(Disk障害でなくなってしまいました…)</li>
@@ -291,7 +291,7 @@
 <div class="section">
 
 <h3><a href="./20060507.html#p01" title="えいご漬け継続中"><span class="sanchor">_</span></a> えいご漬け継続中</h3>
-<p><a href="http://www.smallstyle.com/20060423.html#p01">先日購入した DS Lite と えいご漬け</a>ですが，毎日寝る前に続けています．今のところ英語力は AA からなかなか上に上がれない状態．それでも最初の買ったときよりかは確実に聞き取る力が上達しているような気がする．毎日少しでもいいからこうして勉強するのがやっぱりいいのかもしれませんね．</p>
+<p><a href="https://www.smallstyle.com/20060423.html#p01">先日購入した DS Lite と えいご漬け</a>ですが，毎日寝る前に続けています．今のところ英語力は AA からなかなか上に上がれない状態．それでも最初の買ったときよりかは確実に聞き取る力が上達しているような気がする．毎日少しでもいいからこうして勉強するのがやっぱりいいのかもしれませんね．</p>
 
 </div>
 
@@ -368,9 +368,9 @@
 <p><a href="http://d.hatena.ne.jp/naoya/20060429/1146288801">naoyaのはてなダイアリー</a>より引用</p>
 </blockquote>
 <p>ということらしいので，このパラメータを利用してみることにしてみました．</p>
-<p><img class="right" src="http://www.smallstyle.com/images/20060510_0.png" alt="スクリーンショット" title="スクリーンショット" width="240"></p>
+<p><img class="right" src="https://www.smallstyle.com/images/20060510_0.png" alt="スクリーンショット" title="スクリーンショット" width="240"></p>
 <p>はてなダイアリーキーワード自動リンク API はXML-RPC を利用しているので，これまでに作ったものとは実装部分が変わったのですが，リファレンスとにらめっこしながらとりあえず動くようになったみたいです．カテゴリやスコアの閾値は設定していません．</p>
-<p>最新版は下記リンクからダウンロードしてください．導入方法は<a href="http://www.smallstyle.com/20060504.html#p01" title="タグ自動抽出 API を利用したタグ候補の取得プラグイン">タグ自動抽出 API を利用したタグ候補の取得プラグイン</a>を参考に．<a href="./lab/tag.html">サンプルページ</a>も最新版に更新しました．</p>
+<p>最新版は下記リンクからダウンロードしてください．導入方法は<a href="https://www.smallstyle.com/20060504.html#p01" title="タグ自動抽出 API を利用したタグ候補の取得プラグイン">タグ自動抽出 API を利用したタグ候補の取得プラグイン</a>を参考に．<a href="./lab/tag.html">サンプルページ</a>も最新版に更新しました．</p>
 <ul>
 <li><del><a href="./lab/tag-generator.txt">tag-generator.rb</a></del>(Disk障害でなくなってしまいました…)</li>
 <li><del><a href="./lab/tagapi.txt">tagapi.rb</a></del>(Disk障害でなくなってしまいました…)</li>
@@ -507,7 +507,7 @@
 <p><strong>財布忘れた…!!</strong></p>
 <p>これか，なんとなく感じていた異変は．</p>
 <p>いつもかばんの中に財布や携帯を放り込んでしまうので，昼どきは財布と携帯を取り出して出かける，今日は雨が降っていたので，折り畳み傘と携帯をかばんから取り出した．ものは二つ．勝手に財布を持ったつもりになっていたみたい．久々のボケっぷりに自分でも驚き．</p>
-<div class="sequel">つづき: <a href="http://www.smallstyle.com/20090122.html#p01">2009-01-22</a></div>
+<div class="sequel">つづき: <a href="https://www.smallstyle.com/20090122.html#p01">2009-01-22</a></div>
 
 </div>
 
@@ -589,7 +589,7 @@
 <li><a href="./lab/realtime-preview.txt">realtime-preview.rb</a>（タグ生成プラグイン共存版）</li>
 <li><a href="./lab/realtime-preview-with-xmlhttprequest.txt">realtime-preview-with-xmlhttprequest.rb</a>（単体動作版）</li>
 </ul>
-<p><a href="http://www.smallstyle.com/20060504.html#p01" title="タグ自動抽出 API を利用したタグ候補の取得プラグイン">以前，公開したタグ生成プラグイン</a>と共存させる場合は，xmlhttprequest の部分は再利用できるので，共存版を．タグ生成プラグインを使っていない場合は，単体動作版をダウンロードしてください．</p>
+<p><a href="https://www.smallstyle.com/20060504.html#p01" title="タグ自動抽出 API を利用したタグ候補の取得プラグイン">以前，公開したタグ生成プラグイン</a>と共存させる場合は，xmlhttprequest の部分は再利用できるので，共存版を．タグ生成プラグインを使っていない場合は，単体動作版をダウンロードしてください．</p>
 <p>plugin ディレクトリに入れて追記画面で本文を入力すると，入力フォームの下にリアルタイムにプレビュー表示されます．一応，amazon プラグインなんかがうまく表示されているのは確認していますが，このプラグインが動かないとかあったらお知らせください．</p>
 
 </div>
@@ -749,7 +749,7 @@
 <div class="section">
 
 <h3><a href="./20060525.html#p01" title="category_to_tag で表示されるタグ少し見やすく"><span class="sanchor">_</span></a> category_to_tag で表示されるタグ少し見やすく</h3>
-<p><img class="right" src="http://www.smallstyle.com/images/20060525_0.png" alt="カンマ区切りで表示" title="カンマ区切りで表示" width="240"></p>
+<p><img class="right" src="https://www.smallstyle.com/images/20060525_0.png" alt="カンマ区切りで表示" title="カンマ区切りで表示" width="240"></p>
 <p>category_to_tag で表示されるタグは，スペース区切りで表示されるわけですが，なんとなーく見にくい感じがする．スタイルシートである程度スペースをとったりをとるってのも手ですが，content プロパティと :before 擬似要素を利用して，カンマ区切りになんかしてみた．残念ながら IE はこれに対応していないので表示されないのですが，Firefox や Safari なんかでは表示されます．</p>
 <pre>/* category_to_tag */
 div.tags a+a:before {
@@ -757,7 +757,7 @@ div.tags a+a:before {
   color: #000;
 }</pre>
 <p>すべてのブラウザに対応させるのであれば，category_to_tag.rb を直接書き換えてしまえばいいだけなのですが，スタイルシートだけでもなんとかできるよということで．</p>
-<div class="sequel">つづき: <a href="http://www.smallstyle.com/20060526.html#p01" title="Ajax を使った tDiary のプレビュー表示プラグイン(2)">2006-05-26</a></div>
+<div class="sequel">つづき: <a href="https://www.smallstyle.com/20060526.html#p01" title="Ajax を使った tDiary のプレビュー表示プラグイン(2)">2006-05-26</a></div>
 
 </div>
 
@@ -792,7 +792,7 @@ div.tags a+a:before {
 <div class="section">
 
 <h3><a href="./20060526.html#p01" title="Ajax を使った tDiary のプレビュー表示プラグイン(2)"><span class="sanchor">_</span></a> Ajax を使った tDiary のプレビュー表示プラグイン(2)</h3>
-<p><a href="http://www.smallstyle.com/20060525.html#p01" title="category_to_tag で表示されるタグ少し見やすく">category_to_tag で表示されるタグ少し見やすく</a>を書いてる途中に，プレビュー表示を見ていたら，どうも本文中にセミコロン (;) が入っていると，そこでとぎれてしまうようです．</p>
+<p><a href="https://www.smallstyle.com/20060525.html#p01" title="category_to_tag で表示されるタグ少し見やすく">category_to_tag で表示されるタグ少し見やすく</a>を書いてる途中に，プレビュー表示を見ていたら，どうも本文中にセミコロン (;) が入っていると，そこでとぎれてしまうようです．</p>
 <p>んー，テスト不足だったな．とりあえず， livehttpheader で送信されている POST 要求をキャプチャ．プレビュー表示プラグインではセミコロンが encode されずにそのまま送信されているけど，通常のプレビューボタンを用いた場合は，セミコロンも encode されている．</p>
 <p>調べてみると，<a href="http://www.w3.org/TR/1999/REC-html401-19991224/appendix/notes.html#h-B.2.2">フォームの区切り文字に「&amp;」の代用として「;」をサポートすることが推奨されている</a> (via:<a href="http://www.namazu.org/pipermail/namazu-devel-ja/2005-October/000675.html">Namazu-devel-ja 676] URI属性値のセミコロン記号</a>) ようで，このためセミコロンをそのまま送信すると，そこで本文が区切られてしまっていたのが原因でした．</p>
 <p>で，Javascript には URI エンコードを行うメソッドとして，escape()，encodeURI()，encodeURIComponent() の 3 種類があり，それぞれエンコード対象の文字列が異なるようです．（escape() は古いメソッドでおすすめできないらしい)</p>
@@ -879,7 +879,7 @@ div.tags a+a:before {
 <div class="section">
 
 <h3><a href="./20060528.html#p01" title="HTML DOM Visualizer"><span class="sanchor">_</span></a> <a href="http://www.aharef.info/static/htmlgraph/">HTML DOM Visualizer</a></h3>
-<p><img class="right" src="http://www.smallstyle.com/images/20060528_0.png" alt="HTML DOM Visualizer" title="HTML DOM Visualizer" width="240"></p>
+<p><img class="right" src="https://www.smallstyle.com/images/20060528_0.png" alt="HTML DOM Visualizer" title="HTML DOM Visualizer" width="240"></p>
 <p><a href="http://www.aharef.info/static/htmlgraph/">HTML DOM Visualizer</a> は自分のサイトの DOM を Java Applet を利用して視覚的に表現してくれるサービス．（例：<a href="http://www.aharef.info/static/htmlgraph/?url=http%3A%2F%2Fwww.smallstyle.com">www.smallstyle.com</a> の場合）●が root となりそこから link，div，img，table などの要素ごとに色分けをして表示してくれます．</p>
 
 </div>
@@ -958,13 +958,13 @@ div.tags a+a:before {
 <p>と，ここまで書いて，「<a href="http://subtech.g.hatena.ne.jp/keyword/%E3%81%9D%E3%82%8CPlagger%E3%81%A7%E3%82%84%E3%82%8C%E3%81%B0%E3%81%84%E3%81%84%E3%82%93%E3%81%98%E3%82%83%E3%81%AD%EF%BC%9F">それ Plagger でやればいいんじゃね</a>」が頭をかすめたけど，気づかなかったことにする．</p>
 <p>ま，そんな感じでそれなりに動くものができたのでよしとする．で，この日記が mixi 日記更新の初テストだったりする．</p>
 <p><strong>追記：</strong>ちなみにこの更新スクリプトは Ruby で実装してます．</p>
-<div class="sequel">つづき: <a href="http://www.smallstyle.com/20060821.html#p01">2006-08-21</a></div>
+<div class="sequel">つづき: <a href="https://www.smallstyle.com/20060821.html#p01">2006-08-21</a></div>
 
 </div>
 <div class="section">
 
 <h3><a href="./20060531.html#p02" title="更新成功"><span class="sanchor">_</span></a> 更新成功</h3>
-<p><img class="right" src="http://www.smallstyle.com/images/20060531_0.png" alt="mixi screenshot" title="mixi screenshot" width="240"></p>
+<p><img class="right" src="https://www.smallstyle.com/images/20060531_0.png" alt="mixi screenshot" title="mixi screenshot" width="240"></p>
 <p>キャッシュファイルがないとすべてのフィードをメール送信してしまったので，11 件くらい更新されるというミスはあったもののとりあえず更新は成功したっぽい．</p>
 
 </div>

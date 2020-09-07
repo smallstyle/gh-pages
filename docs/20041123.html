@@ -10,7 +10,7 @@
 	<link rel="prev" title="前の日記(2004-11-20)" href="./20041120.html">
 	<link rel="next" title="次の日記(2004-11-24)" href="./20041124.html">
 	<link rel="start" title="最新" href="./">
-	<link rel="alternate" media="handheld" type="text/html" href="http://www.smallstyle.com/20041123.html">
+	<link rel="alternate" media="handheld" type="text/html" href="https://www.smallstyle.com/20041123.html">
 	<link rel="shortcut icon" href="favicon.ico">
 	<meta name="description" content="日々，気になったことを書き留める日記">
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js" type="text/javascript"></script>
@@ -42,7 +42,7 @@
 <span class="adminmenu"><a href="./20041124.html">次の日記(2004-11-24)&raquo;</a></span>
 </div>
 </div>
-<h1><a href="http://www.smallstyle.com/">SmallStyle</a></h1>
+<h1><a href="https://www.smallstyle.com/">SmallStyle</a></h1>
 <div class="content">
 <div class="main">
 
@@ -62,12 +62,12 @@
 
 <h3><a name="p01" href="./20041123.html#p01" title="ThunderbirdからFirefoxが呼び出せない"><span class="sanchor">_</span></a> ThunderbirdからFirefoxが呼び出せない</h3>
 <p>IEコンポーネントブラウザの<a href="http://sleipnir.pos.to/">Sleipnir</a>から<a href="http://www.mozilla.org/products/firefox/">Firefox</a>に乗り換えてしばらくして気がついたのですが，メーラーとして使用している<a href="http://www.mozilla.org/products/thunderbird/">Thunderbird</a>からメール本文のURLをクリックするとSleipnirが起動してしまいます．Googleでそれなりに検索して調べてみたところ，いろいろ対応策は見つかったのですが，どれもうまくいきません．で，ふとフォルダオプションをもう一度確認してみると，Sleipnir側で設定を解除しても，うまく反映されない部分を発見しました．とりあえず，解決策を順に残しておこう．</p>
-<p><img class="right" src="http://www.smallstyle.com/images/20041123_0.jpg" alt="Sleipnirオプション設定画面" title="Sleipnirオプション設定画面" width="240"></p>
+<p><img class="right" src="https://www.smallstyle.com/images/20041123_0.jpg" alt="Sleipnirオプション設定画面" title="Sleipnirオプション設定画面" width="240"></p>
 <p>まず，以前，PCのデフォルトブラウザとして使用してたSleipnirを，通常使うブラウザからはずします．Sleipnirオプションの全般で「標準のブラウザに設定する(D)」のチェックをはずします．</p>
-<p><img class="right" src="http://www.smallstyle.com/images/20041123_1.jpg" alt="インターネットオプション設定画面" title="インターネットオプション設定画面" width="240"></p>
+<p><img class="right" src="https://www.smallstyle.com/images/20041123_1.jpg" alt="インターネットオプション設定画面" title="インターネットオプション設定画面" width="240"></p>
 <p>次に，一度デフォルトブラウザをIEに設定します．インターネットオプションのプログラムタブで，「Internet Explorerの起動時に、通常使用するブラウザを確認する(I)」にチェックをいれ，さらに「Web設定のリセット(R)」をクリックします．「適用(A)」をクリックしたらIEを終了します．</p>
-<p><img class="right" src="http://www.smallstyle.com/images/20041123_2.jpg" alt="フォルダオプション設定画面(1)" title="フォルダオプション設定画面(1)" width="240"></p>
-<p><img class="right" src="http://www.smallstyle.com/images/20041123_3.jpg" alt="フォルダオプション設定画面(2)" title="フォルダオプション設定画面(2)" width="240"></p>
+<p><img class="right" src="https://www.smallstyle.com/images/20041123_2.jpg" alt="フォルダオプション設定画面(1)" title="フォルダオプション設定画面(1)" width="240"></p>
+<p><img class="right" src="https://www.smallstyle.com/images/20041123_3.jpg" alt="フォルダオプション設定画面(2)" title="フォルダオプション設定画面(2)" width="240"></p>
 <p>ここで一度，Thunderbirdを起動して，メール本文中のURLをクリックしてみてください．うまくIEで表示がされていれば設定の変更が有効になっていることになります．私の環境ではこれではうまくいきませんでした．そこで確認するのが，各フォルダのツールのフォルダオプションを確認します．ファイルの種類タブで，拡張子：（なし），ファイルの種類：URL:Hyper Text 転送プロトコル(HTTP)を選択して，「詳細設定(V)」をクリックします．そうするとアクションの一覧に「Sleipnir」が太字でエントリーされていることが確認できます．どうもこの設定が残っているがために，ThunderbirdからURLをクリックすると，Sleipnirが起動されてしまうようです．Sleipnirを選択して，「削除(R)」をクリックします．同様に，Hyper Text 保護機能付き転送プロトコル(HTTPS)にも，同じエントリーがあるので削除をします．</p>
 <p>これで正しく設定されたデフォルトブラウザが使用されるようになります．ちなみにFirefoxをデフォルトブラウザとして設定すれば，ちゃんとThunderbirdからFirefoxが起動されます．</p>
 <p>ちなみに<a href="http://extensionroom.mozdev.org/more-info/launchy">Launchy</a>という拡張を使えば，メール本文中のURLをどのアプリケーションで起動するかをコンテキスト・メニューで選択することも可能になります．URLをIEやFirefox，MediaPlayerなど結構多彩に対応しています．</p>

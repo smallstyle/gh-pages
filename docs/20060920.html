@@ -10,7 +10,7 @@
 	<link rel="prev" title="前の日記(2006-09-19)" href="./20060919.html">
 	<link rel="next" title="次の日記(2006-09-21)" href="./20060921.html">
 	<link rel="start" title="最新" href="./">
-	<link rel="alternate" media="handheld" type="text/html" href="http://www.smallstyle.com/20060920.html">
+	<link rel="alternate" media="handheld" type="text/html" href="https://www.smallstyle.com/20060920.html">
 	<link rel="shortcut icon" href="favicon.ico">
 	<meta name="description" content="日々，気になったことを書き留める日記">
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js" type="text/javascript"></script>
@@ -42,7 +42,7 @@
 <span class="adminmenu"><a href="./20060921.html">次の日記(2006-09-21)&raquo;</a></span>
 </div>
 </div>
-<h1><a href="http://www.smallstyle.com/">SmallStyle</a></h1>
+<h1><a href="https://www.smallstyle.com/">SmallStyle</a></h1>
 <div class="content">
 <div class="main">
 
@@ -61,13 +61,13 @@
 <div class="section">
 
 <h3><a name="p01" href="./20060920.html#p01" title="タグクラウド表示プラグイン(5)"><span class="sanchor">_</span></a> タグクラウド表示プラグイン(5)</h3>
-<p><a href="http://www.smallstyle.com/20060918.html#p01" title="タグクラウド表示プラグイン(4)">先日リリースしたタグクラウド表示プラグイン</a>ですが，ツッコミ時にエラーが発生するバグがありました．ご迷惑をおかけしますが，再度ダウンロードしていただきますよう，お願いいたします．</p>
+<p><a href="https://www.smallstyle.com/20060918.html#p01" title="タグクラウド表示プラグイン(4)">先日リリースしたタグクラウド表示プラグイン</a>ですが，ツッコミ時にエラーが発生するバグがありました．ご迷惑をおかけしますが，再度ダウンロードしていただきますよう，お願いいたします．</p>
 <ul>
 <li><a href="./lab/category_to_tagcloud.txt">category_to_tagcloud.rb</a></li>
 </ul>
 <p>原因は，add_update_proc が呼び出されたときに，タグを生成するための初期化処理を日記更新時のみ行うようにしていたのですが，ツッコミ時には初期化がされていないために，エラーとなっていました．</p>
 <p>タグクラウドの集計は日記の更新時と，日付が変わった最初のアクセスのみだけでいいので，add_update_proc でタグ生成処理の実行を日記更新時のみにするようにしました．</p>
-<p>また，<a href="http://www.smallstyle.com/20060918.html#c01" title="[yuco] こんにちは。category_to_tagcloud.rb使わせていただきました。どうもありがとうございます。ところ..">8-14 日の間で更新されたタグについてもクラス属性を付加して欲しいとの要望</a>がありましたので，こちらも追加しました．これによりクラス属性は以下のようになります．</p>
+<p>また，<a href="https://www.smallstyle.com/20060918.html#c01" title="[yuco] こんにちは。category_to_tagcloud.rb使わせていただきました。どうもありがとうございます。ところ..">8-14 日の間で更新されたタグについてもクラス属性を付加して欲しいとの要望</a>がありましたので，こちらも追加しました．これによりクラス属性は以下のようになります．</p>
 <dl>
 <dt>hot</dt>
 <dd>7 日以内に更新されたタグ
@@ -83,7 +83,7 @@
 </dd>
 </dl>
 <p>タグクラウドの生成は日記更新時に行われますので，プラグインを置き換えてクラス属性の変更を確認したい場合は，いったんタグクラウドのキャッシュを削除して日記にアクセスしてください．</p>
-<div class="sequel">つづき: <a href="http://www.smallstyle.com/20061202.html#p01">2006-12-02</a></div>
+<div class="sequel">つづき: <a href="https://www.smallstyle.com/20061202.html#p01">2006-12-02</a></div>
 
 </div>
 

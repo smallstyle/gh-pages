@@ -10,7 +10,7 @@
 	<link rel="prev" title="前の日記(2011-06-20)" href="./20110620.html">
 	<link rel="next" title="次の日記(2011-06-30)" href="./20110630.html">
 	<link rel="start" title="最新" href="./">
-	<link rel="alternate" media="handheld" type="text/html" href="http://www.smallstyle.com/20110621.html">
+	<link rel="alternate" media="handheld" type="text/html" href="https://www.smallstyle.com/20110621.html">
 	<link rel="shortcut icon" href="favicon.ico">
 	<meta name="description" content="日々，気になったことを書き留める日記">
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js" type="text/javascript"></script>
@@ -42,7 +42,7 @@
 <span class="adminmenu"><a href="./20110630.html">次の日記(2011-06-30)&raquo;</a></span>
 </div>
 </div>
-<h1><a href="http://www.smallstyle.com/">SmallStyle</a></h1>
+<h1><a href="https://www.smallstyle.com/">SmallStyle</a></h1>
 <div class="content">
 <div class="main">
 
@@ -61,13 +61,13 @@
 <div class="section">
 
 <h3><a name="p01" href="./20110621.html#p01" title="（再）ページ遷移なしで日記のプレビューを表示するプラグイン…のプロトタイプ"><span class="sanchor">_</span></a> （再）ページ遷移なしで日記のプレビューを表示するプラグイン…のプロトタイプ</h3>
-<p><a href="http://www.smallstyle.com/20060504.html#p01">5 年前にそんなことができるプラグインを作ってはいた</a>のですが，かなり実験的な要素が強くて人におすすめできたもんじゃないっていうくらいの出来だったのですが，jQuery の登場や tDiary の JavaScript 化という波に乗って，新しく書き直してみました．</p>
+<p><a href="https://www.smallstyle.com/20060504.html#p01">5 年前にそんなことができるプラグインを作ってはいた</a>のですが，かなり実験的な要素が強くて人におすすめできたもんじゃないっていうくらいの出来だったのですが，jQuery の登場や tDiary の JavaScript 化という波に乗って，新しく書き直してみました．</p>
 <p>ひとまず fork した async-preview ブランチに置いてあります．興味のある方はどうぞ．こういうときに GitHub は便利ですね．</p>
 <ul>
 <li><a href="https://github.com/smallstyle/tdiary-contrib/commit/8ec6385aa206c8785ab83333b5bdefda5579dec0">https://github.com/smallstyle/tdiary-contrib/commit/8ec6385aa206c8785ab83333b5bdefda5579dec0</a></li>
 </ul>
 <p>このプラグインを使うと，通常のプレビューボタンを押したときと同じリクエストが非同期で送信され，日記のプレビュー部分の HTML エレメントを取り出して表示をしています．5 年前にやってることと基本は変わりないですねw．</p>
-<p><img class="right" src="http://www.smallstyle.com/images/20110621_0.png" alt="async-previewのスクリーンショット" title="async-previewのスクリーンショット" width="240"></p>
+<p><img class="right" src="https://www.smallstyle.com/images/20110621_0.png" alt="async-previewのスクリーンショット" title="async-previewのスクリーンショット" width="240"></p>
 <p>今のところ編集領域の上に，「編集」と「プレビュー」の 2 つのボタンを用意していますが，それ以外の実装案としては，</p>
 <ul>
 <li>既存のプレビューボタンの click イベントを横取りして，非同期で実行する</li>
@@ -75,7 +75,7 @@
 </ul>
 <p>といったこともやってみたりしましたが，さて，どれがいいのだろうか…．</p>
 <p>上記の 2 つは実装してボツにしたもので，1 つめの実装は，プレビューボタン押下後に，ボタン下部にプレビューを表示するようにしてみました．これはプレビュー後に，再度，編集しようと思うと，本文が長いと上に行ったり，下に行ったりと移動量が多く感じられたのでボツにしました．2 つめの実装も表示をどこにするかが重要で，文章が長くなってくると結局プレビューをみるためにスクロールする必要が出てくることと，タイピング時にちまちま動くのが，最初はいいかなと思っても，気が散ったりする感じがあったのでボツにしました．定期的にリクエストかけるのはサーバー側にも負荷になりますしね．</p>
-<p>個人的にもっとも影響が大きいのは，この非同期プレビューを利用した場合に，<a href="http://www.smallstyle.com/20100922.html#p01">校正プラグイン</a>の結果表示がやりにくい点です．日記のプレビュー時に，日本語としておかしな部分を指摘してくれるので，自分で作っといてなんですが，結構便利なんです．</p>
+<p>個人的にもっとも影響が大きいのは，この非同期プレビューを利用した場合に，<a href="https://www.smallstyle.com/20100922.html#p01">校正プラグイン</a>の結果表示がやりにくい点です．日記のプレビュー時に，日本語としておかしな部分を指摘してくれるので，自分で作っといてなんですが，結構便利なんです．</p>
 <p>こういった理由から，このプラグインの実装では上部に非同期プレビューのボタン，下部に従来のプレビューのボタンとわけて表示をさせています．まぁ，非同期プレビューのときにも校正結果の HTML エレメントを取得して，どこかしらに表示させればいいだけのことなんですが…．</p>
 <p><a href="https://github.com/tdiary/tdiary-core/issues/41">設定画面の Ajax 化について，たださんが issue #41 で着手されているよう</a>なので，更新関係周りの仕様や動作が今後，変わってくる可能性があるのかな？</p>
 <p>プラグインから外部サービスを呼び出す際に，API 側が jsonp に対応していると，クロスドメインの制限を超えて利用することが可能なので JavaScript 化しやすいですが，ものによっては XML でしか取得できないものなどもあるので，日記編集画面から個別のプラグインに対してリクエストを投げて，JSON なりXML なりで取得できる仕組みが将来的にできてくるとうれしいかな，と思ったりするのでした．</p>

@@ -8,7 +8,7 @@
 	<meta name="author" content="hb">
 	
 	<link rel="start" title="最新" href="./">
-	<link rel="alternate" media="handheld" type="text/html" href="http://www.smallstyle.com/">
+	<link rel="alternate" media="handheld" type="text/html" href="https://www.smallstyle.com/">
 	<link rel="shortcut icon" href="favicon.ico">
 	<meta name="description" content="日々，気になったことを書き留める日記">
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js" type="text/javascript"></script>
@@ -40,7 +40,7 @@
 <span class="adminmenu"><a href="./20060510-3.html" rel="prev">次3日分&raquo;</a></span>
 </div>
 </div>
-<h1><a href="http://www.smallstyle.com/">SmallStyle</a></h1>
+<h1><a href="https://www.smallstyle.com/">SmallStyle</a></h1>
 <div class="content">
 <div class="main">
 
@@ -95,10 +95,10 @@
 <div class="section">
 
 <h3><a href="./20060505.html#p01" title="Bulkfeeds API 形態素解析 + 特徴語抽出を利用したタグ候補取得プラグイン"><span class="sanchor">_</span></a> <a href="http://bulkfeeds.net/app/developer.html#terms">Bulkfeeds API 形態素解析 + 特徴語抽出</a>を利用したタグ候補取得プラグイン</h3>
-<p><a href="http://www.smallstyle.com/20060504.html#p01" title="タグ自動抽出 API を利用したタグ候補の取得プラグイン">タグ候補生成プラグインを作って</a>なかなか面白かったので，他にも日本語に対応した形態素解析 API がないかなぁと探してみたら，<a href="http://bulkfeeds.net/app/developer.html">Bulkfeeds API</a> で「<a href="http://bulkfeeds.net/app/developer.html#terms">形態素解析 + 特徴語抽出</a>」が提供されていたので早速対応させてみることにしました．</p>
+<p><a href="https://www.smallstyle.com/20060504.html#p01" title="タグ自動抽出 API を利用したタグ候補の取得プラグイン">タグ候補生成プラグインを作って</a>なかなか面白かったので，他にも日本語に対応した形態素解析 API がないかなぁと探してみたら，<a href="http://bulkfeeds.net/app/developer.html">Bulkfeeds API</a> で「<a href="http://bulkfeeds.net/app/developer.html#terms">形態素解析 + 特徴語抽出</a>」が提供されていたので早速対応させてみることにしました．</p>
 <p>Bulkfeeds API は XML 形式でレスポンスが返ってくるということなので，XML のパーサーとして<a href="http://www.germane-software.com/software/rexml/">REXML</a> を利用してみることにしてみました．</p>
 <p>あとは CGI Proxy の tagapi.rb の JSON 形式の結果の返し方がなんとなくきれいでなかったので，少し変更．ishinao さんのとこは結果がタブ区切りの文字列で返ってくるので，そのまま返して JavaScript でタブをキーに文字列分割していたのですが，JSON は配列での定義も可能なので，サーバ側でタグ候補文字列を配列にして返すように変更しました．その他，例外処理まわりの変更や，いくつかの処理を関数として切り出しました．</p>
-<p><img class="right" src="http://www.smallstyle.com/images/20060505_0.png" alt="スクリーンショット" title="スクリーンショット"></p>
+<p><img class="right" src="https://www.smallstyle.com/images/20060505_0.png" alt="スクリーンショット" title="スクリーンショット"></p>
 <p>ということで，新しいバージョンでは，タグ候補を抽出するサービスを MM/Memo か Bulkfeeds のAPI のどちらかを選択できるようになっています．最新版は下記リンクからダウンロードしてください．</p>
 <ul>
 <li><del><a href="./lab/tag-generator.txt">tag-generator.rb</a></del>(Disk障害でなくなってしまいました…)</li>
@@ -147,7 +147,7 @@
 <p>で，日記を書いたときにその文章を解析して，タグ候補をいくつかだしてくれればいいのにと思って調べてみると，<a href="http://tdiary.ishinao.net/20051201.html#p02">MM/Memo にタグ自動抽出の API がある</a>ということなので，これを利用しない手はないと．テキストを POST してやれば結果は返ってくるということなので，Ajax や JSON なんかの勉強がてらプラグインを作ってみた．</p>
 <p>とりあえず Ajax と JSON って単語はよく目にするものの，実際に自分で書いたことがなかったので．いろいろサンプルコードをなんかをながめながらちょこちょこと作ってみて，だいたいの感じがつかめた．サンプルの HTML と JavaScript で一通りの動きを確認できたので，さっそくプラグインつくりにとりかかる．</p>
 <p>とりあえず MM/Memo のAPI を直接呼び出すことが難しそうなので，CGI Proxy 的なものを作成．xmlHttpRequest では呼び出し元と呼び出し先のドメインが一致していないと動作しないために，この CGI Proxy を通すことで，ページ遷移なしで xmlHttpRequest を利用してタグ候補を取得します．最初は単純に中継させるだけでいいかとも思っていたのですが，ここで，少しデータを加工して JSON 形式のデータを返すようにしてみました（っていうかやってみたかっただけ）</p>
-<p><img class="right" src="http://www.smallstyle.com/images/20060504_0.png" alt="スクリーンショット" title="スクリーンショット"></p>
+<p><img class="right" src="https://www.smallstyle.com/images/20060504_0.png" alt="スクリーンショット" title="スクリーンショット"></p>
 <p>Tag 自動生成ボタンをクリックすると，ローディングイメージが表示され，日記本文の内容をスクリプト経由で POST し，タグ候補が一覧されます．内部サーバエラーやタイムアウト時は赤字で何かメッセージを出します．</p>
 <p>取得したデータはタグ候補として日記フォーム本文下部に表示され，タグとして記述したいものをクリックすると，セクション先頭に挿入されます．とりあえずは今のところは Wiki スタイルにのみ対応しています．</p>
 <p>タグ自動抽出 API にはフィルターオプションがあり，すでに MM/Memo に登録されているキーワードのみを対象としたタグ候補を抽出することも可能です．</p>
@@ -163,7 +163,7 @@
 </ol>
 <p>これでたぶん動くはず．今日のこの日記のタグ付けは，上記のプラグインを利用してつけてみました．もちろん生成されたタグ以外で自分でタグをつけることもできます．</p>
 <p><a href="http://tdiary.ishinao.net/20051011.html#p01">ishinao さんのとこのサーバは過負荷気味</a>ということなので，あまりがんがんリクエストを投げるのはアレですが，日記のお供にご利用いただければと思います．</p>
-<div class="sequel">つづき: <a href="http://www.smallstyle.com/20060505.html#p01" title="Bulkfeeds API 形態素解析 + 特徴語抽出を利用したタグ候補取得プラグイン">2006-05-05</a>, <a href="http://www.smallstyle.com/20060510.html#p01" title="タグ候補生成プラグインをはてなダイアリーキーワード自動リンク API に対応させてみた">2006-05-10</a>, <a href="http://www.smallstyle.com/20060521.html#p01" title="Ajax を使った tDiary のプレビュー表示">2006-05-21</a>, <a href="http://www.smallstyle.com/20110621.html#p01">2011-06-21</a></div>
+<div class="sequel">つづき: <a href="https://www.smallstyle.com/20060505.html#p01" title="Bulkfeeds API 形態素解析 + 特徴語抽出を利用したタグ候補取得プラグイン">2006-05-05</a>, <a href="https://www.smallstyle.com/20060510.html#p01" title="タグ候補生成プラグインをはてなダイアリーキーワード自動リンク API に対応させてみた">2006-05-10</a>, <a href="https://www.smallstyle.com/20060521.html#p01" title="Ajax を使った tDiary のプレビュー表示">2006-05-21</a>, <a href="https://www.smallstyle.com/20110621.html#p01">2011-06-21</a></div>
 
 </div>
 

@@ -60,7 +60,7 @@
 
 <h3><a href="./20071001.html#p01" title="Buffalo WHR-G54Sにtomato firmwareをインストール"><span class="sanchor">_</span></a> Buffalo WHR-G54Sにtomato firmwareをインストール</h3>
 <p>Buffalo の無線 LAN ルータ <a href="http://buffalo.jp/products/catalog/item/w/whr-g54s/">WHR-G54S</a> のファームウェアを書き換えて，機能強化したルータにしてみた．今回は，<a href="http://www.polarcloud.com/tomato">Tomato Firmware</a> で挑戦．こうした代替ファームウェアを利用すると，例えば Tomato Firmware の場合，帯域使用量のグラフ化や，スクリプトの実行などなど，さまざまな機能が利用できるようになります．この辺は，<a href="http://gigazine.net/index.php?/news/comments/20070227_tomato_firmware/">無線LANアクセスポイントを機能強化する無料ファームウェア「Tomato Firmware」- GIGAZINE</a>なんかを参考に．</p>
-<p><img class="right" src="http://www.smallstyle.com/images/20071001_0.png" alt="Windows の機能" title="Windows の機能" width="240"></p>
+<p><img class="right" src="https://www.smallstyle.com/images/20071001_0.png" alt="Windows の機能" title="Windows の機能" width="240"></p>
 <p>導入手順については，まず，ファームウェアを書き換えるにあたって，Windows で tftp クライアントを利用可能な状態にしておきます．Windows Vista では 「Windows の機能の有効化または無効化」で"TFTP クライアント"にチェックをいれておきます．有効化は若干時間がかかりました．気長に待ちましょう．</p>
 <p>次に Windows のネットワークの設定を以下のように設定します．</p>
 <dl>
@@ -141,7 +141,7 @@ tftp -i 192.168.11.1 put tomato.trx
 <p>ニコニコ動画をローカルにキャッシュして，快適に利用できる便利ツール「<a href="http://homepage1.nifty.com/asr/tools/nicocache.html">NicoCache</a>」ですが，起動するとプロンプトが開いたままになります．ま，残っていても別段気になるわけでもないですが，Windows のサービスに登録しちゃったりすると，すっきりするかな，ということでその方法．</p>
 <p>Java アプリケーションを Windows のサービスとして利用する方法としては，<a href="http://forge.objectweb.org/projects/javaservice/">JavaService</a> や <a href="http://commons.apache.org/daemon/">Jakarta Commons Daemon</a> などがあるみたいですが，今回は，<a href="http://wrapper.tanukisoftware.org/">Java Service Wrapper</a> を利用して，NicoCache をサービス化しようと思います．この後に書く手順は，事前に NicoCache の導入と稼動確認が取れているものとして，そこから Windows サービス化への手順を紹介します．</p>
 <p>まず，Java Service Wrapper のサイトから，Wrapper をダウンロードします．左メニューの Binaries リンクから，wrapper-windows-x86-32-3.2.3.zip をダウンロードし，任意の場所に解凍します．解凍したフォルダを以下の src\bin　以下に下記のファイルがあります．{WRAPPER_HOME} は解凍したフォルダ．</p>
-<p><img class="right" src="http://www.smallstyle.com/images/20071009_3.png" alt="バッチファイルのコピー" title="バッチファイルのコピー" width="240"></p>
+<p><img class="right" src="https://www.smallstyle.com/images/20071009_3.png" alt="バッチファイルのコピー" title="バッチファイルのコピー" width="240"></p>
 <ul>
 <li>{WRAPPER_HOME}\src\bin\App.bat.in</li>
 <li>{WRAPPER_HOME}\src\bin\InstallApp-NT.bat.in</li>
@@ -153,7 +153,7 @@ tftp -i 192.168.11.1 put tomato.trx
 <li>{WRAPPER_HOME}\bin\InstallNicoCache-NT.bat</li>
 <li>{WRAPPER_HOME}\bin\UninstallNicoCache-NT.bat</li>
 </ul>
-<p><img class="right" src="http://www.smallstyle.com/images/20071009_2.png" alt="NicoCache関連ファイルのコピー" title="NicoCache関連ファイルのコピー" width="240"></p>
+<p><img class="right" src="https://www.smallstyle.com/images/20071009_2.png" alt="NicoCache関連ファイルのコピー" title="NicoCache関連ファイルのコピー" width="240"></p>
 <p>次に NicoCache のフォルダにある以下のファイルJava Service Wrapper の bin 以下にコピーします．（NicoCache.bat はコピーしない）</p>
 <ul>
 <li>{WRAPPER_HOME}\bin\cache</li>
@@ -201,14 +201,14 @@ jvm 1    | total cache size=120,266,163bytes</pre>
 <p>こんな感じで表示されればうまく起動できています．ためしにブラウザで何か動画を見てみます．今日のマイリスト登録ランキング 1 位のものでも…</p>
 <pre>jvm 1    | no cache found: sm1224062_百人の組曲『ニコニコ動画』大合奏+リアレンジ＋大合唱（大砲付き）.flv
 jvm 1    | cache completed: sm1224062_百人の組曲『ニコニコ動画』大合奏+リアレンジ＋大合唱（大砲付き）.flv</pre>
-<p><img class="right" src="http://www.smallstyle.com/images/20071009_1.png" alt="コンピュータの管理" title="コンピュータの管理" width="240"></p>
-<p><img class="right" src="http://www.smallstyle.com/images/20071009_0.png" alt="NicoCacheのプロパティ" title="NicoCacheのプロパティ" width="240"></p>
+<p><img class="right" src="https://www.smallstyle.com/images/20071009_1.png" alt="コンピュータの管理" title="コンピュータの管理" width="240"></p>
+<p><img class="right" src="https://www.smallstyle.com/images/20071009_0.png" alt="NicoCacheのプロパティ" title="NicoCacheのプロパティ" width="240"></p>
 <p>ここまでこれば，あとはサービスとして登録するだけ．さきほど起動した NicoCache をいったん Ctrl + C で停止します．次に InstallNicoCache-NT.bat を実行すると，サービスの一覧に NicoCache が登録されます．</p>
 <pre>F:\tool\javasrv-wrapper\wrapper-windows-x86-32-3.2.3\bin&gt;InstallNicoCache-NT.bat</pre>
 <pre>wrapper  | NicoCache installed.</pre>
 <p>登録が完了したらあとはサービスを開始して，正常に動作するか確認してください．</p>
 <p>これで，再起動してもサービスとして自動で起動してくれるので，その存在すらも忘れてしまいそうな感じです．ちなみにサービスから削除する場合は，UninstallNicoCache-NT.bat を実行すると削除されます．</p>
-<div class="sequel">つづき: <a href="http://www.smallstyle.com/20071231.html#p02">2007-12-31</a></div>
+<div class="sequel">つづき: <a href="https://www.smallstyle.com/20071231.html#p02">2007-12-31</a></div>
 
 </div>
 
@@ -287,7 +287,7 @@ jvm 1    | cache completed: sm1224062_百人の組曲『ニコニコ動画』大
 <div class="section">
 
 <h3><a href="./20071018.html#p01" title="なしのコンポート"><span class="sanchor">_</span></a> なしのコンポート</h3>
-<p><img class="right" src="http://www.smallstyle.com/images/20071018_0.jpg" alt="なしのコンポート" title="なしのコンポート" width="240"></p>
+<p><img class="right" src="https://www.smallstyle.com/images/20071018_0.jpg" alt="なしのコンポート" title="なしのコンポート" width="240"></p>
 <p>時間があったのでちょろっと作ってみた（時間がなくても十分作れる簡単なものだけど．</p>
 <p>白ワインと砂糖，水を沸騰させて，皮と芯をとって，8 等分くらいにしたなしを10分程度煮る．あとは適当に粗熱がとれたら冷蔵庫にいれて冷やすだけ．</p>
 <p>お好みでヨーグルトとかアイスをそえるとおいしいかも．簡単でおいしいデザートができました．</p>

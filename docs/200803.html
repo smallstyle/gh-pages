@@ -135,7 +135,7 @@ plugins:
 <div class="section">
 
 <h3><a href="./20080306.html#p01" title="Plagger::Plugin::Filter::FetchNicoVideo でニコニコ動画(SP1) H.264 形式対応"><span class="sanchor">_</span></a> Plagger::Plugin::Filter::FetchNicoVideo でニコニコ動画(SP1) H.264 形式対応</h3>
-<p><em>2008-03-07 追記:</em><a href="http://www.smallstyle.com/20080307.html#p01" title="Plagger::Plugin::Filter::FetchNicoVideo でニコニコ動画(SP1) 対応(2)">Plagger::Plugin::Filter::FetchNicoVideo でニコニコ動画(SP1)対応(2)</a>でニコニコムービーメーカにも対応した形に変更しています．</p>
+<p><em>2008-03-07 追記:</em><a href="https://www.smallstyle.com/20080307.html#p01" title="Plagger::Plugin::Filter::FetchNicoVideo でニコニコ動画(SP1) 対応(2)">Plagger::Plugin::Filter::FetchNicoVideo でニコニコ動画(SP1)対応(2)</a>でニコニコムービーメーカにも対応した形に変更しています．</p>
 <p>ニコニコ動画が H.264 に対応したので，Plagger::Plugin::Filter::FetchNicoVideo で FLV と H.264 を判別するようにしてみました．H.264 の動画は拡張子が mp4 でダウンロードするようにしています．とりあえず diff だけ．</p>
 <pre>Index: FetchNicoVideo.pm
 ===================================================================
@@ -166,7 +166,7 @@ plugins:
 <pre>- module: Filter::FFmpeg
   rule:
     - expression: $args-&gt;{entry}-&gt;enclosure-&gt;type eq "video/x-flv"</pre>
-<div class="sequel">つづき: <a href="http://www.smallstyle.com/20080307.html#p01" title="Plagger::Plugin::Filter::FetchNicoVideo でニコニコ動画(SP1) 対応(2)">2008-03-07</a></div>
+<div class="sequel">つづき: <a href="https://www.smallstyle.com/20080307.html#p01" title="Plagger::Plugin::Filter::FetchNicoVideo でニコニコ動画(SP1) 対応(2)">2008-03-07</a></div>
 
 </div>
 
@@ -201,7 +201,7 @@ plugins:
 <div class="section">
 
 <h3><a href="./20080307.html#p01" title="Plagger::Plugin::Filter::FetchNicoVideo でニコニコ動画(SP1) 対応(2)"><span class="sanchor">_</span></a> Plagger::Plugin::Filter::FetchNicoVideo でニコニコ動画(SP1) 対応(2)</h3>
-<p><a href="http://www.smallstyle.com/20080306.html#p01" title="Plagger::Plugin::Filter::FetchNicoVideo でニコニコ動画(SP1) H.264 形式対応">H.264動画対応</a>に加えてニコニコムービーメーカで作成されたものにも対応させておく．</p>
+<p><a href="https://www.smallstyle.com/20080306.html#p01" title="Plagger::Plugin::Filter::FetchNicoVideo でニコニコ動画(SP1) H.264 形式対応">H.264動画対応</a>に加えてニコニコムービーメーカで作成されたものにも対応させておく．</p>
 <pre>Index: FetchNicoVideo.pm
 ===================================================================
 --- FetchNicoVideo.pm   (revision 7618)
@@ -296,7 +296,7 @@ Usage: rdiga [options]
     -i IEPG_FILE                     iEPGファイル
     -d                               Debugログ出力</pre>
 <p>うちの環境では XW300 で動作確認しています．その他のモデルだとどうなるか．まだいろいろとバグ持ちだと思うのですが，ちょっと使ってみてやろうか，という方がいれば一度お試しください．</p>
-<div class="sequel">つづき: <a href="http://www.smallstyle.com/20080322.html#p01" title="rdiga 0.0.2 を公開">2008-03-22</a></div>
+<div class="sequel">つづき: <a href="https://www.smallstyle.com/20080322.html#p01" title="rdiga 0.0.2 を公開">2008-03-22</a></div>
 
 </div>
 
@@ -401,7 +401,7 @@ Usage: rdiga [options]
 <div class="section">
 
 <h3><a href="./20080322.html#p01" title="rdiga 0.0.2 を公開"><span class="sanchor">_</span></a> rdiga 0.0.2 を公開</h3>
-<p><a href="http://www.smallstyle.com/20080313.html#p01" title="iEPG を利用してコマンドラインから Diga に予約登録するツール">先日公開した，iEPG を利用してコマンドラインで Diga に予約登録する Ruby スクリプト rdiga を更新</a>．今回は，Diga 中の予約一覧を表示できる機能を追加しました．一覧表示にライブラリに hpricot を利用しています．標準の環境ではインストールされていないものなので，別途インストールが必要となりました．hpricot は gem からインストール可能です．</p>
+<p><a href="https://www.smallstyle.com/20080313.html#p01" title="iEPG を利用してコマンドラインから Diga に予約登録するツール">先日公開した，iEPG を利用してコマンドラインで Diga に予約登録する Ruby スクリプト rdiga を更新</a>．今回は，Diga 中の予約一覧を表示できる機能を追加しました．一覧表示にライブラリに hpricot を利用しています．標準の環境ではインストールされていないものなので，別途インストールが必要となりました．hpricot は gem からインストール可能です．</p>
 <pre>$ gem install hpricot</pre>
 <p><a href="/rdiga/">rdiga 用のページを別途作成したので，ダウンロードはそちらから．</a></p>
 <p>リスト表示については，日時と録画モードのみを表示する簡易版とタイトルもあわせて表示する詳細版をオプションとして用意しました．タイトル付きは各予約詳細画面へのリクエストが必要となるため，件数が多いと表示までに時間がかかります．予約件数が 15 件の場合，簡易版では約 1.5 秒，詳細版では 20 秒以上かかっています．この辺は状況に応じて使い分けてもらえればと思います．</p>
@@ -413,7 +413,7 @@ I, [2008-03-21T00:00:00.000000 #7394]  INFO -- : 予約一覧を表示します�
 3/22(土)  18:00〜19:00  HE(HDD) 
 3/23(日)  0:30〜1:30    HE(HDD) </pre>
 <p>こんな感じで表示されると思います．</p>
-<div class="sequel">つづき: <a href="http://www.smallstyle.com/20090720.html#p01">2009-07-20</a></div>
+<div class="sequel">つづき: <a href="https://www.smallstyle.com/20090720.html#p01">2009-07-20</a></div>
 
 </div>
 

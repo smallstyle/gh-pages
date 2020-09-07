@@ -10,7 +10,7 @@
 	<link rel="prev" title="前の日記(2011-05-03)" href="./20110503.html">
 	<link rel="next" title="次の日記(2011-05-08)" href="./20110508.html">
 	<link rel="start" title="最新" href="./">
-	<link rel="alternate" media="handheld" type="text/html" href="http://www.smallstyle.com/20110504.html">
+	<link rel="alternate" media="handheld" type="text/html" href="https://www.smallstyle.com/20110504.html">
 	<link rel="shortcut icon" href="favicon.ico">
 	<meta name="description" content="日々，気になったことを書き留める日記">
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js" type="text/javascript"></script>
@@ -42,7 +42,7 @@
 <span class="adminmenu"><a href="./20110508.html">次の日記(2011-05-08)&raquo;</a></span>
 </div>
 </div>
-<h1><a href="http://www.smallstyle.com/">SmallStyle</a></h1>
+<h1><a href="https://www.smallstyle.com/">SmallStyle</a></h1>
 <div class="content">
 <div class="main">
 
@@ -62,7 +62,7 @@
 
 <h3><a name="p01" href="./20110504.html#p01" title="ネットワークが有効になったら pogoplugfs を起動する"><span class="sanchor">_</span></a> ネットワークが有効になったら pogoplugfs を起動する</h3>
 <p><img title="pogoplugfs" alt="pogoplugfs" src="http://lh4.ggpht.com/_ihKAdXEKr-A/TcFHmybrOiI/AAAAAAAAAEk/gAIVJQgk_-I/s300/photo%20%281%29.resized.JPG" class="right picasa"></p>
-<p><a href="http://www.smallstyle.com/20110503.html#p01" title="Ubuntu で Pogoplug を利用する">先日の日記</a>で，pogoplugfs をスタートアップに登録すれば起動時に pogoplug がドライブとして mount されると書いたけど，これはデスクトップ PC で有線 LAN 環境でのこと．これがノート PC などで無線 LAN 環境になると，スタートアップ時にはまだネットワークに接続できていないため，pogoplugfs の起動に失敗してしまいました．必要なときにコマンドラインで呼び出すなり，起動用のスクリプトを用意してもいいのですが，ネットワークがアクティブになったら自動的に mount されて利用できるほうがやっぱりいい．うまく呼び出す方法として何がいいか．</p>
+<p><a href="https://www.smallstyle.com/20110503.html#p01" title="Ubuntu で Pogoplug を利用する">先日の日記</a>で，pogoplugfs をスタートアップに登録すれば起動時に pogoplug がドライブとして mount されると書いたけど，これはデスクトップ PC で有線 LAN 環境でのこと．これがノート PC などで無線 LAN 環境になると，スタートアップ時にはまだネットワークに接続できていないため，pogoplugfs の起動に失敗してしまいました．必要なときにコマンドラインで呼び出すなり，起動用のスクリプトを用意してもいいのですが，ネットワークがアクティブになったら自動的に mount されて利用できるほうがやっぱりいい．うまく呼び出す方法として何がいいか．</p>
 <p><a href="https://help.ubuntu.com/community/Autofs">autofs</a> とかどうかなと思ったけど，これはネットワークに繋がっているかどうかまでは見ていなさそう．特定のフォルダへのアクセスがあったときに自動的に mount する 仕組みは使えそうだけど．それよりも autofs から pogoplugfs の呼び出しがうまくできなさそうだったので却下．</p>
 <p>次に考えたのがネットワークの起動時にスクリプトが呼び出せる /etc/network/if-up.d 配下に起動スクリプトを置くこと．解決策としてはもっともいいものだと思ったけど，スクリプトの起動が root ユーザーとなってしまっているからか，マウントはできるけどファイルシステムにアクセスできない．ログインユーザー名の取得も環境変数などにはなさそうだったので，これも却下．</p>
 <p>もうひとつ思いついたのは pogoplug と同じようなストレージ系のアプリケーションとして，Dropbox や UbuntuOne のような nautilus と連携させる方法．nautilus actions などでコンテキストメニューなどを独自に追加できるようだけど，フォルダアクセス時にマウントするとかそういった類のことはできなさそうなので却下．</p>

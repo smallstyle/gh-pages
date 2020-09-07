@@ -10,7 +10,7 @@
 	<link rel="prev" title="前の日記(2006-01-16)" href="./20060116.html">
 	<link rel="next" title="次の日記(2006-01-18)" href="./20060118.html">
 	<link rel="start" title="最新" href="./">
-	<link rel="alternate" media="handheld" type="text/html" href="http://www.smallstyle.com/20060117.html">
+	<link rel="alternate" media="handheld" type="text/html" href="https://www.smallstyle.com/20060117.html">
 	<link rel="shortcut icon" href="favicon.ico">
 	<meta name="description" content="日々，気になったことを書き留める日記">
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js" type="text/javascript"></script>
@@ -42,7 +42,7 @@
 <span class="adminmenu"><a href="./20060118.html">次の日記(2006-01-18)&raquo;</a></span>
 </div>
 </div>
-<h1><a href="http://www.smallstyle.com/">SmallStyle</a></h1>
+<h1><a href="https://www.smallstyle.com/">SmallStyle</a></h1>
 <div class="content">
 <div class="main">
 
@@ -61,8 +61,8 @@
 <div class="section">
 
 <h3><a name="p01" href="./20060117.html#p01" title="Lightbox JS でキャプション表示が可能に"><span class="sanchor">_</span></a> Lightbox JS でキャプション表示が可能に</h3>
-<p><img class="right" src="http://www.smallstyle.com/images/20060117_0.jpg" alt="サンプルイメージ" title="サンプルイメージ" width="240"></p>
-<p><a href="http://www.huddletogether.com/projects/lightbox/">Lightbox JS</a> がアップデートされて，<a href="http://www.smallstyle.com/20060111.html#p01" title="Lightbox JS ちょこっとカスタマイズ">以前取り上げた title 属性の追加</a>が加えられたり，キャプション表示や，Close ボタンの表示が可能になりました．このサイトでも少し前から Lightbox JS を使って画像を表示させているのですが，tDiary の image_ex.rb をまた少し手を加えて，キャプション表示を可能にしてみました．</p>
+<p><img class="right" src="https://www.smallstyle.com/images/20060117_0.jpg" alt="サンプルイメージ" title="サンプルイメージ" width="240"></p>
+<p><a href="http://www.huddletogether.com/projects/lightbox/">Lightbox JS</a> がアップデートされて，<a href="https://www.smallstyle.com/20060111.html#p01" title="Lightbox JS ちょこっとカスタマイズ">以前取り上げた title 属性の追加</a>が加えられたり，キャプション表示や，Close ボタンの表示が可能になりました．このサイトでも少し前から Lightbox JS を使って画像を表示させているのですが，tDiary の image_ex.rb をまた少し手を加えて，キャプション表示を可能にしてみました．</p>
 <p>image_ex.rb では日記を書くときに，代替テキストを指定しますが，これをキャプションに利用します．修正はいたって簡単で，以前，Lightbox JS に対応させるために手を加えた image_ex.rb の，rel="lightbox" のあとに，title="#{alt}" を挿入します．</p>
 <pre>%Q[&lt;a href="#{image_url}#{list[id.to_i]}" rel="lightbox" title="#{alt}"&gt;&lt;img class="#{place}" src="#{image_url}#{list[id2.to_i]}" alt="#{alt}"&gt;&lt;/a&gt;]</pre>
 <p>これで画像ポップアップ時に，画像下部にキャプションが表示されるようになります．css ファイル (lightbox.css) には以下を追記しておきました．</p>

@@ -59,9 +59,9 @@
 <div class="section">
 
 <h3><a href="./20101212.html#p01" title="Google Cloud Print を試してみた"><span class="sanchor">_</span></a> Google Cloud Print を試してみた</h3>
-<p><img class="right" src="http://www.smallstyle.com/images/20101212_0.png" alt="Google Cloud Print の設定" title="Google Cloud Print の設定" width="240"></p>
+<p><img class="right" src="https://www.smallstyle.com/images/20101212_0.png" alt="Google Cloud Print の設定" title="Google Cloud Print の設定" width="240"></p>
 <p>Google Chrome dev を利用すると，Google Cloud Print が試せるということで早速試してみた．Google Cloud Print を有効にするとローカルにあるプリンタが一覧に表示される．Cloud Print とかいうくらいだから，ローカルのプリンタが表示されるとは思ってもいなかったので驚いた．Google Chrome からはテストページしか印刷できないけど，Chorome OS を利用すると表示しているページを自由に印刷キューに放り込める．もちろんプリンタードライバーなんてインストールする必要もなくて，印刷指示を Google Cloud Print 上のプリンターに出しておくだけ．Google Cloud Print 上に登録したときに接続されている PC が立ち上がっていれば，勝手に印刷ジョブを取得して印刷してくれる．</p>
-<p><img class="right" src="http://www.smallstyle.com/images/20101212_1.png" alt="Chrome OS の印刷画面" title="Chrome OS の印刷画面" width="240"></p>
+<p><img class="right" src="https://www.smallstyle.com/images/20101212_1.png" alt="Chrome OS の印刷画面" title="Chrome OS の印刷画面" width="240"></p>
 <p>今後，Google Cloud Print に対応したプリンターが直接ネットワークにつながっていればもちろん PC を立ち上げることなく勝手に印刷をしてくれるようになるんだろう．とはいうものの，自宅にはプリンターは置いてなくて，年に数度ある印刷しする必要があるときは，ネットプリントを利用しているので，自分にはあまり利用する機会がなさそうだけど…</p>
 
 </div>
@@ -98,7 +98,7 @@
 
 <h3><a href="./20101213.html#p01" title="iMac から Flash をアンインストールしてみた"><span class="sanchor">_</span></a> iMac から Flash をアンインストールしてみた</h3>
 <p>iMac で常用するブラウザはしばらく Safari をメインに利用していて，拡張に <a href="http://clicktoflash.com/">ClickToFlash</a> を導入して，必要なときだけ Flash を有効にしてたけど，だいたい必要になるサイトがかなり限られていることがわかってきたので，試しに Flash をアンインストールしてみることにした．<a href="http://www.adobe.com/jp/shockwave/download/alternates/">アンインストーラーが Adobe のサイトにあるのでダウンロード</a>して実行．</p>
-<p><img class="right" src="http://www.smallstyle.com/images/20101213_0.png" alt="ショートカットの設定" title="ショートカットの設定" width="240"></p>
+<p><img class="right" src="https://www.smallstyle.com/images/20101213_0.png" alt="ショートカットの設定" title="ショートカットの設定" width="240"></p>
 <p>じゃぁ，Flash なサイトを閲覧するときはどうするか，必要なときは Google Chrome を利用します．以前どこかでみかけたけど，Safari の設定で「メニューバーに"開発"メニューを表示」を有効にしておくと，「ページをこのアプリケーションで開く」なんてメニューが利用できるようになって，ここから Google Chrome を呼び出せるようになる．さらにキーボードショートカットのアプリケーションで，ページを Google Chrome で開くためのショートカットを ⌘G あたりに設定しておけば，必要なときに呼び出せるのでこれがなかなか便利．</p>
 <p>会社 PC は Windows でブラウザは Google Chrome を使って快適にブラウジングしてるけど，自宅の iMac は 1Password が外せないため，Safari を常用していて，今回，久々に iMac 上で Google Chrome 使ってみたけど，やたら早くなったような気がする，以前は Google Chrome の 1Password 拡張はショートカットが使えないとかの不都合があったので，結局，常用することはなかったけど，<a href="http://blog.agile.ws/post/1582138363/exciting-updates-to-the-chrome-extension">先日，1Password の Google Chrome の拡張もまともに使えるようになった感じ</a>なので，ここいらで Google Chrome に乗り換えるのもありなのかもしれないな．</p>
 
@@ -215,7 +215,7 @@ Sun Dec 19 00:00:00 2010  [ERROR] failed to set file mode for PDF file (non fata
 <h3><a href="./20101220.html#p01" title="待ちうけカレンダーメーカー for 705NK(9) - サービスのURLが変わります"><span class="sanchor">_</span></a> 待ちうけカレンダーメーカー for 705NK(9) - サービスのURLが変わります</h3>
 <p>最近，家のサーバーの調子が悪くなってきていてときたま止まってしまったりすることもあるので，待ちうけカレンダーメーカーを外部のサーバーに移転することにしました．移転後のサービスは <a href="http://heroku.com/">Heroku</a> 上で動作することになります．</p>
 <p>Heroku 上で動作させるにあたって，これまで cgi ベースで動作していたものを Rack ベースに書き換えることになりました．といっても，カレンダーのイメージを生成する部分はもともとクラスに切り出されているので，フロント部分を書き換えるだけで済みました．</p>
-<p>また，画像のリクエストを処理する部分なども jQuery で書き換えました．カラーピッカーが見た目で大きく変わっています．<a href="http://www.smallstyle.com/20070321.html#p01">最初にリリースしてから 4 年ほど</a>になるため，もともとのコードも古臭くてなかなかひどいモノでしたが，これで多少ましなコードになったような気がします．</p>
+<p>また，画像のリクエストを処理する部分なども jQuery で書き換えました．カラーピッカーが見た目で大きく変わっています．<a href="https://www.smallstyle.com/20070321.html#p01">最初にリリースしてから 4 年ほど</a>になるため，もともとのコードも古臭くてなかなかひどいモノでしたが，これで多少ましなコードになったような気がします．</p>
 <p>これまで利用されていたブックマークなどは新サーバーの方で改めて取得してください．</p>
 <p>新サーバーでの URL は以下になります．</p>
 <ul>
@@ -330,40 +330,40 @@ Sun Dec 19 00:00:00 2010  [ERROR] failed to set file mode for PDF file (non fata
 <h3><a href="./20101231.html#p01" title="2010 年の日記を振り返り"><span class="sanchor">_</span></a> 2010 年の日記を振り返り</h3>
 <p>毎年，1年の日記を読み返して見て，その年を振り返って見る日記をつけているんですけど，ここ数年は 1 か月に数度しか更新しないので，もう日記じゃなくて月記みたいになってるけど，まぁ，それもまたよしということで，振り返ってみることにしてみます．</p>
 <dl>
-<dt><a href="http://www.smallstyle.com/201001.html">1月</a></dt>
+<dt><a href="https://www.smallstyle.com/201001.html">1月</a></dt>
 <dd>年始から風邪気味スタート．映画「アバター」を観てきた感想が久々な長文だったり(6日)
 </dd>
-<dt><a href="http://www.smallstyle.com/201002.html">2月</a></dt>
+<dt><a href="https://www.smallstyle.com/201002.html">2月</a></dt>
 <dd>インターネット接続環境がよくなったり(2日)
 </dd>
-<dt><a href="http://www.smallstyle.com/201003.html">3月</a></dt>
+<dt><a href="https://www.smallstyle.com/201003.html">3月</a></dt>
 <dd>伊豆方面に温泉旅行に行ったり(5日)
 </dd>
-<dt><a href="http://www.smallstyle.com/201004.html">4月</a></dt>
+<dt><a href="https://www.smallstyle.com/201004.html">4月</a></dt>
 <dd>金沢，能登半島方面に温泉旅行に行ったり(5日)
 </dd>
-<dt><a href="http://www.smallstyle.com/201005.html">5月</a></dt>
+<dt><a href="https://www.smallstyle.com/201005.html">5月</a></dt>
 <dd>発売日に出社前にiPadを買いに行ってみたり(4日)
 </dd>
-<dt><a href="http://www.smallstyle.com/201006.html">6月</a></dt>
+<dt><a href="https://www.smallstyle.com/201006.html">6月</a></dt>
 <dd>Safariの拡張でちょっとがんばって調べてみたり(2日)
 </dd>
-<dt><a href="http://www.smallstyle.com/201007.html">7月</a></dt>
+<dt><a href="https://www.smallstyle.com/201007.html">7月</a></dt>
 <dd>BBモバイルポイントのWEPキーを忘れて新幹線車内で必死に探してみたり(2日)
 </dd>
-<dt><a href="http://www.smallstyle.com/201008.html">8月</a></dt>
+<dt><a href="https://www.smallstyle.com/201008.html">8月</a></dt>
 <dd>ここの環境もtDiary3.0へ更新してみたり(2日)
 </dd>
-<dt><a href="http://www.smallstyle.com/201009.html">9月</a></dt>
+<dt><a href="https://www.smallstyle.com/201009.html">9月</a></dt>
 <dd>突如，何か作りたい気持ちになったのかtDiaryのプラグインを2つほど公開してみたり(7日)
 </dd>
-<dt><a href="http://www.smallstyle.com/201010.html">10月</a></dt>
+<dt><a href="https://www.smallstyle.com/201010.html">10月</a></dt>
 <dd>テレビとiPhoneを買い替えてみたり(3日)
 </dd>
-<dt><a href="http://www.smallstyle.com/201011.html">11月</a></dt>
+<dt><a href="https://www.smallstyle.com/201011.html">11月</a></dt>
 <dd>今年3度目の温泉旅行に行ってみたり(2日)
 </dd>
-<dt><a href="http://www.smallstyle.com/201012.html">12月</a></dt>
+<dt><a href="https://www.smallstyle.com/201012.html">12月</a></dt>
 <dd>カレンダーサービスを外部サーバーで提供するようにしてみたり(6日)
 </dd>
 </dl>

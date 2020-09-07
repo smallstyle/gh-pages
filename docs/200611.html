@@ -140,7 +140,7 @@
 <div class="section">
 
 <h3><a href="./20061107.html#p01" title="Vertical Tabbar でタブを縦に表示する"><span class="sanchor">_</span></a> Vertical Tabbar でタブを縦に表示する</h3>
-<p><img class="right" src="http://www.smallstyle.com/images/20061107_0.png" alt="Vertical Tabbar" title="Vertical Tabbar" width="240"></p>
+<p><img class="right" src="https://www.smallstyle.com/images/20061107_0.png" alt="Vertical Tabbar" title="Vertical Tabbar" width="240"></p>
 <p>Firefox の Add-on で <a href="https://addons.mozilla.org/firefox/3765/">Vertical Tabbar</a> というのが出ていたので，ちょっと試してみました．インストールして Firefox を再起動すると，ブラウザの右の方に，タブが縦に表示されます．タブの幅は，自由にサイズを変えることが可能で，それ以外に設定などはいまのところ何もありません．ちなみにこの拡張は Firefox 2 向けの拡張となっています．</p>
 <p>タブを縦に表示したいんだって方がいたら，一度お試しあれ．</p>
 
@@ -177,7 +177,7 @@
 <div class="section">
 
 <h3><a href="./20061108.html#p01" title="ToggleStyle の状態表示をステータスバーに表示する"><span class="sanchor">_</span></a> ToggleStyle の状態表示をステータスバーに表示する</h3>
-<p><img class="right" src="http://www.smallstyle.com/images/20061108_0.png" alt="ToggleStyle の状態表示をステータスバーに表示" title="ToggleStyle の状態表示をステータスバーに表示"></p>
+<p><img class="right" src="https://www.smallstyle.com/images/20061108_0.png" alt="ToggleStyle の状態表示をステータスバーに表示" title="ToggleStyle の状態表示をステータスバーに表示"></p>
 <p><a href="http://diary.noasobi.net/2006/11/diary_061108a.html">朝顔日記で公開されている，脊髄反射的にページの制作者スタイルを有効にしたり無効にしたりする拡張 「ToggleStyle」が，On/Off の状態がわかりやすくなってバージョンアップ</a>．スクリーンショットではツールバーに CSS のアイコンが表示されるようになってわかりやすい．…が，個人的にはこういうステータス表示はステータスバーに出したい人なので，ちょっと手を加えてみました．なんのひねりもなしに，ツールバーを指定している部分をステータスバーにしただけですが．</p>
 <p>togglestyle.xul は以下のように変更．</p>
 <pre>&lt;statusbar id="status-bar"&gt;
@@ -343,10 +343,10 @@ checkbox[id="styletoggle"] &gt; hbox &gt; image          {
 <p>最後にプラグインの設定画面から，generator の XML をおいた URL を指定してください．</p>
 <p>このプラグインをインストールすると，最新の日記表示時に，</p>
 <pre>&lt;link rel="microsummary" href="microsummary/entry-title.xml"&gt;</pre>
-<p><img class="right" src="http://www.smallstyle.com/images/20061112_0.png" alt="ブックマーク登録時のダイアログ" title="ブックマーク登録時のダイアログ" width="240"></p>
+<p><img class="right" src="https://www.smallstyle.com/images/20061112_0.png" alt="ブックマーク登録時のダイアログ" title="ブックマーク登録時のダイアログ" width="240"></p>
 <p>上記の link 要素が出力されます(href の部分は実際に設定された URL が表示されます)．この状態で日記を Firefox のブックマークに登録すると，右のようなダイアログが表示されます．通常，Name の部分にプルダウンのボタンは表示されませんが，microsummary に対応しているサイトではプルダウンボタンが表示されます．サイトをライブタイトルとして登録するには，Live titles 以下の項目を登録することになります．</p>
 <p>これで，自動的に日記の最新タイトルを取得してきてくれるというわけです．この generator では，日記にタイトルが設定されている場合はタイトルを，タイトルが空でサブタイトルが記述されている場合は，アンカーの数値がもっとも大きいサブタイトルを取得するようになっています．このあたりは，generator の書き方でいろいろ変更することが可能なので，<a href="http://developer.mozilla.org/ja/docs/microsummary_XML_grammar_reference">microsummary XML grammar reference - MDC</a> や <a href="http://developer.mozilla.org/ja/docs/Creating_a_microsummary">Creating a microsummary - MDC</a> を参考にしてみてください．</p>
-<div class="sequel">つづき: <a href="http://www.smallstyle.com/20080808.html#p01">2008-08-08</a></div>
+<div class="sequel">つづき: <a href="https://www.smallstyle.com/20080808.html#p01">2008-08-08</a></div>
 
 </div>
 
@@ -418,9 +418,9 @@ checkbox[id="styletoggle"] &gt; hbox &gt; image          {
 
 <h3><a href="./20061122.html#p01" title="Personal Menu でメニューバーのカスタマイズ"><span class="sanchor">_</span></a> Personal Menu でメニューバーのカスタマイズ</h3>
 <p>Firefox のメニューバーをすっきりさせる拡張としては，<a href="https://addons.mozilla.org/firefox/19/">Compact Menu</a>という拡張がありましたが，この拡張は Firefox 2 では対応していません．これまでは，メニューバーで必要のない項目は，userChrome.css や Stylish を利用して，非表示にすることで，若干すっきりした感じがあったのですが，<a href="https://addons.mozilla.org/firefox/3895/">Personal Menu</a> という拡張を利用すると，Compact Menu のように，メニューバーを自分用にカスタマイズすることができます．</p>
-<p><img class="right" src="http://www.smallstyle.com/images/20061122_0.png" alt="表示する項目をカスタマイズ" title="表示する項目をカスタマイズ" width="240"></p>
+<p><img class="right" src="https://www.smallstyle.com/images/20061122_0.png" alt="表示する項目をカスタマイズ" title="表示する項目をカスタマイズ" width="240"></p>
 <p>Personal Menu をインストールし，Firefox を再起動した後，メニューバーで右クリックをすると，Menus という項目が新たに追加されます．このメニュー画面では，メニューバーで表示する項目を選択したり，メニューバー上で右クリックしたときに選択できる項目を追加したりすることができます．いったん，メニューバーの右クリックの項目に追加したあとは，Personal Menu の Option 画面で，Others タブの "Show and Hide These Menus" の Setting ボタンで変更することができます．</p>
-<p><img class="right" src="http://www.smallstyle.com/images/20061122_1.png" alt="メニューをひとつのボタンにまとめる" title="メニューをひとつのボタンにまとめる"></p>
+<p><img class="right" src="https://www.smallstyle.com/images/20061122_1.png" alt="メニューをひとつのボタンにまとめる" title="メニューをひとつのボタンにまとめる"></p>
 <p>また，メニューバーそのものを非表示にしてひとつのボタンにまとめてしまうことも可能です．このボタンに対して，どの項目を表示するかももちろん選択可能です．個人的に細かいとこまで気がきいてるとか思ったのは．ボタンのスタイルが Firefox 1.5 のときと同じような表示にすることもできることです．Firefox 2 の戻る，進むボタンの履歴を表示するボタン部分がどうも気にいらないので，Stylish でいじって 1.5 のときと同じような感じにしているので，その手間がない分ありがたい．</p>
 <p>Firefox のメニューバーを手軽にカスタマイズしたい方にはおすすめな拡張です．</p>
 
@@ -552,8 +552,8 @@ checkbox[id="styletoggle"] &gt; hbox &gt; image          {
 <li><a href="http://www.tdiary.org/20061126.html">tDiaryの脆弱性に関する報告(2006-11-26)</a></li>
 </ul>
 <p>というわけで，取り急ぎここではパッチをあてて対応．</p>
-<p>tDiary のアップデートにあわせて念のためにアナウンス．最新の<a href="http://www.smallstyle.com/20060713.html#p01">コメントフォーム非表示プラグイン</a>を利用されている場合，スナップショットで上書きされた場合は，spam filter がオリジナルに置き換わってしまうと思いますので，コメントフォームが表示されているけど，ツッコミが破棄されてしまう状態になるのでご注意ください．</p>
-<div class="sequel">つづき: <a href="http://www.smallstyle.com/20061210.html#p01">2006-12-10</a></div>
+<p>tDiary のアップデートにあわせて念のためにアナウンス．最新の<a href="https://www.smallstyle.com/20060713.html#p01">コメントフォーム非表示プラグイン</a>を利用されている場合，スナップショットで上書きされた場合は，spam filter がオリジナルに置き換わってしまうと思いますので，コメントフォームが表示されているけど，ツッコミが破棄されてしまう状態になるのでご注意ください．</p>
+<div class="sequel">つづき: <a href="https://www.smallstyle.com/20061210.html#p01">2006-12-10</a></div>
 
 </div>
 
@@ -588,7 +588,7 @@ checkbox[id="styletoggle"] &gt; hbox &gt; image          {
 <div class="section">
 
 <h3><a href="./20061127.html#p01" title="Firefox 2.0 リリース前後にみる UA 比率の変化"><span class="sanchor">_</span></a> Firefox 2.0 リリース前後にみる UA 比率の変化</h3>
-<p>Firefox 2.0 がリリースされて 1 ヶ月が経過しました．このサイトでもリリース後に「<a href="http://www.smallstyle.com/20061025.html#p01">Firefox をインストールしたらまず行う設定(Firefox 2.0 版)</a>」なんてのを書いたりしてみたわけですが，果たしてどのくらいこのサイトにアクセスした UA  の比率が変わったのでしょうか．</p>
+<p>Firefox 2.0 がリリースされて 1 ヶ月が経過しました．このサイトでもリリース後に「<a href="https://www.smallstyle.com/20061025.html#p01">Firefox をインストールしたらまず行う設定(Firefox 2.0 版)</a>」なんてのを書いたりしてみたわけですが，果たしてどのくらいこのサイトにアクセスした UA  の比率が変わったのでしょうか．</p>
 <p>データは <a href="http://www.google.com/analytics/ja-JP/">Google Analytics</a> のデータを利用しました．Firefox 2.0 がリリースされる 1 ヶ月前の，9 月 25 日から 10 月 24 日まで．リリース後 1 ヶ月の 10 月 25 日から 11 月 24 日までが集計対象です．</p>
 <p>まずはブラウザのバージョン．</p>
 <table border="1">

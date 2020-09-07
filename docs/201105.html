@@ -203,7 +203,7 @@ svcpassword=&lt;PASSWORD&gt;</pre>
 		</span><br style="clear: left">
 	</span></a>
 </p>
-<div class="sequel">つづき: <a href="http://www.smallstyle.com/20110504.html#p01" title="ネットワークが有効になったら pogoplugfs を起動する">2011-05-04</a></div>
+<div class="sequel">つづき: <a href="https://www.smallstyle.com/20110504.html#p01" title="ネットワークが有効になったら pogoplugfs を起動する">2011-05-04</a></div>
 
 </div>
 
@@ -240,7 +240,7 @@ svcpassword=&lt;PASSWORD&gt;</pre>
 
 <h3><a href="./20110504.html#p01" title="ネットワークが有効になったら pogoplugfs を起動する"><span class="sanchor">_</span></a> ネットワークが有効になったら pogoplugfs を起動する</h3>
 <p><img title="pogoplugfs" alt="pogoplugfs" src="http://lh4.ggpht.com/_ihKAdXEKr-A/TcFHmybrOiI/AAAAAAAAAEk/gAIVJQgk_-I/s300/photo%20%281%29.resized.JPG" class="right picasa"></p>
-<p><a href="http://www.smallstyle.com/20110503.html#p01" title="Ubuntu で Pogoplug を利用する">先日の日記</a>で，pogoplugfs をスタートアップに登録すれば起動時に pogoplug がドライブとして mount されると書いたけど，これはデスクトップ PC で有線 LAN 環境でのこと．これがノート PC などで無線 LAN 環境になると，スタートアップ時にはまだネットワークに接続できていないため，pogoplugfs の起動に失敗してしまいました．必要なときにコマンドラインで呼び出すなり，起動用のスクリプトを用意してもいいのですが，ネットワークがアクティブになったら自動的に mount されて利用できるほうがやっぱりいい．うまく呼び出す方法として何がいいか．</p>
+<p><a href="https://www.smallstyle.com/20110503.html#p01" title="Ubuntu で Pogoplug を利用する">先日の日記</a>で，pogoplugfs をスタートアップに登録すれば起動時に pogoplug がドライブとして mount されると書いたけど，これはデスクトップ PC で有線 LAN 環境でのこと．これがノート PC などで無線 LAN 環境になると，スタートアップ時にはまだネットワークに接続できていないため，pogoplugfs の起動に失敗してしまいました．必要なときにコマンドラインで呼び出すなり，起動用のスクリプトを用意してもいいのですが，ネットワークがアクティブになったら自動的に mount されて利用できるほうがやっぱりいい．うまく呼び出す方法として何がいいか．</p>
 <p><a href="https://help.ubuntu.com/community/Autofs">autofs</a> とかどうかなと思ったけど，これはネットワークに繋がっているかどうかまでは見ていなさそう．特定のフォルダへのアクセスがあったときに自動的に mount する 仕組みは使えそうだけど．それよりも autofs から pogoplugfs の呼び出しがうまくできなさそうだったので却下．</p>
 <p>次に考えたのがネットワークの起動時にスクリプトが呼び出せる /etc/network/if-up.d 配下に起動スクリプトを置くこと．解決策としてはもっともいいものだと思ったけど，スクリプトの起動が root ユーザーとなってしまっているからか，マウントはできるけどファイルシステムにアクセスできない．ログインユーザー名の取得も環境変数などにはなさそうだったので，これも却下．</p>
 <p>もうひとつ思いついたのは pogoplug と同じようなストレージ系のアプリケーションとして，Dropbox や UbuntuOne のような nautilus と連携させる方法．nautilus actions などでコンテキストメニューなどを独自に追加できるようだけど，フォルダアクセス時にマウントするとかそういった類のことはできなさそうなので却下．</p>
@@ -364,7 +364,7 @@ done</pre>
 <p>search_result については，Google カスタム検索では検索結果が iframe で表示されてサイトに組み込むことができるので，こちらも Google カスタム検索で表示されている検索結果のコードをコピペするだけ．</p>
 <p>検索結果で表示される iframe の height が足りないからか，若干下のほうが切れてしまっているので今のところ css でちょっといじってるけど，いくつかのブラウザで試してから問題ないようにしたい．</p>
 <p>プラグインにもできそうなのでそのうち contrib にあげよう．</p>
-<div class="sequel">つづき: <a href="http://www.smallstyle.com/20110516.html#p01" title="サイト内検索を置き換えたら OpenSearch Description も書き換えよう">2011-05-16</a>, <a href="http://www.smallstyle.com/20110603.html#p01">2011-06-03</a>, <a href="http://www.smallstyle.com/20110606.html#p01">2011-06-06</a></div>
+<div class="sequel">つづき: <a href="https://www.smallstyle.com/20110516.html#p01" title="サイト内検索を置き換えたら OpenSearch Description も書き換えよう">2011-05-16</a>, <a href="https://www.smallstyle.com/20110603.html#p01">2011-06-03</a>, <a href="https://www.smallstyle.com/20110606.html#p01">2011-06-06</a></div>
 
 </div>
 
@@ -400,7 +400,7 @@ done</pre>
 <div class="section">
 
 <h3><a href="./20110516.html#p01" title="サイト内検索を置き換えたら OpenSearch Description も書き換えよう"><span class="sanchor">_</span></a> サイト内検索を置き換えたら OpenSearch Description も書き換えよう</h3>
-<p><a href="http://www.smallstyle.com/20110515.html#p01" title="サイト内検索を Google カスタム検索に置き換えてみた">昨日からサイト内検索を Google カスタム検索に置き換えて</a>みて，特に支障なく利用できていそうなんですが，そういえば<a href="http://www.smallstyle.com/20091110.html#p01">このサイトは OpenSearch に対応させていた</a>ことをすっかり忘れていて，OpenSearch を利用して検索するとと，Google カスタム検索に必要なパラメータが足りず正常に動作してなかった．</p>
+<p><a href="https://www.smallstyle.com/20110515.html#p01" title="サイト内検索を Google カスタム検索に置き換えてみた">昨日からサイト内検索を Google カスタム検索に置き換えて</a>みて，特に支障なく利用できていそうなんですが，そういえば<a href="https://www.smallstyle.com/20091110.html#p01">このサイトは OpenSearch に対応させていた</a>ことをすっかり忘れていて，OpenSearch を利用して検索するとと，Google カスタム検索に必要なパラメータが足りず正常に動作してなかった．</p>
 <p><a href="http://www.smallstyle.com/smallstyle_search.xml">OpenSearch Description は XML ファイル</a>で定義しているので，URL を Google カスタム検索に対応するように修正．修正したあとに Chrome で確認してみたらキャッシュに残っていて古いまま．キャッシュを削除して動作することを確認できたけど，キャッシュ対策にタイムスタンプっぽい何かをつけたほうがいいのかな…</p>
 
 </div>

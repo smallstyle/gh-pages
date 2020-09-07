@@ -8,7 +8,7 @@
 	<meta name="author" content="hb">
 	
 	<link rel="start" title="最新" href="./">
-	<link rel="alternate" media="handheld" type="text/html" href="http://www.smallstyle.com/">
+	<link rel="alternate" media="handheld" type="text/html" href="https://www.smallstyle.com/">
 	<link rel="shortcut icon" href="favicon.ico">
 	<meta name="description" content="日々，気になったことを書き留める日記">
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js" type="text/javascript"></script>
@@ -40,7 +40,7 @@
 <span class="adminmenu"><a href="./20050810-3.html" rel="prev">次3日分&raquo;</a></span>
 </div>
 </div>
-<h1><a href="http://www.smallstyle.com/">SmallStyle</a></h1>
+<h1><a href="https://www.smallstyle.com/">SmallStyle</a></h1>
 <div class="content">
 <div class="main">
 
@@ -59,7 +59,7 @@
 <div class="section">
 
 <h3><a href="./20050731.html#p01" title="FEEDBRINGERのスタイル変更Bookmarklet"><span class="sanchor">_</span></a> FEEDBRINGERのスタイル変更Bookmarklet</h3>
-<p><a href="http://www.smallstyle.com/20050730.html">昨日はuserContent.cssでFEEDBRINGERの見た目を変えてみました</a>が，Bookmarkletでもできるんじゃないの？って思って試しにやってみたらあっさりできた．これならIEでも使えるのかもとか思ったのですが，うちの環境(WindowsXP SP2)ではうまく動きません…．</p>
+<p><a href="https://www.smallstyle.com/20050730.html">昨日はuserContent.cssでFEEDBRINGERの見た目を変えてみました</a>が，Bookmarkletでもできるんじゃないの？って思って試しにやってみたらあっさりできた．これならIEでも使えるのかもとか思ったのですが，うちの環境(WindowsXP SP2)ではうまく動きません…．</p>
 <p>フィードの見るだけなら画面遷移はないので，それなりに使えるかも．ちょっとだけどんな見た目か試して見たい方はどうぞ．動作確認はFirefox DP2でのみ行っています．(Bookmarkに登録して使ってください)</p>
 <pre>javascript:(function(){var newSS, styles=&amp;apos;#logo-container {background: #E7E3D0 !important;}#tool {display: none !important;}#nav {color: #fff !important;background: #5E766B !important;}#nav a {padding-left: 0.3em !important;padding-right: 0.3em !important;}#nav a {color: #fff !important;border-bottom: none !important;}#nav a:hover {border-bottom: none !important;color: #FFD264 !important;background-color: transparent !important;}#nav .border {border-top: none !important;border-bottom: solid 1px #333 !important;}#container {padding: 0 !important;height: 80% !important;border-bottom: solid 1px #333 !important;}#side {position: static !important;height: 100% !important;overflow: scroll !important;float: left !important;border-right: solid 1px #333 !important;}#main-container {margin: 0 !important;padding-left: 1em !important;padding-right: 1em !important;background: #E7E3D0 !important;overflow: scroll !important;height: 100% !important;}#main .feed, #popular .feed {background: #fff !important;}#main .feed-title, #popular .feed-title {color: #666 !important;background: transparent !important;}#main .feed-entry-title {background-color: #757575 !important;color: #fff !important;}#main a:hover.feed-title,#popular a:hover.feed-title,#main a:hover.feed-entry-title {color: #fff !important;background: #5E766B !important;}#main .feed-entry-information, #main .clip-information {border: 1px solid #757575 !important;}#main-help {color: #000 !important;background: #fff !important;}#main-padding {display: none !important;}&amp;apos;; if(document.createStyleSheet) { document.createStyleSheet(%22javascript:&amp;apos;%22+styles+%22&amp;apos;%22); } else { newSS=document.createElement(&amp;apos;link&amp;apos;); newSS.rel=&amp;apos;stylesheet&amp;apos;; newSS.href=&amp;apos;data:text/css,&amp;apos;+escape(styles); document.documentElement.childNodes[0].appendChild(newSS); } })();</pre>
 
@@ -96,7 +96,7 @@
 <div class="section">
 
 <h3><a href="./20050730.html#p01" title="FEEDBRINGERを@-moz-documentを使って改良"><span class="sanchor">_</span></a> <a href="http://feedbringer.net/">FEEDBRINGER</a>を@-moz-documentを使って改良</h3>
-<p><img class="right" src="http://www.smallstyle.com/images/20050730_0.png" alt="image" title="image" width="240">
+<p><img class="right" src="https://www.smallstyle.com/images/20050730_0.png" alt="image" title="image" width="240">
 WebベースのRSSリーダーといえば，<a href="http://www.bloglines.com/">Bloglines</a>が有名ですが，先日<a href="http://feedbringer.net/">FEEDBRINGER</a>という新しいWebベースのRSSリーダーが登場したようです．Bloglinesはここのところよくメンテナンス状態になってしまうし，なんだかレスポンスも以前に比べて悪くなったような気がします．そんなわけで，他に何かいいWebベースのRSSリーダーはないかなと思っていたところでした．</p>
 <p>ざっと使ってみた感じは，Ajaxを使っていてさくさくと動いてくれます．さっそくBloglinesのデータをエクスポートして，FEEDBRINGERにインポート．そうすると，リストが多いとBloglinesとは異なりフレームを使っていないから画面全体のスクロール量が増えることに気づく．…使いづらいぞ．<a href="http://sho.tdiary.net/20050727.html#p03">ただのにっき</a>でもあげられていますが，未読のfeedをクリックするとページのトップに飛んで，またスクロールして…っていうのは結構面倒．ということで，やはり<a href="http://sho.tdiary.net/20050727.html#c12">同じ思いを抱く人</a>はいるようで，<a href="http://mizzy.org/?topic=/web/feedbringerRemixing">greasemonkeyを使って対処</a>されている方がいました．</p>
 <p>私もFirefoxを利用しているのですが，最近はTrunkを利用しているためgreasemonkeyが使えません．そこでuserContent.cssを利用してFEEDBRINGERをユーザースタイルシートでいじることにしました．ここでサイト別にCSSルールを適用させる@-moz-documentが使えます．これ自体はGecko/1.8a3くらいから有効らしいです．ちなみに私の利用しているFirefoxのGeckoのバージョンはGecko/1.8b4なのでこのルールが利用できるのですが，<a href="http://extensionroom.mozdev.org/more-info/uriid">URIid</a>という拡張を使っても，似たようなことができるようです．</p>

@@ -10,7 +10,7 @@
 	<link rel="prev" title="前の日記(2006-05-04)" href="./20060504.html">
 	<link rel="next" title="次の日記(2006-05-06)" href="./20060506.html">
 	<link rel="start" title="最新" href="./">
-	<link rel="alternate" media="handheld" type="text/html" href="http://www.smallstyle.com/20060505.html">
+	<link rel="alternate" media="handheld" type="text/html" href="https://www.smallstyle.com/20060505.html">
 	<link rel="shortcut icon" href="favicon.ico">
 	<meta name="description" content="日々，気になったことを書き留める日記">
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js" type="text/javascript"></script>
@@ -42,7 +42,7 @@
 <span class="adminmenu"><a href="./20060506.html">次の日記(2006-05-06)&raquo;</a></span>
 </div>
 </div>
-<h1><a href="http://www.smallstyle.com/">SmallStyle</a></h1>
+<h1><a href="https://www.smallstyle.com/">SmallStyle</a></h1>
 <div class="content">
 <div class="main">
 
@@ -61,10 +61,10 @@
 <div class="section">
 
 <h3><a name="p01" href="./20060505.html#p01" title="Bulkfeeds API 形態素解析 + 特徴語抽出を利用したタグ候補取得プラグイン"><span class="sanchor">_</span></a> <a href="http://bulkfeeds.net/app/developer.html#terms">Bulkfeeds API 形態素解析 + 特徴語抽出</a>を利用したタグ候補取得プラグイン</h3>
-<p><a href="http://www.smallstyle.com/20060504.html#p01" title="タグ自動抽出 API を利用したタグ候補の取得プラグイン">タグ候補生成プラグインを作って</a>なかなか面白かったので，他にも日本語に対応した形態素解析 API がないかなぁと探してみたら，<a href="http://bulkfeeds.net/app/developer.html">Bulkfeeds API</a> で「<a href="http://bulkfeeds.net/app/developer.html#terms">形態素解析 + 特徴語抽出</a>」が提供されていたので早速対応させてみることにしました．</p>
+<p><a href="https://www.smallstyle.com/20060504.html#p01" title="タグ自動抽出 API を利用したタグ候補の取得プラグイン">タグ候補生成プラグインを作って</a>なかなか面白かったので，他にも日本語に対応した形態素解析 API がないかなぁと探してみたら，<a href="http://bulkfeeds.net/app/developer.html">Bulkfeeds API</a> で「<a href="http://bulkfeeds.net/app/developer.html#terms">形態素解析 + 特徴語抽出</a>」が提供されていたので早速対応させてみることにしました．</p>
 <p>Bulkfeeds API は XML 形式でレスポンスが返ってくるということなので，XML のパーサーとして<a href="http://www.germane-software.com/software/rexml/">REXML</a> を利用してみることにしてみました．</p>
 <p>あとは CGI Proxy の tagapi.rb の JSON 形式の結果の返し方がなんとなくきれいでなかったので，少し変更．ishinao さんのとこは結果がタブ区切りの文字列で返ってくるので，そのまま返して JavaScript でタブをキーに文字列分割していたのですが，JSON は配列での定義も可能なので，サーバ側でタグ候補文字列を配列にして返すように変更しました．その他，例外処理まわりの変更や，いくつかの処理を関数として切り出しました．</p>
-<p><img class="right" src="http://www.smallstyle.com/images/20060505_0.png" alt="スクリーンショット" title="スクリーンショット"></p>
+<p><img class="right" src="https://www.smallstyle.com/images/20060505_0.png" alt="スクリーンショット" title="スクリーンショット"></p>
 <p>ということで，新しいバージョンでは，タグ候補を抽出するサービスを MM/Memo か Bulkfeeds のAPI のどちらかを選択できるようになっています．最新版は下記リンクからダウンロードしてください．</p>
 <ul>
 <li><del><a href="./lab/tag-generator.txt">tag-generator.rb</a></del>(Disk障害でなくなってしまいました…)</li>
