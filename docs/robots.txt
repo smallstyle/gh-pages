@@ -1,0 +1,5 @@
+Sitemap https://www.smallstyle.com/sitemap.xml
+
+User-agent: *
+Disallow: /update.rb
+
